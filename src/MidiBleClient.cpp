@@ -1,21 +1,22 @@
-#include "ArdMidiBleClient.h"
-#ifdef ARD_MIDI_CLIENT_H
+#include "MidiBleClient.h"
+#if MIDI_BLE_ACTIVE
+#include "MidiLogger.h"
 
 namespace midi {
 
-const char* APP_CLIENT = "ArdMidiBleClient";
-ArdMidiBleEventHandler *pEventHandler;
+const char* APP_CLIENT = "MidiBleClient";
+MidiBleEventHandler *pEventHandler;
 
 
-ArdMidiBleClient :: ArdMidiBleClient(char* name, ArdMidiBleEventHandler* pEventHandler) {
+MidiBleClient :: MidiBleClient(const char* name, MidiBleEventHandler* pEventHandler) {
     this->name = name;
     this->connectionStatus = Unconnected;
 }
 
-void ArdMidiBleClient :: start(MidiVoicer &MidiVoicer) {
-    this->pMidiVoicer = &MidiVoicer;
+void MidiBleClient :: start(MidiAction &MidiAction) {
+    this->pMidiAction = &MidiAction;
     BLEScan* pBLEScan = BLEDevice::getScan();
-    pBLEScan->setAdvertisedDeviceCallbacks(new ArdMidiBleClientAdvertisedDeviceCallbacks(this));
+    pBLEScan->setAdvertisedDeviceCallbacks(new MidiBleClientAdvertisedDeviceCallbacks(this));
     pBLEScan->setInterval(1349);
     pBLEScan->setWindow(449);
     pBLEScan->setActiveScan(true);
@@ -29,41 +30,41 @@ void characteristic_notify_callback(BLERemoteCharacteristic* pBLERemoteCharacter
 }
 
 
-void ArdMidiBleClient :: start(BLEAdvertisedDevice *pDevice) {
+void MidiBleClient :: start(BLEAdvertisedDevice *pDevice) {
     this->pDevice = pDevice;
     BLEClient*  pClient  = BLEDevice::createClient();
-    pClient->setClientCallbacks(new ArdMidiBleClientCallback(&connectionStatus));
+    pClient->setClientCallbacks(new MidiBleClientCallback(&connectionStatus));
     //pClient->connect(name);  // if you pass BLEAdvertisedDevice instead of address, it will be recognized type of peer device address (public or private)
     pClient->connect(pDevice);  
 
     // Obtain a reference to the service we are after in the remote BLE server.
     BLERemoteService* pRemoteService = pClient->getService(MIDI_SERVICE_UUID);
-    if (pRemoteService == nullptrptr) {
-        ESP_LOGE(APP_CLIENT, "Failed to find our service UUID: %s ", MIDI_SERVICE_UUID);
+    if (pRemoteService == nullptr) {
+        MIDI_LOGE( "Failed to find our service UUID: %s ", MIDI_SERVICE_UUID);
         pClient->disconnect();
         return;
     }
 
     // Obtain a reference to the characteristic in the service of the remote BLE server.
     pRemoteCharacteristic = pRemoteService->getCharacteristic(MIDI_CHARACTERISTIC_UUID);
-    if (pRemoteCharacteristic == nullptrptr) {
-        ESP_LOGE(APP_CLIENT, "Failed to find our characteristic UUID: %s", MIDI_CHARACTERISTIC_UUID);
+    if (pRemoteCharacteristic == nullptr) {
+        MIDI_LOGE( "Failed to find our characteristic UUID: %s", MIDI_CHARACTERISTIC_UUID);
         pClient->disconnect();
         return;
     }
-    ESP_LOGD(APP_CLIENT, " - Found our characteristic");
+    MIDI_LOGD( " - Found our characteristic");
 
     // Read the value of the characteristic.
     if(pRemoteCharacteristic->canRead()) {
         std::string value = pRemoteCharacteristic->readValue();
-        ESP_LOGE(APP_CLIENT, "The characteristic value was: %s",value.c_str());
+        MIDI_LOGE( "The characteristic value was: %s",value.c_str());
     }
 
     pRemoteCharacteristic->registerForNotify(characteristic_notify_callback, true);
 
 }
 
-void ArdMidiBleClient :: writeData(MidiMessage *pMsg, int len) {
+void MidiBleClient :: writeData(MidiMessage *pMsg, int len) {
     if (pRemoteCharacteristic!=nullptr){
         updateTimestamp(&outMessage);
         uint8_t* cp = (uint8_t*)&outMessage;
@@ -82,31 +83,31 @@ void ArdMidiBleClient :: writeData(MidiMessage *pMsg, int len) {
 }
 
 
-BLEAdvertisedDevice * ArdMidiBleClient :: getBLEAdvertisedDevice() {
+BLEAdvertisedDevice * MidiBleClient :: getBLEAdvertisedDevice() {
     return this->pDevice;
 }
 
 
-// => ArdMidiBleClientCallback
+// => MidiBleClientCallback
 
-ArdMidiBleClientCallback :: ArdMidiBleClientCallback(ConnectionStatus *pStatus){
+MidiBleClientCallback :: MidiBleClientCallback(ConnectionStatus *pStatus){
     this->pConnectionStatus = pStatus;
 }
-void ArdMidiBleClientCallback :: onConnect(BLEClient* client) {
+void MidiBleClientCallback :: onConnect(BLEClient* client) {
     *pConnectionStatus = Connected;
 };
 
-void ArdMidiBleClientCallback :: onDisconnect(BLEClient* client) {
+void MidiBleClientCallback :: onDisconnect(BLEClient* client) {
     *pConnectionStatus = Disconnected;
 }
 
-// => ArdMidiBleClientAdvertisedDeviceCallbacks
+// => MidiBleClientAdvertisedDeviceCallbacks
 
-ArdMidiBleClientAdvertisedDeviceCallbacks :: ArdMidiBleClientAdvertisedDeviceCallbacks(ArdMidiBleClient *pClient) {
+MidiBleClientAdvertisedDeviceCallbacks :: MidiBleClientAdvertisedDeviceCallbacks(MidiBleClient *pClient) {
     this->pClient = pClient;
 }
 
-void ArdMidiBleClientAdvertisedDeviceCallbacks :: onResult(BLEAdvertisedDevice advertisedDevice) {
+void MidiBleClientAdvertisedDeviceCallbacks :: onResult(BLEAdvertisedDevice advertisedDevice) {
     if (advertisedDevice.haveServiceUUID() && advertisedDevice.isAdvertisingService(BLEUUID(MIDI_SERVICE_UUID))) {
       BLEDevice::getScan()->stop();
       BLEAdvertisedDevice* pDevice = new BLEAdvertisedDevice(advertisedDevice);

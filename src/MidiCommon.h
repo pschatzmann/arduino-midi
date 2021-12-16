@@ -3,8 +3,9 @@
 
 #if MIDI_ACTIVE
 
+#include <math.h>
+
 #if MIDI_BLE_ACTIVE
-#include "sdkconfig.h"
 #include <freertos/FreeRTOS.h>
 #include <freertos/event_groups.h>
 #include <freertos/task.h>
@@ -21,12 +22,10 @@
 #include <map>                 // Part of C++ Standard library
 #include <sstream>             // Part of C++ Standard library
 #include <iomanip>             // Part of C++ Standard library
-#include <math.h>
 #include "BLEDevice.h"
 #include "BLEClient.h"
 #include "BLEUtils.h"
 #include "GeneralUtils.h"
-#include "esp_log.h"
 #include "BLE2902.h"
 
 #define MIDI_SERVICE_UUID        "03B80E5A-EDE8-4B33-A751-6CE34EC4C700"
@@ -35,8 +34,8 @@
 #endif
 
 //#include "Arduino.h"
-#include "ArdMidiEventHandler.h"
-#include "ArdMidiVoicer.h"
+#include "MidiEventHandler.h"
+#include "MidiAction.h"
 #include <stdint.h>
 
 
@@ -57,61 +56,58 @@ enum ConnectionStatus {
 };
 
 /***************************************************/
-/*! \class ArdMidiCommon
+/*! \class MidiCommon
     \brief  The common methods provided by all Arduino Midi
     subclasses which can be used to generate Midi messages:
 
-    - ArdMidiBleServer
-    - ArdMidiBleClient
-    - ArdMidiSerialOut
+    - MidiBleServer
+    - MidiBleClient
+    - MidiSerialOut
 
     by Phil Schatzmann
 */
 /***************************************************/
 
-class ArdMidiCommon {
+class MidiCommon {
     public:
         //! Default Constructor
-        ArdMidiCommon();
+        MidiCommon();
 
         //! Activates a filter on receiving messages to the indicated channel
-        void setFilterReceivingChannel(int channel);
+        virtual void setFilterReceivingChannel(int channel);
 
         //! Sets the default channel for the sending commands. 
-        void setDefaultSendingChannel(int8_t channel);
+        virtual void setDefaultSendingChannel(int8_t channel);
 
         //! Sends a noteOn MIDI command to the output
-        void noteOn(uint8_t note, uint8_t velocity, int8_t channel=-1);
+        virtual void noteOn(uint8_t note, uint8_t velocity, int8_t channel=-1);
 
         //! Sends a noteOff MIDI command to the output
-        void noteOff(uint8_t note, uint8_t velocity, int8_t channel=-1);
+        virtual void noteOff(uint8_t note, uint8_t velocity, int8_t channel=-1);
 
         //! Sends a pitchBend MIDI command to the output
-        void pitchBend(uint16_t value, int8_t channel=-1);
+        virtual  void pitchBend(uint16_t value, int8_t channel=-1);
 
         //! Sends a channelPressure MIDI command to the output
-        void channelPressure(uint8_t value, int8_t channel=-1);
+        virtual void channelPressure(uint8_t value, int8_t channel=-1);
 
         //! Sends a polyPressure MIDI command to the output
-        void polyPressure(uint8_t valuePar, int8_t channel=-1);
+        virtual void polyPressure(uint8_t valuePar, int8_t channel=-1);
 
         //! Sends a programChange MIDI command to the output
-        void programChange(uint8_t program, int8_t channel=-1);
+        virtual void programChange(uint8_t program, int8_t channel=-1);
 
         //! Sends a allNotesOff MIDI command to the output
-        void allNotesOff( int8_t channel=-1);
+        virtual void allNotesOff( int8_t channel=-1);
 
         //! Sends a resetAllControllers  MIDI command to the output
-        void resetAllControllers( int8_t channel=-1);
+        virtual void resetAllControllers( int8_t channel=-1);
 
         //! Sends a localControl  MIDI command to the output
-        void localControl( bool active, int8_t channel=-1);
+        virtual void localControl( bool active, int8_t channel=-1);
 
         //! Sends a control change MIDI command to the output
-        void controlChange(uint8_t msg, uint8_t value, int8_t channel=-1);
-
-        //! Determines the connection status
-        ConnectionStatus getConnectionStatus();
+        virtual void controlChange(uint8_t msg, uint8_t value, int8_t channel=-1);
 
         //! Converts a MIDI note to a frequency in Hz
         static float noteToFrequency(uint8_t note);
@@ -120,16 +116,18 @@ class ArdMidiCommon {
         static uint8_t frequencyToNote(float freq);
 
         //! Defines the voice which is used in inbound processing
-        void setMidiVoicer(MidiVoicer &MidiVoicer);
+        virtual void setMidiAction(MidiAction &MidiAction);
 
+        // //! Determines the connection status
+        virtual ConnectionStatus getConnectionStatus() { return connectionStatus; }
 
     protected:
-        void setConnectionStatus(ConnectionStatus status);
+        void setConnectionStatus(ConnectionStatus status) {connectionStatus=status; }
         void updateTimestamp(MidiMessage *pMsg);
         virtual void writeData(MidiMessage *msg, int len);
         
         ConnectionStatus connectionStatus;
-        MidiVoicer *pMidiVoicer;
+        MidiAction *pMidiAction;
         MidiMessage outMessage;
         int receivingChannel = -1;  
         uint8_t sendingChannel = 0;  

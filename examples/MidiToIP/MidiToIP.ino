@@ -9,7 +9,7 @@
  */
 #include <WiFi.h>
 #include <WiFiMulti.h>
-#include "ArdMidiStreamOut.h"
+#include "MidiStreamOut.h"
 
 using namespace midi;
 using namespace stk;
@@ -17,7 +17,7 @@ using namespace stk;
 IPAddress ip(192, 168, 1, 35);
 int port = 9999;
 WiFiClient client;
-ArdMidiStreamOut out(client);
+MidiStreamOut out(client);
 const char *SSID = "your ssid";
 const char *PWD = "your password";
 

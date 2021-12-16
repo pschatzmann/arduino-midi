@@ -4,33 +4,33 @@
 #if MIDI_BLE_ACTIVE
 
 #include "Arduino.h"
-#include "ArdMidiVoicer.h"
-#include "ArdMidiEventHandler.h"
+#include "MidiAction.h"
+#include "MidiEventHandler.h"
 #include "BLECharacteristic.h"
-#include "esp_log.h"
+#include "MidiLogger.h"
 
 namespace midi {
 
 /***************************************************/
-/*! \class ArdMidiBleEventHandler
+/*! \class MidiBleEventHandler
     \brief  A simple Midi Parser for BLE Midi messages
     that calls the corresponding events. 
   
     In this implementation the handler just passes the noteOn 
-    and noteOff to the MidiVoicer.
+    and noteOff to the MidiAction.
   
     http://www.hangar42.nl/wp-content/uploads/2017/10/BLE-MIDI-spec.pdf
 
     by Phil Schatzmann
 */
 /***************************************************/
-class ArdMidiBleEventHandler 
+class MidiBleEventHandler 
 : public BLECharacteristicCallbacks , public  MidiEventHandler {
     public:
-        ArdMidiBleEventHandler(MidiVoicer *MidiVoicer, int *p_channel = nullptr );
-         ~ArdMidiBleEventHandler();
-        void onRead(BLECharacteristic* pCharacteristic);
-	    void onWrite(BLECharacteristic* pCharacteristic);
+        MidiBleEventHandler(MidiAction *MidiAction, int *p_channel = nullptr );
+        virtual ~MidiBleEventHandler();
+        virtual void onRead(BLECharacteristic* pCharacteristic);
+	    virtual void onWrite(BLECharacteristic* pCharacteristic);
 
 };
 

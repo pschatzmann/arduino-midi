@@ -3,13 +3,13 @@
 
 #if MIDI_BLE_ACTIVE
 
-#include "ArdMidiCommon.h"
-#include "ArdMidiBleEventHandler.h"
+#include "MidiCommon.h"
+#include "MidiBleEventHandler.h"
 
 namespace midi {
 
 /***************************************************/
-/*! \class ArdMidiBleServer
+/*! \class MidiBleServer
     \brief A Bluetooth Low Energy BLE Server which
     can send or receive Bluetooth messages.
     
@@ -17,28 +17,28 @@ namespace midi {
 */
 /***************************************************/
 
-class ArdMidiBleServer : public ArdMidiCommon {
+class MidiBleServer : public MidiCommon {
     public:
         //! Default constructor
-        ArdMidiBleServer(char* name, ArdMidiBleEventHandler* pEventHandler=nullptr);
+        MidiBleServer(char* name, MidiBleEventHandler* pEventHandler=nullptr);
         
         //! Starts the BLE server
-        void start(MidiVoicer &MidiVoicer);
+        void start(MidiAction &MidiAction);
         void start();
         void  writeData(MidiMessage *pMsg, int len);
 
 
     protected:
-        ArdMidiBleEventHandler *pEventHandler;
+        MidiBleEventHandler *pEventHandler;
         BLEServer *pServer;
         BLECharacteristic* pCharacteristic;
         char *name;
 };
 
-class ArdMidiBleServerCallback: public BLEServerCallbacks {
+class MidiBleServerCallback: public BLEServerCallbacks {
     public:
-        ArdMidiBleServerCallback(ConnectionStatus *pStatus);
-        void start(MidiVoicer &MidiVoicer);
+        MidiBleServerCallback(ConnectionStatus *pStatus);
+        void start(MidiAction &MidiAction);
         void onConnect(BLEServer* pServer);
         void onDisconnect(BLEServer* pServer);
 

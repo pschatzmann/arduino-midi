@@ -3,7 +3,7 @@
 
 #if MIDI_ACTIVE
 
-#include "ArdMidiVoicer.h"
+#include "MidiAction.h"
 
 namespace midi {
 
@@ -14,7 +14,7 @@ namespace midi {
     is the parse command which calls the related methods.
   
     In this implementation the handler just passes the noteOn 
-    and noteOff to the MidiVoicer.
+    and noteOff to the MidiAction.
   
     If you indicate the channel in the constructor, it is used as filter
     to process only the messages for the indicated channel.
@@ -28,7 +28,7 @@ namespace midi {
 
 class MidiEventHandler  {
     public:
-        MidiEventHandler(MidiVoicer *midiVoicer, int *p_channel = nullptr );
+        MidiEventHandler(MidiAction *MidiAction, int *p_channel = nullptr );
          ~MidiEventHandler();
         void parse(uint8_t*  msg, uint8_t len);
         virtual void onCommand(uint8_t channel, uint8_t status, uint8_t p1,uint8_t p2 );
@@ -38,7 +38,7 @@ class MidiEventHandler  {
         virtual void onControlChange( uint8_t controller, uint8_t controllerValue, uint8_t channel);
 
     protected:
-        MidiVoicer *p_MidiVoicer; 
+        MidiAction *p_MidiAction; 
         int *p_channel;
 };
 

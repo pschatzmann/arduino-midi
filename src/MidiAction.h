@@ -6,13 +6,13 @@
 namespace midi {
 
 /***************************************************/
-/*! \class MidiVoicer
-    \brief Abstract class for a MidiVoicer
+/*! \class MidiAction
+    \brief Abstract class for a MidiAction
 
     by Phil Schatzmann
 */
 /***************************************************/
-class MidiVoicer  {
+class MidiAction  {
     public:
 
         virtual void onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) = 0;

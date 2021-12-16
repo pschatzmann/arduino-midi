@@ -3,20 +3,20 @@
 
 #if MIDI_ACTIVE
 #include "Stream.h"
-#include "ArdMidiCommon.h"
+#include "MidiCommon.h"
 
 namespace midi {
 /***************************************************/
-/*! \class ArdMidiStreamOut
+/*! \class MidiStreamOut
     \brief Output of Midi Messages to an Arduino 
     Stream (eg output to Serial, UDP or IP).
 
     by Phil Schatzmann
 */
 /***************************************************/
-class ArdMidiStreamOut : public ArdMidiCommon {
+class MidiStreamOut : public MidiCommon {
     public:
-        ArdMidiStreamOut(Stream &stream);
+        MidiStreamOut(Stream &stream);
 
     protected:
         virtual void writeData(MidiMessage *pMsg, int len);

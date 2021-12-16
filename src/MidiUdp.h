@@ -1,8 +1,6 @@
+#pragma once
 #include "ArdConfig.h"
 #ifdef ESP32
-
-#ifndef ARDUPD_H
-#define ARDUPD_H
 
 #include <WiFi.h>
 #include <WiFiClient.h>
@@ -11,7 +9,7 @@
 namespace midi {
 
 /***************************************************/
-/*! \class ArdMidiUdp
+/*! \class MidiUdp
     \brief Simple UDP wrapper class which sends all 
     packages to the same destination.
 
@@ -23,10 +21,10 @@ namespace midi {
 */
 /***************************************************/
 
-class ArdMidiUdp : public WiFiUDP { // EthernetUDP {
+class MidiUdp : public WiFiUDP { // EthernetUDP {
     public:
-        ArdMidiUdp(char* targetUdpAddressStr,int targetPort);
-        ArdMidiUdp(IPAddress targetUdpAddress,int targetPort);
+        MidiUdp(char* targetUdpAddressStr,int targetPort);
+        MidiUdp(IPAddress targetUdpAddress,int targetPort);
         size_t write(const uint8_t * buffer,size_t size );
         bool isValidHost();
 
@@ -38,5 +36,4 @@ class ArdMidiUdp : public WiFiUDP { // EthernetUDP {
 
 }
 
-#endif
 #endif

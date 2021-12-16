@@ -6,18 +6,18 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include <Voicer.h>
 #include <Clarinet.h>
-#include <ArdMidiBleEventHandler.h>
-#include <ArdMidiBleServer.h>
+#include <ArdMidiVoicer.h>
+#include <MidiBleEventHandler.h>
+#include <MidiBleServer.h>
 
 using namespace midi;
 using namespace stk;
 
-StkMidiVoicer voicer;
+MidiVoicer voicer;
 Clarinet clarinet(440);
-ArdMidiBleEventHandler handler(&voicer);
-ArdMidiBleServer ble("MidiServer", &handler);
+MidiBleEventHandler handler(&voicer);
+MidiBleServer ble("MidiServer", &handler);
 
 void setup() {
   Serial.begin(115200);

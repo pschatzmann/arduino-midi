@@ -1,16 +1,15 @@
 
-#include "ArdMidiStreamOut.h"
-#ifdef ARDMIDISTREAMOUT_H
+#include "MidiStreamOut.h"
 
 namespace midi {
 
-ArdMidiStreamOut :: ArdMidiStreamOut(Stream &stream) {
+MidiStreamOut :: MidiStreamOut(Stream &stream) {
     pStream = &stream;
     
     //this->setConnectionStatus(stream ? Connected : Unconnected);
 }
 
-void ArdMidiStreamOut :: writeData(MidiMessage *pMsg, int len) {
+void MidiStreamOut :: writeData(MidiMessage *pMsg, int len) {
     static uint8_t last_status;
     int size = 0;
 
@@ -32,4 +31,3 @@ void ArdMidiStreamOut :: writeData(MidiMessage *pMsg, int len) {
 
 } // namespace
 
-#endif

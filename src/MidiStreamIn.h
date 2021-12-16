@@ -3,15 +3,15 @@
 
 #if MIDI_ACTIVE
 #include "Stream.h"
-#include "ArdMidiCommon.h"
-#include "ArdMidiEventHandler.h"
+#include "MidiCommon.h"
+#include "MidiEventHandler.h"
 
 namespace midi {
 
 #define BUFFER_LEN 30
 
 /***************************************************/
-/*! \class ArdMidiStreamIn
+/*! \class MidiStreamIn
     \brief Input of Midi Messages from the Aruduino 
     HardwareSerial port. You need to give the default
     MidiEventHandler or your own subclassed
@@ -24,9 +24,9 @@ namespace midi {
     by Phil Schatzmann
 */
 /***************************************************/
-class ArdMidiStreamIn : public ArdMidiCommon {
+class MidiStreamIn : public MidiCommon {
     public:
-        ArdMidiStreamIn(Stream &stream, MidiEventHandler &handler);
+        MidiStreamIn(Stream &stream, MidiEventHandler &handler);
         void loop();
     protected:
        int getLastStatusPos(uint8_t *buffer, int endPos);

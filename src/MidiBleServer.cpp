@@ -1,24 +1,24 @@
-#include "ArdMidiBleServer.h"
-#ifdef ARDMIDIBLESERVER_H
+#include "MidiBleServer.h"
+#if MIDI_BLE_ACTIVE
 
 namespace midi {
 
-const char* APP_SERVER = "ArdMidiBleServer";
+const char* APP_SERVER = "MidiBleServer";
 
-ArdMidiBleServer::ArdMidiBleServer(char* name, ArdMidiBleEventHandler* pEventHandler)
- : ArdMidiCommon() {
+MidiBleServer::MidiBleServer(char* name, MidiBleEventHandler* pEventHandler)
+ : MidiCommon() {
      this->name = name;
      this->pEventHandler = pEventHandler;
      this->connectionStatus = Unconnected;
  }
 
-void ArdMidiBleServer :: start() {
+void MidiBleServer :: start() {
     // Create the BLE Device
     BLEDevice::init(this->name);
 
     // Create the BLE Server
     pServer = BLEDevice::createServer();
-    pServer->setCallbacks(new ArdMidiBleServerCallback(&connectionStatus));
+    pServer->setCallbacks(new MidiBleServerCallback(&connectionStatus));
 
     //BLEDevice::setEncryptionLevel((esp_ble_sec_act_t)ESP_LE_AUTH_REQ_SC_BOND);
 
@@ -35,12 +35,12 @@ void ArdMidiBleServer :: start() {
                     );
 
                     
-    if (this->pMidiVoicer != nullptr) {                
+    if (this->pMidiAction != nullptr) {                
         if (this->pEventHandler == nullptr){
-            ESP_LOGD(APP_SERVER, "Creating new ArdMidiBleEventHandler for MidiVoicer");
-            this->pEventHandler =  new ArdMidiBleEventHandler(pMidiVoicer, &(this->receivingChannel));
+            MIDI_LOGD( "Creating new MidiBleEventHandler for MidiAction");
+            this->pEventHandler =  new MidiBleEventHandler(pMidiAction, &(this->receivingChannel));
         }
-        ESP_LOGD(APP_SERVER, "Setting callback for characteristic");
+        MIDI_LOGD( "Setting callback for characteristic");
         pCharacteristic->setCallbacks(this->pEventHandler);
     }
 
@@ -64,17 +64,17 @@ void ArdMidiBleServer :: start() {
     pAdvertising->setMinPreferred(0x12);
     pAdvertising->start();
 
-    ESP_LOGD(APP_SERVER, "started");
+    MIDI_LOGD( "%s: started",__func__);
 
 }
 
-void ArdMidiBleServer :: start(MidiVoicer &MidiVoicer) {
-	ESP_LOGD(APP_SERVER, "start");
-    setMidiVoicer(MidiVoicer);
+void MidiBleServer :: start(MidiAction &MidiAction) {
+	MIDI_LOGD(__func__);
+    setMidiAction(MidiAction);
     start();
 }
 
-void ArdMidiBleServer :: writeData(MidiMessage *pMsg, int len) {
+void MidiBleServer :: writeData(MidiMessage *pMsg, int len) {
     updateTimestamp(&outMessage);
 
     switch (len) {
@@ -90,22 +90,20 @@ void ArdMidiBleServer :: writeData(MidiMessage *pMsg, int len) {
 }
 
 
-// => ArdMidiBleServerCallback
+// => MidiBleServerCallback
 
-ArdMidiBleServerCallback :: ArdMidiBleServerCallback(ConnectionStatus *pStatus){
+MidiBleServerCallback :: MidiBleServerCallback(ConnectionStatus *pStatus){
     this->pConnectionStatus = pStatus;
 }
-void ArdMidiBleServerCallback :: onConnect(BLEServer* pServer) {
-	ESP_LOGD(APP_SERVER, "onConnect");
+void MidiBleServerCallback :: onConnect(BLEServer* pServer) {
+	MIDI_LOGD(__func__);
     *pConnectionStatus = Connected;
 };
 
-void ArdMidiBleServerCallback :: onDisconnect(BLEServer* pServer) {
-	ESP_LOGD(APP_SERVER, "onDisconnect");
+void MidiBleServerCallback :: onDisconnect(BLEServer* pServer) {
+	MIDI_LOGD(__func__);
     *pConnectionStatus = Disconnected;
 }
-
-
 
 } // namespace
 

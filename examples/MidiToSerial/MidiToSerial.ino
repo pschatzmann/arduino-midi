@@ -6,11 +6,11 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include "ArdMidiStreamOut.h"
+#include "MidiStreamOut.h"
 
 using namespace midi;
 
-ArdMidiStreamOut out(Serial);
+MidiStreamOut out(Serial);
 uint16_t note = 64; // 0 to 128
 uint16_t amplitude = 100; // 0 to 128
 

@@ -9,14 +9,14 @@
  * 
  */
 #include "WiFi.h" 
-#include "ArdMidiUdp.h" 
-#include "ArdMidiStreamOut.h"
+#include "MidiUdp.h" 
+#include "MidiStreamOut.h"
 
 using namespace midi;
 
 IPAddress ip(192, 168, 1, 35);
-ArdMidiUdp udp(ip, 7000);
-ArdMidiStreamOut out(udp);
+MidiUdp udp(ip, 7000);
+MidiStreamOut out(udp);
 const char *SSID = "your ssid";
 const char *PWD = "your password";
 

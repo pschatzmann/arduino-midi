@@ -1,10 +1,9 @@
 
-#include "ArdMidiStreamIn.h"
-#ifdef ARDMIDISTREAMIN_H
+#include "MidiStreamIn.h"
 
 namespace midi {
 
-ArdMidiStreamIn :: ArdMidiStreamIn(Stream &stream, MidiEventHandler &handler) {
+MidiStreamIn :: MidiStreamIn(Stream &stream, MidiEventHandler &handler) {
     pStream = &stream;
     // without this I was getting a 2 sec delay!
     pStream->setTimeout(10);
@@ -12,7 +11,7 @@ ArdMidiStreamIn :: ArdMidiStreamIn(Stream &stream, MidiEventHandler &handler) {
     startPos = 0;
 }
 
-void ArdMidiStreamIn :: loop() {
+void MidiStreamIn :: loop() {
     if (pStream->available()>0){
         int lenRead = pStream->readBytes(buffer+startPos, BUFFER_LEN-startPos);
         if (lenRead>0){
@@ -29,7 +28,7 @@ void ArdMidiStreamIn :: loop() {
     }
 }
 
-int ArdMidiStreamIn :: getLastStatusPos(uint8_t* buffer, int pos){
+int MidiStreamIn :: getLastStatusPos(uint8_t* buffer, int pos){
     while (pos>=0){
         if (buffer[pos]>>7 == 1){
             return pos; 
@@ -42,4 +41,3 @@ int ArdMidiStreamIn :: getLastStatusPos(uint8_t* buffer, int pos){
 
 } // namespace
 
-#endif

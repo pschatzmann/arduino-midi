@@ -6,17 +6,17 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include "Voicer.h"
 #include "Clarinet.h"
-#include "ArdMidiStreamIn.h"
+#include <ArdMidiVoicer.h>
+#include "MidiStreamIn.h"
 
 using namespace midi;
 using namespace stk;
 
-StkMidiVoicer voicer;
+MidiVoicer voicer;
 Clarinet clarinet(440);
-ArdMidiEventHandler handler(&voicer);
-ArdMidiStreamIn in(Serial, handler);
+MidiEventHandler handler(&voicer);
+MidiStreamIn in(Serial, handler);
 
 void setup() {
   Serial.begin(115200);

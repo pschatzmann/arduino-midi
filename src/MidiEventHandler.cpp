@@ -1,7 +1,5 @@
-#include "ArdMidiEventHandler.h"
-#ifdef ARDMIDIEVENTHANDLER_H
-
-#include "arduino.h"
+#include "MidiEventHandler.h"
+#include "MidiLogger.h"
 
 namespace midi {
 
@@ -9,8 +7,8 @@ const char* APP = "MidiEventHandler";
 
 //MidiEventHandler *self_MidiEventHandler;
 
-MidiEventHandler::MidiEventHandler(MidiVoicer *p_MidiVoicer, int *p_channel){
-  this->p_MidiVoicer = p_MidiVoicer;
+MidiEventHandler::MidiEventHandler(MidiAction *p_MidiAction, int *p_channel){
+  this->p_MidiAction = p_MidiAction;
   this->p_channel = p_channel;
 //  self_MidiEventHandler = this;
 };
@@ -25,7 +23,7 @@ MidiEventHandler::~MidiEventHandler(){
  */
 
 void MidiEventHandler::parse(uint8_t* msg, uint8_t len){
-  ESP_LOGD(APP, "parse: len: %d", len);
+  MIDI_LOGD( "parse: len: %d", len);
 
   int pos = 0;
   uint8_t status=0;
@@ -64,8 +62,8 @@ void MidiEventHandler::parse(uint8_t* msg, uint8_t len){
 }
 
 void MidiEventHandler::onCommand(uint8_t channel, uint8_t status, uint8_t p1,uint8_t p2 ){
-  ESP_LOGD(APP, "onCommand channel:%d, status:%d, p1:%d,  p2:%d", (int)channel, (int)status, (int)p1, (int)p2);
-  ESP_LOGD(APP, "onCommand filtered channel: %d ", *p_channel);
+  MIDI_LOGD( "onCommand channel:%d, status:%d, p1:%d,  p2:%d", (int)channel, (int)status, (int)p1, (int)p2);
+  MIDI_LOGD( "onCommand filtered channel: %d ", *p_channel);
   if (p_channel==nullptr || *p_channel < 0 || *p_channel == channel) {
     switch (status) {
       case 0b1001:
@@ -81,30 +79,29 @@ void MidiEventHandler::onCommand(uint8_t channel, uint8_t status, uint8_t p1,uin
         onControlChange(channel, p1, p2);
         break;
       default:
-        //ESP_LOGI(APP, "Unsupported MIDI status: %d",status);
+        //MIDI_LOGI( "Unsupported MIDI status: %d",status);
         break;
     }
   }
 }
 
 void MidiEventHandler::onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity){
-    ESP_LOGD(APP, "noteOn note:%d, velocity:%d, channel:%d", (int)note, (int)velocity, (int)channel);
-    p_MidiVoicer->noteOn(note, velocity, channel);
+    MIDI_LOGD( "noteOn note:%d, velocity:%d, channel:%d", (int)note, (int)velocity, (int)channel);
+    p_MidiAction->onNoteOn(channel, note, velocity);
 };
 
 void MidiEventHandler::onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity){
-    ESP_LOGD(APP, "noteOff note:%d, velocity:%d, channel:%d", (int)note, (int)velocity, (int)channel);
-    p_MidiVoicer->noteOff(note, velocity, channel);
+    MIDI_LOGD( "noteOff note:%d, velocity:%d, channel:%d", (int)note, (int)velocity, (int)channel);
+    p_MidiAction->onNoteOff(channel, note, velocity);
 };
 void MidiEventHandler::onControlChange(uint8_t channel, uint8_t controller, uint8_t value){
-    p_MidiVoicer->controlChange(controller,(uint16_t) value, channel);
+    p_MidiAction->onControlChange(channel, controller, value);
 };
 
 void MidiEventHandler::onPitchBend(uint8_t channel, uint8_t value){
-    p_MidiVoicer->pitchBend(value, channel);
+    p_MidiAction->onPitchBend(channel, value);
 };
 
 
 } // namespace
 
-#endif

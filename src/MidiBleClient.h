@@ -3,14 +3,14 @@
 
 #if MIDI_BLE_ACTIVE
 
-#include "ArdMidiCommon.h"
-#include "ArdMidiBleEventHandler.h"
+#include "MidiCommon.h"
+#include "MidiBleEventHandler.h"
 
 
 namespace midi {
 
 /***************************************************/
-/*! \class ArdMidiBleClient
+/*! \class MidiBleClient
     \brief A Bluetooth Low Energy BLE Client which
     can send or receive Bluetooth messages. It
     needs to connect to a running BLE Server.
@@ -19,32 +19,32 @@ namespace midi {
 */
 /***************************************************/
 
-class ArdMidiBleClient : public ArdMidiCommon {
+class MidiBleClient : public MidiCommon {
     public:
         //! Default constructor
-        ArdMidiBleClient(char* serverName, ArdMidiBleEventHandler* pEventHandler = nullptr);
+        MidiBleClient(const char* serverName, MidiBleEventHandler* pEventHandler = nullptr);
 
         //! starts the discover and connects if the serverName was found
-        void start(MidiVoicer &MidiVoicer);
+        void start(MidiAction &MidiAction);
 
         //! connects to the indicated device
         void start(BLEAdvertisedDevice *pDevice);
         
-        void  writeData(MidiMessage *pMsg, int len);
+        void writeData(MidiMessage *pMsg, int len);
 
         //! determe in the BLEAdvertisedDevice 
         BLEAdvertisedDevice *getBLEAdvertisedDevice();
         
     protected:
-        char *name;
+        const char *name;
         BLERemoteCharacteristic* pRemoteCharacteristic;
         BLEAdvertisedDevice* pDevice;
 
 };
 
-class ArdMidiBleClientCallback: public BLEClientCallbacks {
+class MidiBleClientCallback: public BLEClientCallbacks {
     public:
-        ArdMidiBleClientCallback(ConnectionStatus *pStatus);
+        MidiBleClientCallback(ConnectionStatus *pStatus);
         void onConnect(BLEClient* pServer);
         void onDisconnect(BLEClient* pServer);
 
@@ -53,12 +53,12 @@ class ArdMidiBleClientCallback: public BLEClientCallbacks {
 
 };
 
-class ArdMidiBleClientAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
+class MidiBleClientAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
     public:
-        ArdMidiBleClientAdvertisedDeviceCallbacks(ArdMidiBleClient *pClient);
+        MidiBleClientAdvertisedDeviceCallbacks(MidiBleClient *pClient);
         void onResult(BLEAdvertisedDevice advertisedDevice);
     private:
-        ArdMidiBleClient *pClient;
+        MidiBleClient *pClient;
 }; 
 
 
