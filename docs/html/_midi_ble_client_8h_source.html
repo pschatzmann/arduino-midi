@@ -102,39 +102,39 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_ble_client_callback.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_ble_client_callback.html">MidiBleClientCallback</a>: <span class="keyword">public</span> BLEClientCallbacks {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classmidi_1_1_midi_ble_client_callback.html">MidiBleClientCallback</a>(ConnectionStatus *pStatus);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> onConnect(BLEClient* pServer);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> onDisconnect(BLEClient* pServer);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        ConnectionStatus *pConnectionStatus;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_ble_client_callback.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_ble_client_callback.html">MidiBleClientCallback</a>: <span class="keyword">public</span> BLEClientCallbacks {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classmidi_1_1_midi_ble_client_callback.html">MidiBleClientCallback</a>(ConnectionStatus *pStatus);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> onConnect(BLEClient* pServer);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> onDisconnect(BLEClient* pServer);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_ble_client_advertised_device_callbacks.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_ble_client_advertised_device_callbacks.html">MidiBleClientAdvertisedDeviceCallbacks</a>: <span class="keyword">public</span> BLEAdvertisedDeviceCallbacks {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classmidi_1_1_midi_ble_client_advertised_device_callbacks.html">MidiBleClientAdvertisedDeviceCallbacks</a>(<a class="code" href="classmidi_1_1_midi_ble_client.html">MidiBleClient</a> *pClient);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> onResult(BLEAdvertisedDevice advertisedDevice);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classmidi_1_1_midi_ble_client.html">MidiBleClient</a> *pClient;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ConnectionStatus *pConnectionStatus;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_ble_client_advertised_device_callbacks.html">   65</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_ble_client_advertised_device_callbacks.html">MidiBleClientAdvertisedDeviceCallbacks</a>: <span class="keyword">public</span> BLEAdvertisedDeviceCallbacks {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classmidi_1_1_midi_ble_client_advertised_device_callbacks.html">MidiBleClientAdvertisedDeviceCallbacks</a>(<a class="code" href="classmidi_1_1_midi_ble_client.html">MidiBleClient</a> *pClient);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> onResult(BLEAdvertisedDevice advertisedDevice);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classmidi_1_1_midi_ble_client.html">MidiBleClient</a> *pClient;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmidi_1_1_midi_action_html"><div class="ttname"><a href="classmidi_1_1_midi_action.html">midi::MidiAction</a></div><div class="ttdoc">Abstract class for a MidiAction.</div><div class="ttdef"><b>Definition:</b> MidiAction.h:15</div></div>
-<div class="ttc" id="aclassmidi_1_1_midi_ble_client_advertised_device_callbacks_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_client_advertised_device_callbacks.html">midi::MidiBleClientAdvertisedDeviceCallbacks</a></div><div class="ttdef"><b>Definition:</b> MidiBleClient.h:56</div></div>
-<div class="ttc" id="aclassmidi_1_1_midi_ble_client_callback_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_client_callback.html">midi::MidiBleClientCallback</a></div><div class="ttdef"><b>Definition:</b> MidiBleClient.h:45</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_ble_client_advertised_device_callbacks_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_client_advertised_device_callbacks.html">midi::MidiBleClientAdvertisedDeviceCallbacks</a></div><div class="ttdoc">BLEAdvertisedDeviceCallbacks for Midi: reports onResult.</div><div class="ttdef"><b>Definition:</b> MidiBleClient.h:65</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_ble_client_callback_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_client_callback.html">midi::MidiBleClientCallback</a></div><div class="ttdoc">Client callback method which informs about connect or disconnect events.</div><div class="ttdef"><b>Definition:</b> MidiBleClient.h:50</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_client_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_client.html">midi::MidiBleClient</a></div><div class="ttdoc">A Bluetooth Low Energy BLE Client which can send or receive Bluetooth messages. It needs to connect t...</div><div class="ttdef"><b>Definition:</b> MidiBleClient.h:22</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_client_html_a083e342e202d32400ba517e7d40619d5"><div class="ttname"><a href="classmidi_1_1_midi_ble_client.html#a083e342e202d32400ba517e7d40619d5">midi::MidiBleClient::start</a></div><div class="ttdeci">void start(MidiAction &amp;MidiAction)</div><div class="ttdoc">starts the discover and connects if the serverName was found</div><div class="ttdef"><b>Definition:</b> MidiBleClient.cpp:16</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_client_html_aca50f8ddc38a5939e17db59434d0f485"><div class="ttname"><a href="classmidi_1_1_midi_ble_client.html#aca50f8ddc38a5939e17db59434d0f485">midi::MidiBleClient::getBLEAdvertisedDevice</a></div><div class="ttdeci">BLEAdvertisedDevice * getBLEAdvertisedDevice()</div><div class="ttdoc">determe in the BLEAdvertisedDevice</div><div class="ttdef"><b>Definition:</b> MidiBleClient.cpp:86</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_client_html_ad6215cb9ab331c6eac8b8298412c4db7"><div class="ttname"><a href="classmidi_1_1_midi_ble_client.html#ad6215cb9ab331c6eac8b8298412c4db7">midi::MidiBleClient::MidiBleClient</a></div><div class="ttdeci">MidiBleClient(const char *serverName, MidiBleEventHandler *pEventHandler=nullptr)</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> MidiBleClient.cpp:11</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_event_handler_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_event_handler.html">midi::MidiBleEventHandler</a></div><div class="ttdoc">A simple Midi Parser for BLE Midi messages that calls the corresponding events.</div><div class="ttdef"><b>Definition:</b> MidiBleEventHandler.h:28</div></div>
-<div class="ttc" id="aclassmidi_1_1_midi_common_html"><div class="ttname"><a href="classmidi_1_1_midi_common.html">midi::MidiCommon</a></div><div class="ttdoc">The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message...</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:71</div></div>
-<div class="ttc" id="astructmidi_1_1_midi_message_html"><div class="ttname"><a href="structmidi_1_1_midi_message.html">midi::MidiMessage</a></div><div class="ttdef"><b>Definition:</b> MidiCommon.h:44</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_common_html"><div class="ttname"><a href="classmidi_1_1_midi_common.html">midi::MidiCommon</a></div><div class="ttdoc">The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message...</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:75</div></div>
+<div class="ttc" id="astructmidi_1_1_midi_message_html"><div class="ttname"><a href="structmidi_1_1_midi_message.html">midi::MidiMessage</a></div><div class="ttdoc">The content of the midi message: timestamp, status, arg1 and arg2.</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

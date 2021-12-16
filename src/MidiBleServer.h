@@ -35,6 +35,16 @@ class MidiBleServer : public MidiCommon {
         char *name;
 };
 
+/***************************************************/
+/*! \class MidiBleServerCallback
+    \brief Callback method which informs about 
+    connect or disconnect.
+    
+    by Phil Schatzmann
+*/
+/***************************************************/
+
+
 class MidiBleServerCallback: public BLEServerCallbacks {
     public:
         MidiBleServerCallback(ConnectionStatus *pStatus);

@@ -41,6 +41,10 @@
 
 namespace midi {
 
+/**
+ * @brief The content of the midi message: timestamp, status, arg1 and arg2
+ * 
+ */
 struct MidiMessage {
     uint8_t timestampHigh;
     uint8_t timestampLow;

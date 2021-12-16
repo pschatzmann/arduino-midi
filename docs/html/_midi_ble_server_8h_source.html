@@ -98,28 +98,32 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">char</span> *name;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_ble_server_callback.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_ble_server_callback.html">MidiBleServerCallback</a>: <span class="keyword">public</span> BLEServerCallbacks {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classmidi_1_1_midi_ble_server_callback.html">MidiBleServerCallback</a>(ConnectionStatus *pStatus);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> start(<a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> onConnect(BLEServer* pServer);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> onDisconnect(BLEServer* pServer);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ConnectionStatus *pConnectionStatus;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/***************************************************/</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/***************************************************/</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_ble_server_callback.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_ble_server_callback.html">MidiBleServerCallback</a>: <span class="keyword">public</span> BLEServerCallbacks {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classmidi_1_1_midi_ble_server_callback.html">MidiBleServerCallback</a>(ConnectionStatus *pStatus);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> start(<a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> onConnect(BLEServer* pServer);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> onDisconnect(BLEServer* pServer);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        ConnectionStatus *pConnectionStatus;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmidi_1_1_midi_action_html"><div class="ttname"><a href="classmidi_1_1_midi_action.html">midi::MidiAction</a></div><div class="ttdoc">Abstract class for a MidiAction.</div><div class="ttdef"><b>Definition:</b> MidiAction.h:15</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_event_handler_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_event_handler.html">midi::MidiBleEventHandler</a></div><div class="ttdoc">A simple Midi Parser for BLE Midi messages that calls the corresponding events.</div><div class="ttdef"><b>Definition:</b> MidiBleEventHandler.h:28</div></div>
-<div class="ttc" id="aclassmidi_1_1_midi_ble_server_callback_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_server_callback.html">midi::MidiBleServerCallback</a></div><div class="ttdef"><b>Definition:</b> MidiBleServer.h:38</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_ble_server_callback_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_server_callback.html">midi::MidiBleServerCallback</a></div><div class="ttdoc">Callback method which informs about connect or disconnect.</div><div class="ttdef"><b>Definition:</b> MidiBleServer.h:48</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_server_html"><div class="ttname"><a href="classmidi_1_1_midi_ble_server.html">midi::MidiBleServer</a></div><div class="ttdoc">A Bluetooth Low Energy BLE Server which can send or receive Bluetooth messages.</div><div class="ttdef"><b>Definition:</b> MidiBleServer.h:20</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_server_html_a71b162a62d9be42729a459aa2f3e3bd1"><div class="ttname"><a href="classmidi_1_1_midi_ble_server.html#a71b162a62d9be42729a459aa2f3e3bd1">midi::MidiBleServer::MidiBleServer</a></div><div class="ttdeci">MidiBleServer(char *name, MidiBleEventHandler *pEventHandler=nullptr)</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> MidiBleServer.cpp:8</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_ble_server_html_a7fb41839e32412bb994aca8f131cbcbd"><div class="ttname"><a href="classmidi_1_1_midi_ble_server.html#a7fb41839e32412bb994aca8f131cbcbd">midi::MidiBleServer::start</a></div><div class="ttdeci">void start(MidiAction &amp;MidiAction)</div><div class="ttdoc">Starts the BLE server.</div><div class="ttdef"><b>Definition:</b> MidiBleServer.cpp:71</div></div>
-<div class="ttc" id="aclassmidi_1_1_midi_common_html"><div class="ttname"><a href="classmidi_1_1_midi_common.html">midi::MidiCommon</a></div><div class="ttdoc">The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message...</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:71</div></div>
-<div class="ttc" id="astructmidi_1_1_midi_message_html"><div class="ttname"><a href="structmidi_1_1_midi_message.html">midi::MidiMessage</a></div><div class="ttdef"><b>Definition:</b> MidiCommon.h:44</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_common_html"><div class="ttname"><a href="classmidi_1_1_midi_common.html">midi::MidiCommon</a></div><div class="ttdoc">The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message...</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:75</div></div>
+<div class="ttc" id="astructmidi_1_1_midi_message_html"><div class="ttname"><a href="structmidi_1_1_midi_message.html">midi::MidiMessage</a></div><div class="ttdoc">The content of the midi message: timestamp, status, arg1 and arg2.</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

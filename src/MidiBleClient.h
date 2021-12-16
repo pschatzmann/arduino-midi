@@ -42,6 +42,11 @@ class MidiBleClient : public MidiCommon {
 
 };
 
+/**
+ * @brief Client callback method which informs about connect 
+ * or disconnect events
+ * 
+ */
 class MidiBleClientCallback: public BLEClientCallbacks {
     public:
         MidiBleClientCallback(ConnectionStatus *pStatus);
@@ -53,6 +58,10 @@ class MidiBleClientCallback: public BLEClientCallbacks {
 
 };
 
+/**
+ * @brief BLEAdvertisedDeviceCallbacks for Midi: reports onResult.
+ * 
+ */
 class MidiBleClientAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
     public:
         MidiBleClientAdvertisedDeviceCallbacks(MidiBleClient *pClient);
