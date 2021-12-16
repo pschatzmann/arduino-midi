@@ -74,6 +74,11 @@ $(function() {
 <div class="title">midi::ArdMidiStreamIn Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default <a class="el" href="classmidi_1_1_midi_event_handler.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiEventHandler</a> or your own subclassed implementation in the constructor to process the midi records.  
+ <a href="classmidi_1_1_ard_midi_stream_in.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ard_midi_stream_in_8h_source.html">ArdMidiStreamIn.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for midi::ArdMidiStreamIn:</div>
 <div class="dyncontent">
@@ -222,7 +227,11 @@ static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:a57861e9ed254790bc32fdbc3b0e40c92 inherit pub_static_methods_classmidi_1_1_ard_midi_common"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a MIDI note to a frequency in Hz. <br /></td></tr>
 <tr class="separator:a57861e9ed254790bc32fdbc3b0e40c92 inherit pub_static_methods_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default <a class="el" href="classmidi_1_1_midi_event_handler.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiEventHandler</a> or your own subclassed implementation in the constructor to process the midi records. </p>
+<p>You also need to call the loop method in the loop of your Arduino sketch.</p>
+<p>by Phil Schatzmann </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="_ard_midi_stream_in_8h_source.html">ArdMidiStreamIn.h</a></li>
 <li>src/ArdMidiStreamIn.cpp</li>
 </ul>

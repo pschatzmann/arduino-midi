@@ -11,7 +11,7 @@ namespace midi {
 #define BUFFER_LEN 30
 
 /***************************************************/
-/*! \class ArdMidiSerialIn
+/*! \class ArdMidiStreamIn
     \brief Input of Midi Messages from the Aruduino 
     HardwareSerial port. You need to give the default
     MidiEventHandler or your own subclassed

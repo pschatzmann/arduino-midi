@@ -11,7 +11,7 @@
 namespace midi {
 
 /***************************************************/
-/*! \class ArdUdp
+/*! \class ArdMidiUdp
     \brief Simple UDP wrapper class which sends all 
     packages to the same destination.
 

@@ -8,10 +8,8 @@ var searchData=
   ['ardmidibleserver_5',['ArdMidiBleServer',['../classmidi_1_1_ard_midi_ble_server.html#ab598d82b0d3881fec5776c1a291e9152',1,'midi::ArdMidiBleServer::ArdMidiBleServer()'],['../classmidi_1_1_ard_midi_ble_server.html',1,'midi::ArdMidiBleServer']]],
   ['ardmidibleservercallback_6',['ArdMidiBleServerCallback',['../classmidi_1_1_ard_midi_ble_server_callback.html',1,'midi']]],
   ['ardmidicommon_7',['ArdMidiCommon',['../classmidi_1_1_ard_midi_common.html#ad04b6e0be73119f12bebe3cea68df00c',1,'midi::ArdMidiCommon::ArdMidiCommon()'],['../classmidi_1_1_ard_midi_common.html',1,'midi::ArdMidiCommon']]],
-  ['ardmidiserialin_8',['ArdMidiSerialIn',['../class_ard_midi_serial_in.html',1,'']]],
-  ['ardmidistreamin_9',['ArdMidiStreamIn',['../classmidi_1_1_ard_midi_stream_in.html',1,'midi']]],
-  ['ardmidistreamout_10',['ArdMidiStreamOut',['../classmidi_1_1_ard_midi_stream_out.html',1,'midi']]],
-  ['ardmidiudp_11',['ArdMidiUdp',['../classmidi_1_1_ard_midi_udp.html',1,'midi']]],
-  ['ardudp_12',['ArdUdp',['../class_ard_udp.html',1,'']]],
-  ['arduino_20midi_20library_13',['Arduino MIDI Library',['../index.html',1,'']]]
+  ['ardmidistreamin_8',['ArdMidiStreamIn',['../classmidi_1_1_ard_midi_stream_in.html',1,'midi']]],
+  ['ardmidistreamout_9',['ArdMidiStreamOut',['../classmidi_1_1_ard_midi_stream_out.html',1,'midi']]],
+  ['ardmidiudp_10',['ArdMidiUdp',['../classmidi_1_1_ard_midi_udp.html',1,'midi']]],
+  ['arduino_20midi_20library_11',['Arduino MIDI Library',['../index.html',1,'']]]
 ];
