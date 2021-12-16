@@ -97,7 +97,7 @@ void MidiEventHandler::onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity
     p_MidiVoicer->noteOff(note, velocity, channel);
 };
 void MidiEventHandler::onControlChange(uint8_t channel, uint8_t controller, uint8_t value){
-    p_MidiVoicer->controlChange(controller,(StkFloat) value, channel);
+    p_MidiVoicer->controlChange(controller,(uint16_t) value, channel);
 };
 
 void MidiEventHandler::onPitchBend(uint8_t channel, uint8_t value){

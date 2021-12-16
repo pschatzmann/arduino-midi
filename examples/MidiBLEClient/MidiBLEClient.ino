@@ -26,8 +26,8 @@ void setup() {
   ble.start(voicer);
 }
 
-StkFloat note = 64; // 0 to 128
-StkFloat amplitude = 100; // 0 to 128
+uint16_t note = 64; // 0 to 128
+uint16_t amplitude = 100; // 0 to 128
 
 void loop() {
   Serial.print("playing ");

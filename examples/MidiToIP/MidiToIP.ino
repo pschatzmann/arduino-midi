@@ -21,8 +21,8 @@ ArdMidiStreamOut out(client);
 const char *SSID = "your ssid";
 const char *PWD = "your password";
 
-StkFloat note = 64; // 0 to 128
-StkFloat amplitude = 100; // 0 to 128
+uint16_t note = 64; // 0 to 128
+uint16_t amplitude = 100; // 0 to 128
 
 void setup() {
   Serial.begin(115200);
