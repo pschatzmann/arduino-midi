@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['onread_24',['onRead',['../classmidi_1_1_ard_midi_ble_event_handler.html#ab036448a44d0a1b2700ab18d8042bfa3',1,'midi::ArdMidiBleEventHandler']]],
-  ['onwrite_25',['onWrite',['../classmidi_1_1_ard_midi_ble_event_handler.html#a48868bc0d342c1932da995f7225f351b',1,'midi::ArdMidiBleEventHandler']]]
+  ['onread_23',['onRead',['../classmidi_1_1_midi_ble_event_handler.html#a94dae7bc13275396d4afb84f5722af7b',1,'midi::MidiBleEventHandler']]],
+  ['onwrite_24',['onWrite',['../classmidi_1_1_midi_ble_event_handler.html#a2729bd231cc4f50cb202c3e7b69b0bab',1,'midi::MidiBleEventHandler']]]
 ];

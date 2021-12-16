@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['noteoff_21',['noteOff',['../classmidi_1_1_ard_midi_common.html#aaded84d70a016e5a1368910ac3fd608e',1,'midi::ArdMidiCommon']]],
-  ['noteon_22',['noteOn',['../classmidi_1_1_ard_midi_common.html#ace5e24e506f68755b28e372509a8f489',1,'midi::ArdMidiCommon']]],
-  ['notetofrequency_23',['noteToFrequency',['../classmidi_1_1_ard_midi_common.html#a57861e9ed254790bc32fdbc3b0e40c92',1,'midi::ArdMidiCommon']]]
+  ['noteoff_20',['noteOff',['../classmidi_1_1_midi_common.html#a7bffbeb8f4f625a551f741d6ec515da3',1,'midi::MidiCommon']]],
+  ['noteon_21',['noteOn',['../classmidi_1_1_midi_common.html#a7e026258c4355d38dedda82f1862141c',1,'midi::MidiCommon']]],
+  ['notetofrequency_22',['noteToFrequency',['../classmidi_1_1_midi_common.html#a95a089c4af7d0809094255de9a4bf242',1,'midi::MidiCommon']]]
 ];

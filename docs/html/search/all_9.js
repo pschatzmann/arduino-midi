@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resetallcontrollers_30',['resetAllControllers',['../classmidi_1_1_ard_midi_common.html#a8332d06ef1614f1e937ccf4900973d3a',1,'midi::ArdMidiCommon']]]
+  ['resetallcontrollers_29',['resetAllControllers',['../classmidi_1_1_midi_common.html#a64a34fef651a7ad879975e9feef2394c',1,'midi::MidiCommon']]]
 ];

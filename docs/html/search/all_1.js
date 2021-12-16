@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['channelpressure_12',['channelPressure',['../classmidi_1_1_ard_midi_common.html#a0dfde01d83285d46ef71b4b1ec6ac212',1,'midi::ArdMidiCommon']]],
-  ['controlchange_13',['controlChange',['../classmidi_1_1_ard_midi_common.html#a14f2aa614162e8bb6785f90fe1e2aa7a',1,'midi::ArdMidiCommon']]]
+  ['channelpressure_2',['channelPressure',['../classmidi_1_1_midi_common.html#a599481be137cbc0ae57c288a593e8dcf',1,'midi::MidiCommon']]],
+  ['controlchange_3',['controlChange',['../classmidi_1_1_midi_common.html#aa80729b4b9932838ddef4fe48242510b',1,'midi::MidiCommon']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['localcontrol_57',['localControl',['../classmidi_1_1_ard_midi_common.html#a8e9fb007772947eca9fe0ee6b0e4ca5e',1,'midi::ArdMidiCommon']]]
+  ['localcontrol_52',['localControl',['../classmidi_1_1_midi_common.html#a164dfde583e2e3fdf3e8a277954a3632',1,'midi::MidiCommon']]]
 ];

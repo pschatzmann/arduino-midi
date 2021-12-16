@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['parse_63',['parse',['../classmidi_1_1_midi_event_handler.html#a47aaa17332283a5d65b9ba68a73ab896',1,'midi::MidiEventHandler']]],
-  ['pitchbend_64',['pitchBend',['../classmidi_1_1_ard_midi_common.html#a1124cf2421a16ead739c856810adb626',1,'midi::ArdMidiCommon']]],
-  ['polypressure_65',['polyPressure',['../classmidi_1_1_ard_midi_common.html#aaab78e4d88fb8d958a7a518b6fd0d2bb',1,'midi::ArdMidiCommon']]],
-  ['programchange_66',['programChange',['../classmidi_1_1_ard_midi_common.html#a8efdf2cf3b718f613aab141721550d12',1,'midi::ArdMidiCommon']]]
+  ['onread_59',['onRead',['../classmidi_1_1_midi_ble_event_handler.html#a94dae7bc13275396d4afb84f5722af7b',1,'midi::MidiBleEventHandler']]],
+  ['onwrite_60',['onWrite',['../classmidi_1_1_midi_ble_event_handler.html#a2729bd231cc4f50cb202c3e7b69b0bab',1,'midi::MidiBleEventHandler']]]
 ];

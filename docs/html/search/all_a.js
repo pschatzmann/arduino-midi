@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['setdefaultsendingchannel_31',['setDefaultSendingChannel',['../classmidi_1_1_ard_midi_common.html#a3430e53fed3ea7ce672befe88a92aae9',1,'midi::ArdMidiCommon']]],
-  ['setfilterreceivingchannel_32',['setFilterReceivingChannel',['../classmidi_1_1_ard_midi_common.html#aba9718817f518da7bf537d322127a34b',1,'midi::ArdMidiCommon']]],
-  ['setmidivoicer_33',['setMidiVoicer',['../classmidi_1_1_ard_midi_common.html#af3c0235938eff61cdf50718374ca235b',1,'midi::ArdMidiCommon']]],
-  ['start_34',['start',['../classmidi_1_1_ard_midi_ble_client.html#a4e99ce3c114803795e0e6f097ef3667f',1,'midi::ArdMidiBleClient::start(MidiVoicer &amp;MidiVoicer)'],['../classmidi_1_1_ard_midi_ble_client.html#ae01cc5669dd8aca8771be7536ba7b050',1,'midi::ArdMidiBleClient::start(BLEAdvertisedDevice *pDevice)'],['../classmidi_1_1_ard_midi_ble_server.html#a42355b8d9c02c65e111324289a7d0b62',1,'midi::ArdMidiBleServer::start()']]]
+  ['setdefaultsendingchannel_30',['setDefaultSendingChannel',['../classmidi_1_1_midi_common.html#a1fc898c0b3dfeddef8515df50abac9d2',1,'midi::MidiCommon']]],
+  ['setfilterreceivingchannel_31',['setFilterReceivingChannel',['../classmidi_1_1_midi_common.html#a0ccfb10ae26c6855310de2443c319af1',1,'midi::MidiCommon']]],
+  ['setmidiaction_32',['setMidiAction',['../classmidi_1_1_midi_common.html#afdc7e84bfe245486503768f271680e1f',1,'midi::MidiCommon']]],
+  ['start_33',['start',['../classmidi_1_1_midi_ble_client.html#a083e342e202d32400ba517e7d40619d5',1,'midi::MidiBleClient::start(MidiAction &amp;MidiAction)'],['../classmidi_1_1_midi_ble_client.html#a0a5c65672b469dae1d01177ba9f249ff',1,'midi::MidiBleClient::start(BLEAdvertisedDevice *pDevice)'],['../classmidi_1_1_midi_ble_server.html#a7fb41839e32412bb994aca8f131cbcbd',1,'midi::MidiBleServer::start()']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['onread_61',['onRead',['../classmidi_1_1_ard_midi_ble_event_handler.html#ab036448a44d0a1b2700ab18d8042bfa3',1,'midi::ArdMidiBleEventHandler']]],
-  ['onwrite_62',['onWrite',['../classmidi_1_1_ard_midi_ble_event_handler.html#a48868bc0d342c1932da995f7225f351b',1,'midi::ArdMidiBleEventHandler']]]
+  ['noteoff_56',['noteOff',['../classmidi_1_1_midi_common.html#a7bffbeb8f4f625a551f741d6ec515da3',1,'midi::MidiCommon']]],
+  ['noteon_57',['noteOn',['../classmidi_1_1_midi_common.html#a7e026258c4355d38dedda82f1862141c',1,'midi::MidiCommon']]],
+  ['notetofrequency_58',['noteToFrequency',['../classmidi_1_1_midi_common.html#a95a089c4af7d0809094255de9a4bf242',1,'midi::MidiCommon']]]
 ];
