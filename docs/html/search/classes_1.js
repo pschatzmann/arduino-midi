@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['midimessage_47',['MidiMessage',['../structmidi_1_1_midi_message.html',1,'midi']]],
-  ['midimidivoicer_48',['MidiMidiVoicer',['../classmidi_1_1_midi_midi_voicer.html',1,'midi']]]
+  ['midieventhandler_49',['MidiEventHandler',['../classmidi_1_1_midi_event_handler.html',1,'midi']]],
+  ['midimessage_50',['MidiMessage',['../structmidi_1_1_midi_message.html',1,'midi']]],
+  ['midivoicer_51',['MidiVoicer',['../classmidi_1_1_midi_voicer.html',1,'midi']]]
 ];

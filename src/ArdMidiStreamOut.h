@@ -7,7 +7,7 @@
 
 namespace midi {
 /***************************************************/
-/*! \class ArdMidiSerialOut
+/*! \class ArdMidiStreamOut
     \brief Output of Midi Messages to an Arduino 
     Stream (eg output to Serial, UDP or IP).
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>arduino-midi: Arduino MIDI Library</title>
+<title>arduino-midi: ArdUdp Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,7 +45,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,33 +59,24 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+</div><!-- top -->
+<div class="header">
   <div class="headertitle">
-<div class="title">Arduino MIDI Library </div>  </div>
+<div class="title">ArdUdp Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> Quite some time ago, I spent some effort to add Midi support to the <a href="https://github.com/pschatzmann/Arduino-STK.git">Arduino-STK</a> library. In the meantime I came to the conclusion that it would be better to have this as a separate functionality, so that it could be used by other of my projects.</p>
-<p>The library supports</p>
-<ul>
-<li>Midi over an Arduino Streams (e.g. Serial)</li>
-<li>Midi over TCP/IP</li>
-<li>Midi over Bluetooth</li>
-<li>Midi over BLE</li>
+
+<p>Simple UDP wrapper class which sends all packages to the same destination.  
+ <a href="class_ard_udp.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ard_udp_8h_source.html">ArdUdp.h</a>&gt;</code></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Simple UDP wrapper class which sends all packages to the same destination. </p>
+<p>This is useful when the API asks for a stream as parameter to output data.</p>
+<p>by Phil Schatzmann </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/<a class="el" href="_ard_udp_8h_source.html">ArdUdp.h</a></li>
 </ul>
-<p>Please note that most of the examples that generate sound are based on <b>Arduino-STK</b>!</p>
-<h2><a class="anchor" id="autotoc_md1"></a>
-Documentation</h2>
-<ul>
-<li>Here is the generated <a href="https://pschatzmann.github.io/arduino-midi/html/annotated.html">Class Documentation</a>.</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md2"></a>
-Installation in Arduino</h2>
-<p>You can download the library as zip and call include Library -&gt; zip library. Or you can git clone this project into the Arduino libraries folder e.g. with</p>
-<div class="fragment"><div class="line">cd  ~/Documents/Arduino/libraries</div>
-<div class="line">git clone pschatzmann/arduino-midi.git</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
-arduino-midi</h1>
-</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

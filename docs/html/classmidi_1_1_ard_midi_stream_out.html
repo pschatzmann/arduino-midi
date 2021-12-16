@@ -74,6 +74,11 @@ $(function() {
 <div class="title">midi::ArdMidiStreamOut Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Output of Midi Messages to an Arduino Stream (eg output to Serial, UDP or IP).  
+ <a href="classmidi_1_1_ard_midi_stream_out.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ard_midi_stream_out_8h_source.html">ArdMidiStreamOut.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for midi::ArdMidiStreamOut:</div>
 <div class="dyncontent">
@@ -147,7 +152,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:aba9718817f518da7bf537d322127a34b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates a filter on receiving messages to the indicated channel. <br /></td></tr>
 <tr class="separator:aba9718817f518da7bf537d322127a34b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3c0235938eff61cdf50718374ca235b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="memItemLeft" align="right" valign="top"><a id="af3c0235938eff61cdf50718374ca235b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_ard_midi_common.html#af3c0235938eff61cdf50718374ca235b">setMidiVoicer</a> (MidiVoicer &amp;MidiVoicer)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_ard_midi_common.html#af3c0235938eff61cdf50718374ca235b">setMidiVoicer</a> (<a class="el" href="classmidi_1_1_midi_voicer.html">MidiVoicer</a> &amp;<a class="el" href="classmidi_1_1_midi_voicer.html">MidiVoicer</a>)</td></tr>
 <tr class="memdesc:af3c0235938eff61cdf50718374ca235b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the voice which is used in inbound processing. <br /></td></tr>
 <tr class="separator:af3c0235938eff61cdf50718374ca235b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -183,7 +188,7 @@ char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>outMessage</b></td></tr>
 <tr class="separator:a347bfb93c70b652b498be42e7c1079f8 inherit pro_attribs_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ec1eac3d872fc783fb53d58a1a8d182 inherit pro_attribs_classmidi_1_1_ard_midi_common"><td class="memItemLeft" align="right" valign="top"><a id="a0ec1eac3d872fc783fb53d58a1a8d182"></a>
-MidiVoicer *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiVoicer</b></td></tr>
+<a class="el" href="classmidi_1_1_midi_voicer.html">MidiVoicer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiVoicer</b></td></tr>
 <tr class="separator:a0ec1eac3d872fc783fb53d58a1a8d182 inherit pro_attribs_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ef8160defa78b0a27df57f9c13eb63e inherit pro_attribs_classmidi_1_1_ard_midi_common"><td class="memItemLeft" align="right" valign="top"><a id="a2ef8160defa78b0a27df57f9c13eb63e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>receivingChannel</b> = -1</td></tr>
@@ -210,7 +215,10 @@ static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:a57861e9ed254790bc32fdbc3b0e40c92 inherit pub_static_methods_classmidi_1_1_ard_midi_common"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a MIDI note to a frequency in Hz. <br /></td></tr>
 <tr class="separator:a57861e9ed254790bc32fdbc3b0e40c92 inherit pub_static_methods_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Output of Midi Messages to an Arduino Stream (eg output to Serial, UDP or IP). </p>
+<p>by Phil Schatzmann </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="_ard_midi_stream_out_8h_source.html">ArdMidiStreamOut.h</a></li>
 <li>src/ArdMidiStreamOut.cpp</li>
 </ul>

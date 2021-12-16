@@ -8,7 +8,7 @@
 namespace midi {
 
 /***************************************************/
-/*! \class ArdMidiSerialIn
+/*! \class MidiEventHandler
     \brief  A simple Midi Parser which calls the corresponding events. 
     It supports Midi and BLE Midi messages. The main entry point
     is the parse command which calls the related methods.
@@ -25,6 +25,7 @@ namespace midi {
     by Phil Schatzmann
 */
 /***************************************************/
+
 class MidiEventHandler  {
     public:
         MidiEventHandler(MidiVoicer *midiVoicer, int *p_channel = nullptr );

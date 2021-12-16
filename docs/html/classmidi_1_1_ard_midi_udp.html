@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>arduino-midi: midi::ArdMidiBleServerCallback Class Reference</title>
+<title>arduino-midi: midi::ArdMidiUdp Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,49 +61,55 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>midi</b></li><li class="navelem"><a class="el" href="classmidi_1_1_ard_midi_ble_server_callback.html">ArdMidiBleServerCallback</a></li>  </ul>
+<li class="navelem"><b>midi</b></li><li class="navelem"><a class="el" href="classmidi_1_1_ard_midi_udp.html">ArdMidiUdp</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="classmidi_1_1_ard_midi_ble_server_callback-members.html">List of all members</a>  </div>
+<a href="classmidi_1_1_ard_midi_udp-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">midi::ArdMidiBleServerCallback Class Reference</div>  </div>
+<div class="title">midi::ArdMidiUdp Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for midi::ArdMidiBleServerCallback:</div>
+Inheritance diagram for midi::ArdMidiUdp:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classmidi_1_1_ard_midi_ble_server_callback.png" alt=""/>
+  <img src="classmidi_1_1_ard_midi_udp.png" alt=""/>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a03d96e72a7078368148bade0be4f345b"><td class="memItemLeft" align="right" valign="top"><a id="a03d96e72a7078368148bade0be4f345b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ArdMidiBleServerCallback</b> (ConnectionStatus *pStatus)</td></tr>
-<tr class="separator:a03d96e72a7078368148bade0be4f345b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad645af309e1e30d764180fac77ee7149"><td class="memItemLeft" align="right" valign="top"><a id="ad645af309e1e30d764180fac77ee7149"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onConnect</b> (BLEServer *pServer)</td></tr>
-<tr class="separator:ad645af309e1e30d764180fac77ee7149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4325f4149c33597c00b5703c1d52b799"><td class="memItemLeft" align="right" valign="top"><a id="a4325f4149c33597c00b5703c1d52b799"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onDisconnect</b> (BLEServer *pServer)</td></tr>
-<tr class="separator:a4325f4149c33597c00b5703c1d52b799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20a9f96b031ac07633439c7e9b78fc06"><td class="memItemLeft" align="right" valign="top"><a id="a20a9f96b031ac07633439c7e9b78fc06"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> (<a class="el" href="classmidi_1_1_midi_voicer.html">MidiVoicer</a> &amp;<a class="el" href="classmidi_1_1_midi_voicer.html">MidiVoicer</a>)</td></tr>
-<tr class="separator:a20a9f96b031ac07633439c7e9b78fc06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d3414a85b1ac15a2c5a38497725b01"><td class="memItemLeft" align="right" valign="top"><a id="ae7d3414a85b1ac15a2c5a38497725b01"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ArdMidiUdp</b> (char *targetUdpAddressStr, int targetPort)</td></tr>
+<tr class="separator:ae7d3414a85b1ac15a2c5a38497725b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4597da55c806a4d10028b6cb6af93dbc"><td class="memItemLeft" align="right" valign="top"><a id="a4597da55c806a4d10028b6cb6af93dbc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ArdMidiUdp</b> (IPAddress targetUdpAddress, int targetPort)</td></tr>
+<tr class="separator:a4597da55c806a4d10028b6cb6af93dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2af954b7ed9c7722e7ff6fba0ea02d"><td class="memItemLeft" align="right" valign="top"><a id="ace2af954b7ed9c7722e7ff6fba0ea02d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidHost</b> ()</td></tr>
+<tr class="separator:ace2af954b7ed9c7722e7ff6fba0ea02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab178399e81cf6ae732db993bd61da5ea"><td class="memItemLeft" align="right" valign="top"><a id="ab178399e81cf6ae732db993bd61da5ea"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const uint8_t *buffer, size_t size)</td></tr>
+<tr class="separator:ab178399e81cf6ae732db993bd61da5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a72947e0d59fb1ea9c60ce541073bd0b9"><td class="memItemLeft" align="right" valign="top"><a id="a72947e0d59fb1ea9c60ce541073bd0b9"></a>
-ConnectionStatus *&#160;</td><td class="memItemRight" valign="bottom"><b>pConnectionStatus</b></td></tr>
-<tr class="separator:a72947e0d59fb1ea9c60ce541073bd0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23dd12f1657baf0404d56ed2eee0c828"><td class="memItemLeft" align="right" valign="top"><a id="a23dd12f1657baf0404d56ed2eee0c828"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidHostFlag</b></td></tr>
+<tr class="separator:a23dd12f1657baf0404d56ed2eee0c828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6723c6ed6bfb680030f16220865bc683"><td class="memItemLeft" align="right" valign="top"><a id="a6723c6ed6bfb680030f16220865bc683"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>targetPort</b></td></tr>
+<tr class="separator:a6723c6ed6bfb680030f16220865bc683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aa5a1e80f24f03878986a53c1f51a64"><td class="memItemLeft" align="right" valign="top"><a id="a2aa5a1e80f24f03878986a53c1f51a64"></a>
+IPAddress&#160;</td><td class="memItemRight" valign="bottom"><b>targetUdpAddress</b></td></tr>
+<tr class="separator:a2aa5a1e80f24f03878986a53c1f51a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="_ard_midi_ble_server_8h_source.html">ArdMidiBleServer.h</a></li>
-<li>src/ArdMidiBleServer.cpp</li>
+<li>src/<a class="el" href="_ard_udp_8h_source.html">ArdUdp.h</a></li>
+<li>src/ArdUdp.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

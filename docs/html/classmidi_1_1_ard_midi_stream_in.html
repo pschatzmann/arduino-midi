@@ -86,9 +86,9 @@ Inheritance diagram for midi::ArdMidiStreamIn:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a03e8bf1046c2fbd7ecb7ef2fa8c9bda0"><td class="memItemLeft" align="right" valign="top"><a id="a03e8bf1046c2fbd7ecb7ef2fa8c9bda0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ArdMidiStreamIn</b> (Stream &amp;stream, <a class="el" href="classmidi_1_1_ard_midi_event_handler.html">ArdMidiEventHandler</a> &amp;handler)</td></tr>
-<tr class="separator:a03e8bf1046c2fbd7ecb7ef2fa8c9bda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d00fa5ec6982a0842b1b06b8f8eda25"><td class="memItemLeft" align="right" valign="top"><a id="a4d00fa5ec6982a0842b1b06b8f8eda25"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ArdMidiStreamIn</b> (Stream &amp;stream, <a class="el" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> &amp;handler)</td></tr>
+<tr class="separator:a4d00fa5ec6982a0842b1b06b8f8eda25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac49b6c3f6b8a8de545017da3a42e53ca"><td class="memItemLeft" align="right" valign="top"><a id="ac49b6c3f6b8a8de545017da3a42e53ca"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
 <tr class="separator:ac49b6c3f6b8a8de545017da3a42e53ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,7 +150,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:aba9718817f518da7bf537d322127a34b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates a filter on receiving messages to the indicated channel. <br /></td></tr>
 <tr class="separator:aba9718817f518da7bf537d322127a34b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3c0235938eff61cdf50718374ca235b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="memItemLeft" align="right" valign="top"><a id="af3c0235938eff61cdf50718374ca235b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_ard_midi_common.html#af3c0235938eff61cdf50718374ca235b">setMidiVoicer</a> (MidiVoicer &amp;MidiVoicer)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_ard_midi_common.html#af3c0235938eff61cdf50718374ca235b">setMidiVoicer</a> (<a class="el" href="classmidi_1_1_midi_voicer.html">MidiVoicer</a> &amp;<a class="el" href="classmidi_1_1_midi_voicer.html">MidiVoicer</a>)</td></tr>
 <tr class="memdesc:af3c0235938eff61cdf50718374ca235b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the voice which is used in inbound processing. <br /></td></tr>
 <tr class="separator:af3c0235938eff61cdf50718374ca235b inherit pub_methods_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -175,9 +175,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:adf58daec4303e6db47039e0a040f5e3c"><td class="memItemLeft" align="right" valign="top"><a id="adf58daec4303e6db47039e0a040f5e3c"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b> [BUFFER_LEN]</td></tr>
 <tr class="separator:adf58daec4303e6db47039e0a040f5e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a157949f1873da54cbe49a34e3dde9770"><td class="memItemLeft" align="right" valign="top"><a id="a157949f1873da54cbe49a34e3dde9770"></a>
-<a class="el" href="classmidi_1_1_ard_midi_event_handler.html">ArdMidiEventHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pHandler</b></td></tr>
-<tr class="separator:a157949f1873da54cbe49a34e3dde9770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a546ed7d7490d72255681aba1e1bb6993"><td class="memItemLeft" align="right" valign="top"><a id="a546ed7d7490d72255681aba1e1bb6993"></a>
+<a class="el" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pHandler</b></td></tr>
+<tr class="separator:a546ed7d7490d72255681aba1e1bb6993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09221a00b9a245f62729dbc84b5172af"><td class="memItemLeft" align="right" valign="top"><a id="a09221a00b9a245f62729dbc84b5172af"></a>
 Stream *&#160;</td><td class="memItemRight" valign="bottom"><b>pStream</b></td></tr>
 <tr class="separator:a09221a00b9a245f62729dbc84b5172af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,7 +195,7 @@ char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>outMessage</b></td></tr>
 <tr class="separator:a347bfb93c70b652b498be42e7c1079f8 inherit pro_attribs_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ec1eac3d872fc783fb53d58a1a8d182 inherit pro_attribs_classmidi_1_1_ard_midi_common"><td class="memItemLeft" align="right" valign="top"><a id="a0ec1eac3d872fc783fb53d58a1a8d182"></a>
-MidiVoicer *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiVoicer</b></td></tr>
+<a class="el" href="classmidi_1_1_midi_voicer.html">MidiVoicer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiVoicer</b></td></tr>
 <tr class="separator:a0ec1eac3d872fc783fb53d58a1a8d182 inherit pro_attribs_classmidi_1_1_ard_midi_common"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ef8160defa78b0a27df57f9c13eb63e inherit pro_attribs_classmidi_1_1_ard_midi_common"><td class="memItemLeft" align="right" valign="top"><a id="a2ef8160defa78b0a27df57f9c13eb63e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>receivingChannel</b> = -1</td></tr>

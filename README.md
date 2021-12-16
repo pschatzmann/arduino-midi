@@ -6,7 +6,7 @@ of my projects.
 
 The library supports
 
-- Midi over an Arduino Stream (e.g. Serial)
+- Midi over an Arduino Streams (e.g. Serial)
 - Midi over TCP/IP
 - Midi over Bluetooth
 - Midi over BLE
