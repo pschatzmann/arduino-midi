@@ -1,34 +1,21 @@
 /**
  * @file MidiBLEServer.ino
  * @author Phil Schatzmann
- * @brief Example BLE Midi Server - Requires arduino-stk to generate sound
+ * @brief Example BLE Midi which sends out midi messages
  * @version 0.1
  * @date 2021-12-16
  * 
  * @copyright Copyright (c) 2021
  * 
  */
-#include <Clarinet.h>
-#include <ArdMidiVoicer.h>
-#include <MidiBleEventHandler.h>
-#include <MidiBleServer.h>
+#include <Midi.h>
+#include <StkAll.h>
 
-using namespace midi;
-using namespace stk;
-
-MidiVoicer voicer;
-Clarinet clarinet(440);
-MidiBleEventHandler handler(&voicer);
-MidiBleServer ble("MidiServer", &handler);
-
-uint16_t note = 64; // 0 to 128
-uint16_t amplitude = 100; // 0 to 128
+MidiBleServer ble("MidiServer");
 
 void setup() {
   Serial.begin(115200);
-  
-  voicer.addInstrument(&clarinet, 1);
-  ble.start(voicer);
+  ble.start(action);
   ble.setDefaultSendingChannel(0);
 }
 

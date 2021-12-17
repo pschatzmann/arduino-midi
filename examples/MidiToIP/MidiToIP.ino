@@ -9,10 +9,8 @@
  */
 #include <WiFi.h>
 #include <WiFiMulti.h>
-#include "MidiStreamOut.h"
-
-using namespace midi;
-using namespace stk;
+#include <Midi.h>
+#include <StkAll.h>
 
 IPAddress ip(192, 168, 1, 35);
 int port = 9999;

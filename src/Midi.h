@@ -6,3 +6,5 @@
 #include "MidiBleEventHandler.h"
 #include "MidiStreamOut.h"
 #include "MidiBleServer.h"		
+
+using namespace midi;

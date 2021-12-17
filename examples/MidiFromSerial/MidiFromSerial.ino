@@ -6,24 +6,20 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include "Clarinet.h"
-#include <ArdMidiVoicer.h>
-#include "MidiStreamIn.h"
+#include <Midi.h>
+#include <StkAll.h>
 
-using namespace midi;
-using namespace stk;
-
-MidiVoicer voicer;
+ArdI2SOut i2s;
 Clarinet clarinet(440);
-MidiEventHandler handler(&voicer);
+StkMidiAction action(&clarinet);
+MidiEventHandler handler(&action);
 MidiStreamIn in(Serial, handler);
 
 void setup() {
   Serial.begin(115200);
-  
-  voicer.addInstrument(&clarinet);
 }
 
 void loop() {
   in.loop();
+  i2s.tick( handler.tick() );
 }

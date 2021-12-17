@@ -30,6 +30,7 @@ class MidiEventHandler  {
     public:
         MidiEventHandler(MidiAction *MidiAction, int *p_channel = nullptr );
          ~MidiEventHandler();
+        
         void parse(uint8_t*  msg, uint8_t len);
         virtual void onCommand(uint8_t channel, uint8_t status, uint8_t p1,uint8_t p2 );
         virtual void onNoteOn(uint8_t note, uint8_t velocity,uint8_t channel);
@@ -38,8 +39,8 @@ class MidiEventHandler  {
         virtual void onControlChange( uint8_t controller, uint8_t controllerValue, uint8_t channel);
 
     protected:
-        MidiAction *p_MidiAction; 
-        int *p_channel;
+        MidiAction *p_MidiAction = nullptr; 
+        int *p_channel = nullptr;
 };
 
 

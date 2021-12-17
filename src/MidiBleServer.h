@@ -20,8 +20,10 @@ namespace midi {
 class MidiBleServer : public MidiCommon {
     public:
         //! Default constructor
-        MidiBleServer(char* name, MidiBleEventHandler* pEventHandler=nullptr);
-        
+        MidiBleServer(const char* name, MidiBleEventHandler* pEventHandler=nullptr);
+        //! Constructor which creates MidiBleEventHandler from MidiBleEventHandler internally
+        MidiBleServer(const char* name, MidiAction *MidiAction, int *p_channel = nullptr);
+            
         //! Starts the BLE server
         void start(MidiAction &MidiAction);
         void start();
@@ -29,10 +31,10 @@ class MidiBleServer : public MidiCommon {
 
 
     protected:
-        MidiBleEventHandler *pEventHandler;
-        BLEServer *pServer;
-        BLECharacteristic* pCharacteristic;
-        char *name;
+        MidiBleEventHandler *pEventHandler=nullptr;
+        BLEServer *pServer=nullptr;
+        BLECharacteristic* pCharacteristic=nullptr;
+        const char *name=nullptr;
 };
 
 /***************************************************/

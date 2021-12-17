@@ -4,7 +4,7 @@
 #include "MidiLogger.h"
 
 // global actual loggin level for application
-MidiLogLevel_t MidiLogLevel;
+MidiLogLevel_t MidiLogLevel= MidiWarning;
 
 // Error level as string
 const char* midi_log_msg[] = {"Debug", "Info", "Warning", "Error"};

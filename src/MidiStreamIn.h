@@ -26,14 +26,17 @@ namespace midi {
 /***************************************************/
 class MidiStreamIn : public MidiCommon {
     public:
+        /// Default Constructor
+        MidiStreamIn(Stream &stream, MidiAction &action);
         MidiStreamIn(Stream &stream, MidiEventHandler &handler);
         void loop();
     protected:
-       int getLastStatusPos(uint8_t *buffer, int endPos);
-        Stream *pStream;
-        MidiEventHandler *pHandler;
+        int getLastStatusPos(uint8_t *buffer, int endPos);
+        Stream *pStream = nullptr;
+        MidiEventHandler *pHandler = nullptr;
+        bool ownsHandler = false;
         uint8_t buffer[BUFFER_LEN];
-        int startPos;
+        int startPos = 0;
 };
 
 } // namespace

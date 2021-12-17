@@ -3,13 +3,31 @@
 
 namespace midi {
 
+MidiStreamIn :: MidiStreamIn(Stream &stream, MidiAction &action){
+    pStream = &stream;
+    // without this I was getting a 2 sec delay!
+    pStream->setTimeout(10);
+    pHandler = new MidiEventHandler(&action);
+    startPos = 0;
+    ownsHandler = true;
+}
+
 MidiStreamIn :: MidiStreamIn(Stream &stream, MidiEventHandler &handler) {
     pStream = &stream;
     // without this I was getting a 2 sec delay!
     pStream->setTimeout(10);
     pHandler = &handler;
     startPos = 0;
+    ownsHandler = false;
 }
+
+MidiStreamIn :: ~MidiEventHandler(){
+    if (ownsHandler&&pHandler!=nullptr){
+        delete pHandler;
+        pHandler = nullptr;
+    }
+}
+
 
 void MidiStreamIn :: loop() {
     if (pStream->available()>0){

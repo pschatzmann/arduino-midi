@@ -63,6 +63,10 @@ void MidiEventHandler::parse(uint8_t* msg, uint8_t len){
 
 void MidiEventHandler::onCommand(uint8_t channel, uint8_t status, uint8_t p1,uint8_t p2 ){
   MIDI_LOGD( "onCommand channel:%d, status:%d, p1:%d,  p2:%d", (int)channel, (int)status, (int)p1, (int)p2);
+  if (p_channel==nullptr){
+    MIDI_LOGE("Unexpected error; p_channel is null");
+    return;
+  }
   MIDI_LOGD( "onCommand filtered channel: %d ", *p_channel);
   if (p_channel==nullptr || *p_channel < 0 || *p_channel == channel) {
     switch (status) {

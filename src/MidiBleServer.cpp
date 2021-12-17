@@ -5,7 +5,14 @@ namespace midi {
 
 const char* APP_SERVER = "MidiBleServer";
 
-MidiBleServer::MidiBleServer(char* name, MidiBleEventHandler* pEventHandler)
+MidiBleServer::MidiBleServer(const char* name, MidiAction *midiAction, int *p_channel):MidiCommon(){
+     this->name = name;
+     this->pEventHandler = new MidiBleEventHandler(midiAction, p_channel);
+     this->connectionStatus = Unconnected;
+}
+
+
+MidiBleServer::MidiBleServer(const char* name, MidiBleEventHandler* pEventHandler)
  : MidiCommon() {
      this->name = name;
      this->pEventHandler = pEventHandler;

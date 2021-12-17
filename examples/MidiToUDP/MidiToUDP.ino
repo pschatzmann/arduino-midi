@@ -26,6 +26,7 @@ uint16_t amplitude = 100; // 0 to 128
 void setup() {
   Serial.begin(115200);
   
+  // startup wifi
   WiFi.begin(SSID, PWD);
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print('.');
@@ -34,6 +35,7 @@ void setup() {
 
   Serial.print("Connected to IP address: ");
   Serial.println(WiFi.localIP());
+  
 }
 
 void loop() {

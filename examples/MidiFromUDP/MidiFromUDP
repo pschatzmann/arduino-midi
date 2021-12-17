@@ -9,23 +9,20 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <WiFiUdp.h>
-#include <ArdMidiStreamIn.h>
-#include <ArdMidiVoicer.h>
-#include "Clarinet.h"
+#include <Midi.h>
+#include <StkAll.h>
 
-using namespace midi;
-using namespace stk;
-
+ArdI2SOut i2s;
 WiFiUDP udp;
 Clarinet clarinet(440);
-StkMidiVoicer voicer;
-ArdMidiEventHandler handler(&voicer);
+ArdMidiEventHandler handler(&clarinet);
 ArdMidiStreamIn in(udp, handler );
 int localPort = 9000;
 
 void setup() {
   Serial.begin(115200);
   
+  // startup wifi - udp
   WiFi.begin(SSID, PWD);
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print('.');
@@ -34,12 +31,22 @@ void setup() {
 
   Serial.print("Connected to IP address: ");
   Serial.println(WiFi.localIP());  
-
-  voicer.addInstrument(&clarinet,0);
   udp.begin(localPort);
+
+  // setup i2s
+  i2s_pin_config_t my_pin_config = {
+      .bck_io_num = 26,
+      .ws_io_num = 25,
+      .data_out_num = 22,
+      .data_in_num = I2S_PIN_NO_CHANGE
+  };
+
+  i2s.setPins(my_pin_config);
+  i2s.begin();
 }
 
 void loop() {
   in.loop();
+  i2s.tick( handler.tick() );
 }
 

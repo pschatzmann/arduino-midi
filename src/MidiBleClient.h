@@ -30,6 +30,7 @@ class MidiBleClient : public MidiCommon {
         //! connects to the indicated device
         void start(BLEAdvertisedDevice *pDevice);
         
+        //! Processes a message
         void writeData(MidiMessage *pMsg, int len);
 
         //! determe in the BLEAdvertisedDevice 
