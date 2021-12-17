@@ -16,6 +16,7 @@ namespace midi {
 /***************************************************/
 class MidiStreamOut : public MidiCommon {
     public:
+        /// Default Constructor
         MidiStreamOut(Stream &stream);
 
     protected:

@@ -29,7 +29,9 @@ class MidiStreamIn : public MidiCommon {
         /// Default Constructor
         MidiStreamIn(Stream &stream, MidiAction &action);
         MidiStreamIn(Stream &stream, MidiEventHandler &handler);
+        // Parse/Process the next midi message
         void loop();
+        
     protected:
         int getLastStatusPos(uint8_t *buffer, int endPos);
         Stream *pStream = nullptr;

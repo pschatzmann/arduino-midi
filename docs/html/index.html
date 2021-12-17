@@ -76,17 +76,50 @@ $(function() {
 <p>Please note that most of the examples that generate sound are based on <b>Arduino-STK</b>!</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Documentation</h2>
-<ul>
-<li>Here is the generated <a href="https://pschatzmann.github.io/arduino-midi/html/annotated.html">Class Documentation</a>.</li>
-</ul>
+<p>The functionality is based on Arduino Streams (Except the BLE functionality). You give the <a href="https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html">MidiStreamOut</a> class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP.</p>
+<div class="fragment"><div class="line">#include &quot;Midi.h&quot;</div>
+<div class="line"> </div>
+<div class="line">MidiStreamOut out(Serial);</div>
+<div class="line">uint16_t note = 64; // 0 to 128</div>
+<div class="line">uint16_t amplitude = 100; // 0 to 128</div>
+<div class="line"> </div>
+<div class="line">void setup() {</div>
+<div class="line">    Serial.begin(115200);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">void loop() {</div>
+<div class="line">    Serial.println();</div>
+<div class="line">    Serial.print(&quot;playing &quot;);</div>
+<div class="line">    Serial.println(++note);</div>
+<div class="line"> </div>
+<div class="line">    out.noteOn( note, amplitude );</div>
+<div class="line">    delay(900);</div>
+<div class="line">    out.noteOff( note, 20 );</div>
+<div class="line">    delay(200);</div>
+<div class="line">    if (note&gt;=90) {</div>
+<div class="line">      note = 30;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>The same is true for the <a href="https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_in.html">MidiStreamIn</a> which is used for receiving and parsing midi messages. There you also need to specify the <a href="https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_action.html">MidiAction</a> which implements the actions to be performed on the received events. The loop method processes the next message:</p>
+<div class="fragment"><div class="line">#include &quot;Midi.h&quot;</div>
+<div class="line"> </div>
+<div class="line">MyEventHandler handler</div>
+<div class="line">MidiStreamIn in(Serial, handler);</div>
+<div class="line"> </div>
+<div class="line">void setup() {</div>
+<div class="line">  Serial.begin(115200);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">void loop() {</div>
+<div class="line">  in.loop();</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Here is the generated <a href="https://pschatzmann.github.io/arduino-midi/html/annotated.html">Class Documentation</a>.</p>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Installation in Arduino</h2>
 <p>You can download the library as zip and call include Library -&gt; zip library. Or you can git clone this project into the Arduino libraries folder e.g. with</p>
 <div class="fragment"><div class="line">cd  ~/Documents/Arduino/libraries</div>
 <div class="line">git clone pschatzmann/arduino-midi.git</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
-arduino-midi</h1>
-</div></div><!-- PageDoc -->
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -16,7 +16,7 @@ Please note that most of the examples that generate sound are based on __Arduino
 
 ### Documentation
 
-The functionality is based on Arduino Streams (Except the BLE functionality). You give the MidiStreamOut class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP. 
+The functionality is based on Arduino Streams (Except the BLE functionality). You give the [MidiStreamOut](https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html) class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP. 
 
 ```
 #include "Midi.h"
@@ -44,7 +44,7 @@ void loop() {
 }
 ```
 
-The same is true for the MidiStreamIn which is used for receiving and parsing midi messages. There you also need to specify the MidiAction which implements the actions to be performed on the received events. The loop method processes the next message:
+The same is true for the [MidiStreamIn](https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_in.html) which is used for receiving and parsing midi messages. There you also need to specify the [MidiAction](https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_action.html) which implements the actions to be performed on the received events. The loop method processes the next message:
 
 ```
 #include "Midi.h"

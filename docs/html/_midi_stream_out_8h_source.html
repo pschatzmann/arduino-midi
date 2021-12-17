@@ -81,20 +81,21 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/***************************************************/</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_stream_out.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_stream_out.html">MidiStreamOut</a> : <span class="keyword">public</span> <a class="code" href="classmidi_1_1_midi_common.html">MidiCommon</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classmidi_1_1_midi_stream_out.html">MidiStreamOut</a>(Stream &amp;stream);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> writeData(<a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg, <span class="keywordtype">int</span> len);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        Stream *pStream;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        uint8_t buffer[4];</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classmidi_1_1_midi_stream_out.html#acf0a01424848cc93924157e26fc7a2f9">MidiStreamOut</a>(Stream &amp;stream);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> writeData(<a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        Stream *pStream;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        uint8_t buffer[4];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html"><div class="ttname"><a href="classmidi_1_1_midi_common.html">midi::MidiCommon</a></div><div class="ttdoc">The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message...</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:75</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_stream_out_html"><div class="ttname"><a href="classmidi_1_1_midi_stream_out.html">midi::MidiStreamOut</a></div><div class="ttdoc">Output of Midi Messages to an Arduino Stream (eg output to Serial, UDP or IP).</div><div class="ttdef"><b>Definition:</b> MidiStreamOut.h:17</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_stream_out_html_acf0a01424848cc93924157e26fc7a2f9"><div class="ttname"><a href="classmidi_1_1_midi_stream_out.html#acf0a01424848cc93924157e26fc7a2f9">midi::MidiStreamOut::MidiStreamOut</a></div><div class="ttdeci">MidiStreamOut(Stream &amp;stream)</div><div class="ttdoc">Default Constructor.</div><div class="ttdef"><b>Definition:</b> MidiStreamOut.cpp:6</div></div>
 <div class="ttc" id="astructmidi_1_1_midi_message_html"><div class="ttname"><a href="structmidi_1_1_midi_message.html">midi::MidiMessage</a></div><div class="ttdoc">The content of the midi message: timestamp, status, arg1 and arg2.</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
