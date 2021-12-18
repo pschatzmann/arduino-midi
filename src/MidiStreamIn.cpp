@@ -21,7 +21,7 @@ MidiStreamIn :: MidiStreamIn(Stream &stream, MidiEventHandler &handler) {
     ownsHandler = false;
 }
 
-MidiStreamIn :: ~MidiEventHandler(){
+MidiStreamIn :: ~MidiStreamIn(){
     if (ownsHandler&&pHandler!=nullptr){
         delete pHandler;
         pHandler = nullptr;
