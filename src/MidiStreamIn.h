@@ -28,7 +28,10 @@ class MidiStreamIn : public MidiCommon {
     public:
         /// Default Constructor
         MidiStreamIn(Stream &stream, MidiAction &action);
+        /// Constructor to implement you custom MidiEventHandler
         MidiStreamIn(Stream &stream, MidiEventHandler &handler);
+        /// Destructor
+        ~MidiStreamIn();
         // Parse/Process the next midi message
         void loop();
         
