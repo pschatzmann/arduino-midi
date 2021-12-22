@@ -5,8 +5,8 @@ namespace midi {
 
 const char * APP_EVENT_HDLR = "MidiBleEventHandler";
 
-MidiBleEventHandler::MidiBleEventHandler(MidiAction *p_MidiAction, int *p_channel)
-: MidiEventHandler(p_MidiAction, p_channel) {
+MidiBleEventHandler::MidiBleEventHandler(MidiAction *p_MidiAction, int channelFilter)
+: MidiEventHandler(p_MidiAction, channelFilter) {
 };
 
 MidiBleEventHandler::~MidiBleEventHandler(){

@@ -28,7 +28,7 @@ namespace midi {
 
 class MidiEventHandler  {
     public:
-        MidiEventHandler(MidiAction *MidiAction, int *p_channel = nullptr );
+        MidiEventHandler(MidiAction *MidiAction, int filter_channel = -1 );
          ~MidiEventHandler();
         
         void parse(uint8_t*  msg, uint8_t len);
@@ -40,7 +40,7 @@ class MidiEventHandler  {
 
     protected:
         MidiAction *p_MidiAction = nullptr; 
-        int *p_channel = nullptr;
+        int filter_channel = -1;
 };
 
 

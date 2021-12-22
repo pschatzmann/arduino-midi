@@ -27,7 +27,7 @@ namespace midi {
 class MidiBleEventHandler 
 : public BLECharacteristicCallbacks , public  MidiEventHandler {
     public:
-        MidiBleEventHandler(MidiAction *MidiAction, int *p_channel = nullptr );
+        MidiBleEventHandler(MidiAction *MidiAction, int channelFilter = -1 );
         virtual ~MidiBleEventHandler();
         virtual void onRead(BLECharacteristic* pCharacteristic);
 	    virtual void onWrite(BLECharacteristic* pCharacteristic);

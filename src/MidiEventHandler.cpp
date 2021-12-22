@@ -7,9 +7,9 @@ const char* APP = "MidiEventHandler";
 
 //MidiEventHandler *self_MidiEventHandler;
 
-MidiEventHandler::MidiEventHandler(MidiAction *p_MidiAction, int *p_channel){
+MidiEventHandler::MidiEventHandler(MidiAction *p_MidiAction, int filter_channel){
   this->p_MidiAction = p_MidiAction;
-  this->p_channel = p_channel;
+  this->filter_channel = filter_channel;
 //  self_MidiEventHandler = this;
 };
 
@@ -63,12 +63,8 @@ void MidiEventHandler::parse(uint8_t* msg, uint8_t len){
 
 void MidiEventHandler::onCommand(uint8_t channel, uint8_t status, uint8_t p1,uint8_t p2 ){
   MIDI_LOGD( "onCommand channel:%d, status:%d, p1:%d,  p2:%d", (int)channel, (int)status, (int)p1, (int)p2);
-  if (p_channel==nullptr){
-    MIDI_LOGE("Unexpected error; p_channel is null");
-    return;
-  }
-  MIDI_LOGD( "onCommand filtered channel: %d ", *p_channel);
-  if (p_channel==nullptr || *p_channel < 0 || *p_channel == channel) {
+  MIDI_LOGD( "onCommand filtered channel: %d ", filter_channel);
+  if (filter_channel==-1 || filter_channel == channel) {
     switch (status) {
       case 0b1001:
         onNoteOn(channel, p1, p2);

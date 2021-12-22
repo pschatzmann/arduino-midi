@@ -22,7 +22,7 @@ class MidiBleServer : public MidiCommon {
         //! Default constructor
         MidiBleServer(const char* name, MidiBleEventHandler* pEventHandler=nullptr);
         //! Constructor which creates MidiBleEventHandler from MidiBleEventHandler internally
-        MidiBleServer(const char* name, MidiAction *MidiAction, int *p_channel = nullptr);
+        MidiBleServer(const char* name, MidiAction *MidiAction, int channelFilter = -1);
             
         //! Starts the BLE server
         void start(MidiAction &MidiAction);

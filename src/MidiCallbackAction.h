@@ -49,6 +49,18 @@ class MidiCallbackAction : public MidiAction {
             callbackOnPitchBend = callback;
         }
 
+        virtual void setCallbacks(
+                void (*callbackOnNoteOn)(uint8_t channel, uint8_t note, uint8_t velocity),
+                void (*callbackOnNoteOff)(uint8_t channel, uint8_t note, uint8_t velocity),
+                void (*callbackOnControlChange)(uint8_t channel, uint8_t controller, uint8_t value) = nullptr,
+                void (*callbackOnPitchBend)(uint8_t channel, uint8_t value) = nullptr) {
+        this->callbackOnNoteOn = callbackOnNoteOn;
+        this->callbackOnNoteOff = callbackOnNoteOff;
+        this->callbackOnControlChange = callbackOnControlChange;
+        this->callbackOnPitchBend = callbackOnPitchBend;
+
+        }
+
     protected:
         void (*callbackOnNoteOn)(uint8_t channel, uint8_t note, uint8_t velocity) = nullptr;
         void (*callbackOnNoteOff)(uint8_t channel, uint8_t note, uint8_t velocity) = nullptr;
