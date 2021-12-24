@@ -20,7 +20,7 @@ AppleMidiServer *SelfAppleMidi = nullptr;
 typedef void* apple_midi_cb_t;
 
 /***************************************************/
-/*! \class AppleMidi 
+/*! \class AppleMidiServer 
 
     \brief A Sender and Receiver which supports
     Apple Midi using the implementation from midibox.
@@ -41,7 +41,7 @@ class AppleMidiServer : public MidiCommon  {
             SelfAppleMidi = this;
             apple_event_handler.begin(action, midiPort);
         }
-        
+
         /// Defines the dns name
         void setName(const char* name){
             dns_name = name;
