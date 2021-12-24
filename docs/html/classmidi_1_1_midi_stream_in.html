@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default <a class="el" href="classmidi_1_1_midi_event_handler.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiEventHandler</a> or your own subclassed implementation in the constructor to process the midi records.  
+<p>Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default <a class="el" href="classmidi_1_1_midi_parser.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiParser</a> or your own subclassed implementation in the constructor to process the midi records.  
  <a href="classmidi_1_1_midi_stream_in.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_midi_stream_in_8h_source.html">MidiStreamIn.h</a>&gt;</code></p>
@@ -97,10 +97,10 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_in.html#a73ec2d94884c80251c1c6e361fd8de7a">MidiStreamIn</a> (Stream &amp;stream, <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;action)</td></tr>
 <tr class="memdesc:a73ec2d94884c80251c1c6e361fd8de7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
 <tr class="separator:a73ec2d94884c80251c1c6e361fd8de7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcba0bd0adccc688d86f9045e3955e39"><td class="memItemLeft" align="right" valign="top"><a id="adcba0bd0adccc688d86f9045e3955e39"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_in.html#adcba0bd0adccc688d86f9045e3955e39">MidiStreamIn</a> (Stream &amp;stream, <a class="el" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> &amp;handler)</td></tr>
-<tr class="memdesc:adcba0bd0adccc688d86f9045e3955e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to implement you custom <a class="el" href="classmidi_1_1_midi_event_handler.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiEventHandler</a>. <br /></td></tr>
-<tr class="separator:adcba0bd0adccc688d86f9045e3955e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab46aa6df8e812940fb428ae16febce74"><td class="memItemLeft" align="right" valign="top"><a id="ab46aa6df8e812940fb428ae16febce74"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_in.html#ab46aa6df8e812940fb428ae16febce74">MidiStreamIn</a> (Stream &amp;stream, <a class="el" href="classmidi_1_1_midi_parser.html">MidiParser</a> &amp;handler)</td></tr>
+<tr class="memdesc:ab46aa6df8e812940fb428ae16febce74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to implement you custom <a class="el" href="classmidi_1_1_midi_parser.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiParser</a>. <br /></td></tr>
+<tr class="separator:ab46aa6df8e812940fb428ae16febce74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadf64b3479f9b35bf466c49595622131"><td class="memItemLeft" align="right" valign="top"><a id="aadf64b3479f9b35bf466c49595622131"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_in.html#aadf64b3479f9b35bf466c49595622131">~MidiStreamIn</a> ()</td></tr>
 <tr class="memdesc:aadf64b3479f9b35bf466c49595622131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
@@ -183,9 +183,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getLastStatusPos</b> (
 <tr class="memitem:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memItemLeft" align="right" valign="top"><a id="a20f19c66fe44a0e3998639d4b28c11e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setConnectionStatus</b> (ConnectionStatus status)</td></tr>
 <tr class="separator:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a62ce879950628f6722ac878accc208"><td class="memItemLeft" align="right" valign="top"><a id="a4a62ce879950628f6722ac878accc208"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (Stream *stream, <a class="el" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> *handler, bool releaseHandler)</td></tr>
-<tr class="separator:a4a62ce879950628f6722ac878accc208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d28ac77f721f80b1a2c6e812b3804a9"><td class="memItemLeft" align="right" valign="top"><a id="a0d28ac77f721f80b1a2c6e812b3804a9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (Stream *stream, <a class="el" href="classmidi_1_1_midi_parser.html">MidiParser</a> *handler, bool releaseHandler)</td></tr>
+<tr class="separator:a0d28ac77f721f80b1a2c6e812b3804a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memItemLeft" align="right" valign="top"><a id="a75a6f9752d8a2428d83b27977e18d3d4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTimestamp</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg)</td></tr>
 <tr class="separator:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,9 +210,9 @@ char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="memitem:afd743f726df578bf4b31aa19c22f7520"><td class="memItemLeft" align="right" valign="top"><a id="afd743f726df578bf4b31aa19c22f7520"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>ownsHandler</b> = false</td></tr>
 <tr class="separator:afd743f726df578bf4b31aa19c22f7520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51f52bb3baf2df0e7ec6c292f889f223"><td class="memItemLeft" align="right" valign="top"><a id="a51f52bb3baf2df0e7ec6c292f889f223"></a>
-<a class="el" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pHandler</b> = nullptr</td></tr>
-<tr class="separator:a51f52bb3baf2df0e7ec6c292f889f223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8483a330723027a272b1e4dc9307b573"><td class="memItemLeft" align="right" valign="top"><a id="a8483a330723027a272b1e4dc9307b573"></a>
+<a class="el" href="classmidi_1_1_midi_parser.html">MidiParser</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pHandler</b> = nullptr</td></tr>
+<tr class="separator:a8483a330723027a272b1e4dc9307b573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7751c98be6e174fe88b509ad0e28bac1"><td class="memItemLeft" align="right" valign="top"><a id="a7751c98be6e174fe88b509ad0e28bac1"></a>
 <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiAction</b></td></tr>
 <tr class="separator:a7751c98be6e174fe88b509ad0e28bac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,7 +248,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiUdpServer</b></t
 <tr class="separator:a3e179aebdac7192a6ba3c60cbd1aea15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default <a class="el" href="classmidi_1_1_midi_event_handler.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiEventHandler</a> or your own subclassed implementation in the constructor to process the midi records. </p>
+<div class="textblock"><p>Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default <a class="el" href="classmidi_1_1_midi_parser.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiParser</a> or your own subclassed implementation in the constructor to process the midi records. </p>
 <p>You also need to call the loop method in the loop of your Arduino sketch.</p>
 <p>by Phil Schatzmann </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>

@@ -86,6 +86,7 @@ Inheritance diagram for midi::MidiUdpServer:</div>
  <div class="center">
   <img src="classmidi_1_1_midi_udp_server.png" usemap="#midi::MidiUdpServer_map" alt=""/>
   <map id="midi::MidiUdpServer_map" name="midi::MidiUdpServer_map">
+<area href="classmidi_1_1_midi_server.html" title="A simple Serial Server which which receives and creates MIDI messages." alt="midi::MidiServer" shape="rect" coords="0,56,125,80"/>
 <area href="classmidi_1_1_midi_common.html" title="The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message..." alt="midi::MidiCommon" shape="rect" coords="0,0,125,24"/>
   </map>
 </div></div>
@@ -102,6 +103,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:acd79cf6a1159879cf2491a9ff35d42d3"><td class="memItemLeft" align="right" valign="top"><a id="acd79cf6a1159879cf2491a9ff35d42d3"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> (IPAddress ip, int serverPort=5008)</td></tr>
 <tr class="separator:acd79cf6a1159879cf2491a9ff35d42d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f02552293218c62c31e7c8480c31af"><td class="memItemLeft" align="right" valign="top"><a id="a60f02552293218c62c31e7c8480c31af"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> (Stream &amp;stream)</td></tr>
+<tr class="separator:a60f02552293218c62c31e7c8480c31af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a599481be137cbc0ae57c288a593e8dcf"><td class="memItemLeft" align="right" valign="top"><a id="a599481be137cbc0ae57c288a593e8dcf"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a599481be137cbc0ae57c288a593e8dcf">channelPressure</a> (uint8_t value, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a599481be137cbc0ae57c288a593e8dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a channelPressure MIDI command to the output. <br /></td></tr>
@@ -110,6 +114,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#aa80729b4b9932838ddef4fe48242510b">controlChange</a> (uint8_t msg, uint8_t value, int8_t channel=-1)</td></tr>
 <tr class="memdesc:aa80729b4b9932838ddef4fe48242510b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a control change MIDI command to the output. <br /></td></tr>
 <tr class="separator:aa80729b4b9932838ddef4fe48242510b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664550f788299254c1e980c1e9d30000"><td class="memItemLeft" align="right" valign="top"><a id="a664550f788299254c1e980c1e9d30000"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="separator:a664550f788299254c1e980c1e9d30000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe9bfaacf6e738555f1394ef24fcb200"><td class="memItemLeft" align="right" valign="top"><a id="abe9bfaacf6e738555f1394ef24fcb200"></a>
 virtual ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><b>getConnectionStatus</b> ()</td></tr>
 <tr class="separator:abe9bfaacf6e738555f1394ef24fcb200"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,33 +183,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setConnectionStatus</
 <tr class="memitem:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memItemLeft" align="right" valign="top"><a id="a75a6f9752d8a2428d83b27977e18d3d4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTimestamp</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg)</td></tr>
 <tr class="separator:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef350801035a36a33247b74b438ebb89"><td class="memItemLeft" align="right" valign="top"><a id="aef350801035a36a33247b74b438ebb89"></a>
+<tr class="memitem:aad1359a3fabdf0484d2537b84822190b"><td class="memItemLeft" align="right" valign="top"><a id="aad1359a3fabdf0484d2537b84822190b"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>writeData</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *msg, int len)</td></tr>
-<tr class="separator:aef350801035a36a33247b74b438ebb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aad1359a3fabdf0484d2537b84822190b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a5ee469ef9f02084576f6bbbc853abc13"><td class="memItemLeft" align="right" valign="top"><a id="a5ee469ef9f02084576f6bbbc853abc13"></a>
 ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><b>connectionStatus</b></td></tr>
 <tr class="separator:a5ee469ef9f02084576f6bbbc853abc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe49c15458f0c66b22e666f1a24c8f34"><td class="memItemLeft" align="right" valign="top"><a id="afe49c15458f0c66b22e666f1a24c8f34"></a>
+<tr class="memitem:a1be4ae038de90858569dafa4c4f54aa7"><td class="memItemLeft" align="right" valign="top"><a id="a1be4ae038de90858569dafa4c4f54aa7"></a>
 <a class="el" href="classmidi_1_1_midi_stream_in.html">MidiStreamIn</a>&#160;</td><td class="memItemRight" valign="bottom"><b>in</b></td></tr>
-<tr class="separator:afe49c15458f0c66b22e666f1a24c8f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a1be4ae038de90858569dafa4c4f54aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0500bbacb1b1467bf24842dac3c0c47"><td class="memItemLeft" align="right" valign="top"><a id="ac0500bbacb1b1467bf24842dac3c0c47"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_connected</b> = false</td></tr>
 <tr class="separator:ac0500bbacb1b1467bf24842dac3c0c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff88ec9ecc155f8f55d0c165e90e06db"><td class="memItemLeft" align="right" valign="top"><a id="aff88ec9ecc155f8f55d0c165e90e06db"></a>
 char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="separator:aff88ec9ecc155f8f55d0c165e90e06db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67476dd685dd6133c1f175748a42c35d"><td class="memItemLeft" align="right" valign="top"><a id="a67476dd685dd6133c1f175748a42c35d"></a>
+<tr class="memitem:a36832920aa3b2a0a5b13907f4285e6d9"><td class="memItemLeft" align="right" valign="top"><a id="a36832920aa3b2a0a5b13907f4285e6d9"></a>
 <a class="el" href="classmidi_1_1_midi_stream_out.html">MidiStreamOut</a>&#160;</td><td class="memItemRight" valign="bottom"><b>out</b></td></tr>
-<tr class="separator:a67476dd685dd6133c1f175748a42c35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a36832920aa3b2a0a5b13907f4285e6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7118a7b332d55de6950594e87293c61"><td class="memItemLeft" align="right" valign="top"><a id="ae7118a7b332d55de6950594e87293c61"></a>
 <a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>outMessage</b></td></tr>
 <tr class="separator:ae7118a7b332d55de6950594e87293c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4795d08c08c5810a8c75cacd7d1023ae"><td class="memItemLeft" align="right" valign="top"><a id="a4795d08c08c5810a8c75cacd7d1023ae"></a>
+<tr class="memitem:a16f52934f9449debc2de29d4c476e13d"><td class="memItemLeft" align="right" valign="top"><a id="a16f52934f9449debc2de29d4c476e13d"></a>
 <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>p_action</b></td></tr>
-<tr class="separator:a4795d08c08c5810a8c75cacd7d1023ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a16f52934f9449debc2de29d4c476e13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7751c98be6e174fe88b509ad0e28bac1"><td class="memItemLeft" align="right" valign="top"><a id="a7751c98be6e174fe88b509ad0e28bac1"></a>
 <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiAction</b></td></tr>
 <tr class="separator:a7751c98be6e174fe88b509ad0e28bac1"><td class="memSeparator" colspan="2">&#160;</td></tr>

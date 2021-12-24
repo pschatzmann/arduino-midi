@@ -78,17 +78,16 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>midi {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/***************************************************/</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/***************************************************/</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_callback_action.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_callback_action.html">MidiCallbackAction</a> : <span class="keyword">public</span> <a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">if</span> (callbackOnNoteOn!=<span class="keyword">nullptr</span>) callbackOnNoteOn(channel, note, velocity);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (callbackOnNoteOff!=<span class="keyword">nullptr</span>) callbackOnNoteOff(channel, note, velocity);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/***************************************************/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_callback_action.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_callback_action.html">MidiCallbackAction</a> : <span class="keyword">public</span> <a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span> (callbackOnNoteOn!=<span class="keyword">nullptr</span>) callbackOnNoteOn(channel, note, velocity);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (callbackOnNoteOff!=<span class="keyword">nullptr</span>) callbackOnNoteOff(channel, note, velocity);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onControlChange(uint8_t channel, uint8_t controller, uint8_t value) {</div>
@@ -139,7 +138,7 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmidi_1_1_midi_action_html"><div class="ttname"><a href="classmidi_1_1_midi_action.html">midi::MidiAction</a></div><div class="ttdoc">Abstract class for a MidiAction.</div><div class="ttdef"><b>Definition:</b> MidiAction.h:15</div></div>
-<div class="ttc" id="aclassmidi_1_1_midi_callback_action_html"><div class="ttname"><a href="classmidi_1_1_midi_callback_action.html">midi::MidiCallbackAction</a></div><div class="ttdoc">Abstract class for a MidiAction.</div><div class="ttdef"><b>Definition:</b> MidiCallbackAction.h:16</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_callback_action_html"><div class="ttname"><a href="classmidi_1_1_midi_callback_action.html">midi::MidiCallbackAction</a></div><div class="ttdoc">MidiAction which can be defined with the help of callback methods.</div><div class="ttdef"><b>Definition:</b> MidiCallbackAction.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

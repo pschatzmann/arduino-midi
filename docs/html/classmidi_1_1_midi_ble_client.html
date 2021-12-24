@@ -92,14 +92,22 @@ Inheritance diagram for midi::MidiBleClient:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad6215cb9ab331c6eac8b8298412c4db7"><td class="memItemLeft" align="right" valign="top"><a id="ad6215cb9ab331c6eac8b8298412c4db7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_client.html#ad6215cb9ab331c6eac8b8298412c4db7">MidiBleClient</a> (const char *serverName, <a class="el" href="classmidi_1_1_midi_ble_event_handler.html">MidiBleEventHandler</a> *pEventHandler=nullptr)</td></tr>
-<tr class="memdesc:ad6215cb9ab331c6eac8b8298412c4db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="separator:ad6215cb9ab331c6eac8b8298412c4db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84dd40db5d96e88040ecfae823e9c6bf"><td class="memItemLeft" align="right" valign="top"><a id="a84dd40db5d96e88040ecfae823e9c6bf"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_client.html#a84dd40db5d96e88040ecfae823e9c6bf">MidiBleClient</a> (const char *serverName, <a class="el" href="classmidi_1_1_midi_ble_parser.html">MidiBleParser</a> *pEventHandler=nullptr)</td></tr>
+<tr class="memdesc:a84dd40db5d96e88040ecfae823e9c6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a84dd40db5d96e88040ecfae823e9c6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae14155807a18449e6c3a2117b99aef82"><td class="memItemLeft" align="right" valign="top"><a id="ae14155807a18449e6c3a2117b99aef82"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#ae14155807a18449e6c3a2117b99aef82">allNotesOff</a> (int8_t channel=-1)</td></tr>
 <tr class="memdesc:ae14155807a18449e6c3a2117b99aef82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a allNotesOff MIDI command to the output. <br /></td></tr>
 <tr class="separator:ae14155807a18449e6c3a2117b99aef82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6331498692fdad1b2bfb58e21c1ce407"><td class="memItemLeft" align="right" valign="top"><a id="a6331498692fdad1b2bfb58e21c1ce407"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_client.html#a6331498692fdad1b2bfb58e21c1ce407">begin</a> (BLEAdvertisedDevice *pDevice)</td></tr>
+<tr class="memdesc:a6331498692fdad1b2bfb58e21c1ce407"><td class="mdescLeft">&#160;</td><td class="mdescRight">connects to the indicated device <br /></td></tr>
+<tr class="separator:a6331498692fdad1b2bfb58e21c1ce407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149d7fcadf59b4fc97fb5497126866d1"><td class="memItemLeft" align="right" valign="top"><a id="a149d7fcadf59b4fc97fb5497126866d1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_client.html#a149d7fcadf59b4fc97fb5497126866d1">begin</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>)</td></tr>
+<tr class="memdesc:a149d7fcadf59b4fc97fb5497126866d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">starts the discover and connects if the serverName was found <br /></td></tr>
+<tr class="separator:a149d7fcadf59b4fc97fb5497126866d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a599481be137cbc0ae57c288a593e8dcf"><td class="memItemLeft" align="right" valign="top"><a id="a599481be137cbc0ae57c288a593e8dcf"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a599481be137cbc0ae57c288a593e8dcf">channelPressure</a> (uint8_t value, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a599481be137cbc0ae57c288a593e8dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a channelPressure MIDI command to the output. <br /></td></tr>
@@ -155,14 +163,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#afdc7e84bfe245486503768f271680e1f">setMidiAction</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>)</td></tr>
 <tr class="memdesc:afdc7e84bfe245486503768f271680e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the voice which is used in inbound processing. <br /></td></tr>
 <tr class="separator:afdc7e84bfe245486503768f271680e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a5c65672b469dae1d01177ba9f249ff"><td class="memItemLeft" align="right" valign="top"><a id="a0a5c65672b469dae1d01177ba9f249ff"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_client.html#a0a5c65672b469dae1d01177ba9f249ff">start</a> (BLEAdvertisedDevice *pDevice)</td></tr>
-<tr class="memdesc:a0a5c65672b469dae1d01177ba9f249ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">connects to the indicated device <br /></td></tr>
-<tr class="separator:a0a5c65672b469dae1d01177ba9f249ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a083e342e202d32400ba517e7d40619d5"><td class="memItemLeft" align="right" valign="top"><a id="a083e342e202d32400ba517e7d40619d5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_client.html#a083e342e202d32400ba517e7d40619d5">start</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>)</td></tr>
-<tr class="memdesc:a083e342e202d32400ba517e7d40619d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">starts the discover and connects if the serverName was found <br /></td></tr>
-<tr class="separator:a083e342e202d32400ba517e7d40619d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a893c26eb05a3b52e1168d9713bc67096"><td class="memItemLeft" align="right" valign="top"><a id="a893c26eb05a3b52e1168d9713bc67096"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_client.html#a893c26eb05a3b52e1168d9713bc67096">writeData</a> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg, int len)</td></tr>
 <tr class="memdesc:a893c26eb05a3b52e1168d9713bc67096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a message. <br /></td></tr>

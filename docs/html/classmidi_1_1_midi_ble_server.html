@@ -94,16 +94,23 @@ Inheritance diagram for midi::MidiBleServer:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a088de9cfdaef1106d379dd5362df25dc"><td class="memItemLeft" align="right" valign="top"><a id="a088de9cfdaef1106d379dd5362df25dc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_server.html#a088de9cfdaef1106d379dd5362df25dc">MidiBleServer</a> (const char *name, <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>, int channelFilter=-1)</td></tr>
-<tr class="memdesc:a088de9cfdaef1106d379dd5362df25dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor which creates <a class="el" href="classmidi_1_1_midi_ble_event_handler.html" title="A simple Midi Parser for BLE Midi messages that calls the corresponding events.">MidiBleEventHandler</a> from <a class="el" href="classmidi_1_1_midi_ble_event_handler.html" title="A simple Midi Parser for BLE Midi messages that calls the corresponding events.">MidiBleEventHandler</a> internally. <br /></td></tr>
+<tr class="memdesc:a088de9cfdaef1106d379dd5362df25dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor which creates <a class="el" href="classmidi_1_1_midi_ble_parser.html" title="A simple Midi Parser for BLE Midi messages that calls the corresponding events.">MidiBleParser</a> from <a class="el" href="classmidi_1_1_midi_ble_parser.html" title="A simple Midi Parser for BLE Midi messages that calls the corresponding events.">MidiBleParser</a> internally. <br /></td></tr>
 <tr class="separator:a088de9cfdaef1106d379dd5362df25dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b755ad51ff640e03ba659546e2eda04"><td class="memItemLeft" align="right" valign="top"><a id="a5b755ad51ff640e03ba659546e2eda04"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_server.html#a5b755ad51ff640e03ba659546e2eda04">MidiBleServer</a> (const char *name, <a class="el" href="classmidi_1_1_midi_ble_event_handler.html">MidiBleEventHandler</a> *pEventHandler=nullptr)</td></tr>
-<tr class="memdesc:a5b755ad51ff640e03ba659546e2eda04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="separator:a5b755ad51ff640e03ba659546e2eda04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a638f856c98c372fc8c701dbd3b456d7a"><td class="memItemLeft" align="right" valign="top"><a id="a638f856c98c372fc8c701dbd3b456d7a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_server.html#a638f856c98c372fc8c701dbd3b456d7a">MidiBleServer</a> (const char *name, <a class="el" href="classmidi_1_1_midi_ble_parser.html">MidiBleParser</a> *pEventHandler=nullptr)</td></tr>
+<tr class="memdesc:a638f856c98c372fc8c701dbd3b456d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:a638f856c98c372fc8c701dbd3b456d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae14155807a18449e6c3a2117b99aef82"><td class="memItemLeft" align="right" valign="top"><a id="ae14155807a18449e6c3a2117b99aef82"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#ae14155807a18449e6c3a2117b99aef82">allNotesOff</a> (int8_t channel=-1)</td></tr>
 <tr class="memdesc:ae14155807a18449e6c3a2117b99aef82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a allNotesOff MIDI command to the output. <br /></td></tr>
 <tr class="separator:ae14155807a18449e6c3a2117b99aef82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c92607f29fb6980c593aa0d7fbe78e"><td class="memItemLeft" align="right" valign="top"><a id="af4c92607f29fb6980c593aa0d7fbe78e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="separator:af4c92607f29fb6980c593aa0d7fbe78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacab3b85bf2fc7565f51eae9e8632251"><td class="memItemLeft" align="right" valign="top"><a id="aacab3b85bf2fc7565f51eae9e8632251"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_server.html#aacab3b85bf2fc7565f51eae9e8632251">begin</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>)</td></tr>
+<tr class="memdesc:aacab3b85bf2fc7565f51eae9e8632251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the BLE server. <br /></td></tr>
+<tr class="separator:aacab3b85bf2fc7565f51eae9e8632251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a599481be137cbc0ae57c288a593e8dcf"><td class="memItemLeft" align="right" valign="top"><a id="a599481be137cbc0ae57c288a593e8dcf"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a599481be137cbc0ae57c288a593e8dcf">channelPressure</a> (uint8_t value, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a599481be137cbc0ae57c288a593e8dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a channelPressure MIDI command to the output. <br /></td></tr>
@@ -155,13 +162,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#afdc7e84bfe245486503768f271680e1f">setMidiAction</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>)</td></tr>
 <tr class="memdesc:afdc7e84bfe245486503768f271680e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the voice which is used in inbound processing. <br /></td></tr>
 <tr class="separator:afdc7e84bfe245486503768f271680e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fc7bb9fc004182ae85c14b735baa16a"><td class="memItemLeft" align="right" valign="top"><a id="a7fc7bb9fc004182ae85c14b735baa16a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr>
-<tr class="separator:a7fc7bb9fc004182ae85c14b735baa16a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fb41839e32412bb994aca8f131cbcbd"><td class="memItemLeft" align="right" valign="top"><a id="a7fb41839e32412bb994aca8f131cbcbd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_ble_server.html#a7fb41839e32412bb994aca8f131cbcbd">start</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>)</td></tr>
-<tr class="memdesc:a7fb41839e32412bb994aca8f131cbcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the BLE server. <br /></td></tr>
-<tr class="separator:a7fb41839e32412bb994aca8f131cbcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac085ed48502b72a7ecbbe90e408aa739"><td class="memItemLeft" align="right" valign="top"><a id="ac085ed48502b72a7ecbbe90e408aa739"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>writeData</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg, int len)</td></tr>
 <tr class="separator:ac085ed48502b72a7ecbbe90e408aa739"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,9 +200,9 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> =nul
 <tr class="memitem:acf7793aef1b91973e5e8965324fff5b8"><td class="memItemLeft" align="right" valign="top"><a id="acf7793aef1b91973e5e8965324fff5b8"></a>
 BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><b>pCharacteristic</b> =nullptr</td></tr>
 <tr class="separator:acf7793aef1b91973e5e8965324fff5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ba88ef5247583284245f38780bd7f07"><td class="memItemLeft" align="right" valign="top"><a id="a9ba88ef5247583284245f38780bd7f07"></a>
-<a class="el" href="classmidi_1_1_midi_ble_event_handler.html">MidiBleEventHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pEventHandler</b> =nullptr</td></tr>
-<tr class="separator:a9ba88ef5247583284245f38780bd7f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6186fee5e375c72f0cc60c6c7d06e0f9"><td class="memItemLeft" align="right" valign="top"><a id="a6186fee5e375c72f0cc60c6c7d06e0f9"></a>
+<a class="el" href="classmidi_1_1_midi_ble_parser.html">MidiBleParser</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pEventHandler</b> =nullptr</td></tr>
+<tr class="separator:a6186fee5e375c72f0cc60c6c7d06e0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7751c98be6e174fe88b509ad0e28bac1"><td class="memItemLeft" align="right" valign="top"><a id="a7751c98be6e174fe88b509ad0e28bac1"></a>
 <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiAction</b></td></tr>
 <tr class="separator:a7751c98be6e174fe88b509ad0e28bac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
