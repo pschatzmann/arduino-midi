@@ -34,7 +34,7 @@
 #endif
 
 //#include "Arduino.h"
-#include "MidiEventHandler.h"
+#include "MidiParser.h"
 #include "MidiAction.h"
 #include <stdint.h>
 

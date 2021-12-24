@@ -7,12 +7,12 @@ const char* APP_SERVER = "MidiBleServer";
 
 MidiBleServer::MidiBleServer(const char* name, MidiAction *midiAction, int channelFilter):MidiCommon(){
      this->name = name;
-     this->pEventHandler = new MidiBleEventHandler(midiAction, channelFilter);
+     this->pEventHandler = new MidiBleParser(midiAction, channelFilter);
      this->connectionStatus = Unconnected;
 }
 
 
-MidiBleServer::MidiBleServer(const char* name, MidiBleEventHandler* pEventHandler)
+MidiBleServer::MidiBleServer(const char* name, MidiBleParser* pEventHandler)
  : MidiCommon() {
      this->name = name;
      this->pEventHandler = pEventHandler;
@@ -44,8 +44,8 @@ void MidiBleServer :: begin() {
                     
     if (this->pMidiAction != nullptr) {                
         if (this->pEventHandler == nullptr){
-            MIDI_LOGD( "Creating new MidiBleEventHandler for MidiAction");
-            this->pEventHandler =  new MidiBleEventHandler(pMidiAction, this->receivingChannel);
+            MIDI_LOGD( "Creating new MidiBleParser for MidiAction");
+            this->pEventHandler =  new MidiBleParser(pMidiAction, this->receivingChannel);
         }
         MIDI_LOGD( "Setting callback for characteristic");
         pCharacteristic->setCallbacks(this->pEventHandler);

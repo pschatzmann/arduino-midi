@@ -5,10 +5,10 @@
 namespace midi {
 
 const char* APP_CLIENT = "MidiBleClient";
-MidiBleEventHandler *pEventHandler;
+MidiBleParser *pEventHandler;
 
 
-MidiBleClient :: MidiBleClient(const char* name, MidiBleEventHandler* pEventHandler) {
+MidiBleClient :: MidiBleClient(const char* name, MidiBleParser* pEventHandler) {
     this->name = name;
     this->connectionStatus = Unconnected;
 }

@@ -1,16 +1,16 @@
-#include "MidiEventHandler.h"
+#include "MidiParser.h"
 #include "MidiLogger.h"
 
 namespace midi {
 
-MidiEventHandler::MidiEventHandler(MidiAction *p_MidiAction, int filter_channel){
+MidiParser::MidiParser(MidiAction *p_MidiAction, int filter_channel){
   begin(p_MidiAction,filter_channel);
 };
 
-MidiEventHandler::~MidiEventHandler(){
+MidiParser::~MidiParser(){
 }
 
-void MidiEventHandler::begin(MidiAction *p_MidiAction, int filter_channel){
+void MidiParser::begin(MidiAction *p_MidiAction, int filter_channel){
   this->p_MidiAction = p_MidiAction;
   this->filter_channel = filter_channel;
 }
@@ -21,7 +21,7 @@ void MidiEventHandler::begin(MidiAction *p_MidiAction, int filter_channel){
  * @param [in] len length of the msg
  */
 
-void MidiEventHandler::parse(uint8_t* msg, uint8_t len){
+void MidiParser::parse(uint8_t* msg, uint8_t len){
   MIDI_LOGD( "parse: len: %d", len);
 
   int pos = 0;
@@ -60,7 +60,7 @@ void MidiEventHandler::parse(uint8_t* msg, uint8_t len){
   }
 }
 
-void MidiEventHandler::onCommand(uint8_t channel, uint8_t status, uint8_t p1,uint8_t p2 ){
+void MidiParser::onCommand(uint8_t channel, uint8_t status, uint8_t p1,uint8_t p2 ){
   MIDI_LOGD( "onCommand channel:%d, status:%d, p1:%d,  p2:%d", (int)channel, (int)status, (int)p1, (int)p2);
   MIDI_LOGD( "onCommand filtered channel: %d ", filter_channel);
   if (filter_channel==-1 || filter_channel == channel) {
@@ -84,21 +84,21 @@ void MidiEventHandler::onCommand(uint8_t channel, uint8_t status, uint8_t p1,uin
   }
 }
 
-void MidiEventHandler::onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity){
+void MidiParser::onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity){
     MIDI_LOGI( "noteOn note:%d, velocity:%d, channel:%d", (int)note, (int)velocity, (int)channel);
     p_MidiAction->onNoteOn(channel, note, velocity);
 };
 
-void MidiEventHandler::onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity){
+void MidiParser::onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity){
     MIDI_LOGI( "noteOff note:%d, velocity:%d, channel:%d", (int)note, (int)velocity, (int)channel);
     p_MidiAction->onNoteOff(channel, note, velocity);
 };
-void MidiEventHandler::onControlChange(uint8_t channel, uint8_t controller, uint8_t value){
+void MidiParser::onControlChange(uint8_t channel, uint8_t controller, uint8_t value){
     MIDI_LOGI( "onControlChange  channel:%d", (int)channel);
     p_MidiAction->onControlChange(channel, controller, value);
 };
 
-void MidiEventHandler::onPitchBend(uint8_t channel, uint8_t value){
+void MidiParser::onPitchBend(uint8_t channel, uint8_t value){
     MIDI_LOGI( "onPitchBend  channel:%d", (int)channel);
     p_MidiAction->onPitchBend(channel, value);
 };

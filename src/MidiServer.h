@@ -24,7 +24,7 @@ class MidiServer : public MidiCommon {
          
         bool begin(Stream &stream){
             MIDI_LOGI( __PRETTY_FUNCTION__);
-            in.setup(&stream, new MidiEventHandler(p_action), true);
+            in.setup(&stream, new MidiParser(p_action), true);
             out.setup(&stream);
             return true;
         }

@@ -8,7 +8,7 @@
 namespace midi {
 
 /***************************************************/
-/*! \class MidiEventHandler
+/*! \class MidiParser
     \brief  A simple Midi Parser which calls the corresponding events. 
     It supports Midi and BLE Midi messages. The main entry point
     is the parse command which calls the related methods.
@@ -26,11 +26,11 @@ namespace midi {
 */
 /***************************************************/
 
-class MidiEventHandler  {
+class MidiParser  {
     public:
-        MidiEventHandler() = default;
-        MidiEventHandler(MidiAction *MidiAction, int filter_channel = -1 );
-         ~MidiEventHandler();
+        MidiParser() = default;
+        MidiParser(MidiAction *MidiAction, int filter_channel = -1 );
+         ~MidiParser();
 
         /// Assigns the MidiAction and optinally defines a midi channel
         void begin(MidiAction *MidiAction, int filter_channel = -1 );

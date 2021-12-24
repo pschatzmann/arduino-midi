@@ -59,7 +59,7 @@ class AppleMidiServer : public MidiCommon  {
         }
 
     protected:
-        MidiEventHandler apple_event_handler;
+        MidiParser apple_event_handler;
         WiFiUDP udpControl;
         WiFiUDP udpData;
         uint8_t rx_buffer[MIDI_BUFFER_SIZE];

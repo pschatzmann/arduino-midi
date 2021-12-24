@@ -4,7 +4,7 @@
 #if MIDI_BLE_ACTIVE
 
 #include "MidiCommon.h"
-#include "MidiBleEventHandler.h"
+#include "MidiBleParser.h"
 
 
 namespace midi {
@@ -22,7 +22,7 @@ namespace midi {
 class MidiBleClient : public MidiCommon {
     public:
         //! Default constructor
-        MidiBleClient(const char* serverName, MidiBleEventHandler* pEventHandler = nullptr);
+        MidiBleClient(const char* serverName, MidiBleParser* pEventHandler = nullptr);
 
         //! starts the discover and connects if the serverName was found
         void begin(MidiAction &MidiAction);

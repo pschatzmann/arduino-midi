@@ -4,7 +4,7 @@
 #if MIDI_BLE_ACTIVE
 
 #include "MidiCommon.h"
-#include "MidiBleEventHandler.h"
+#include "MidiBleParser.h"
 
 namespace midi {
 
@@ -20,8 +20,8 @@ namespace midi {
 class MidiBleServer : public MidiCommon {
     public:
         //! Default constructor
-        MidiBleServer(const char* name, MidiBleEventHandler* pEventHandler=nullptr);
-        //! Constructor which creates MidiBleEventHandler from MidiBleEventHandler internally
+        MidiBleServer(const char* name, MidiBleParser* pEventHandler=nullptr);
+        //! Constructor which creates MidiBleParser from MidiBleParser internally
         MidiBleServer(const char* name, MidiAction *MidiAction, int channelFilter = -1);
             
         //! Starts the BLE server
@@ -31,7 +31,7 @@ class MidiBleServer : public MidiCommon {
 
 
     protected:
-        MidiBleEventHandler *pEventHandler=nullptr;
+        MidiBleParser *pEventHandler=nullptr;
         BLEServer *pServer=nullptr;
         BLECharacteristic* pCharacteristic=nullptr;
         const char *name=nullptr;

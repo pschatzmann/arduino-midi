@@ -4,7 +4,7 @@
 #if MIDI_ACTIVE
 #include "Stream.h"
 #include "MidiCommon.h"
-#include "MidiEventHandler.h"
+#include "MidiParser.h"
 
 namespace midi {
 
@@ -14,7 +14,7 @@ namespace midi {
 /*! \class MidiStreamIn
     \brief Input of Midi Messages from the Aruduino 
     HardwareSerial port. You need to give the default
-    MidiEventHandler or your own subclassed
+    MidiParser or your own subclassed
     implementation in the constructor to process
      the midi records.
 
@@ -28,8 +28,8 @@ class MidiStreamIn : public MidiCommon {
     public:
         /// Default Constructor
         MidiStreamIn(Stream &stream, MidiAction &action);
-        /// Constructor to implement you custom MidiEventHandler
-        MidiStreamIn(Stream &stream, MidiEventHandler &handler);
+        /// Constructor to implement you custom MidiParser
+        MidiStreamIn(Stream &stream, MidiParser &handler);
         /// Destructor
         ~MidiStreamIn();
         // Parse/Process the next midi message
@@ -42,14 +42,14 @@ class MidiStreamIn : public MidiCommon {
 
         int getLastStatusPos(uint8_t *buffer, int endPos);
         Stream *pStream = nullptr;
-        MidiEventHandler *pHandler = nullptr;
+        MidiParser *pHandler = nullptr;
         bool ownsHandler = false;
         uint8_t buffer[BUFFER_LEN];
         int startPos = 0;
 
         MidiStreamIn() = default;
 
-        void setup(Stream *stream, MidiEventHandler *handler, bool releaseHandler);
+        void setup(Stream *stream, MidiParser *handler, bool releaseHandler);
 };
 
 } // namespace

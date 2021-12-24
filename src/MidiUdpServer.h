@@ -37,7 +37,7 @@ class MidiUdpServer : public MidiServer {
             }
 
             udp = new MidiUdp(ip, serverPort);
-            in.setup(udp, new MidiEventHandler(p_action), true);
+            in.setup(udp, new MidiParser(p_action), true);
             out.setup(udp);
             return true;
         }

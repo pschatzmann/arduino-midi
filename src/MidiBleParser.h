@@ -5,14 +5,14 @@
 
 #include "Arduino.h"
 #include "MidiAction.h"
-#include "MidiEventHandler.h"
+#include "MidiParser.h"
 #include "BLECharacteristic.h"
 #include "MidiLogger.h"
 
 namespace midi {
 
 /***************************************************/
-/*! \class MidiBleEventHandler
+/*! \class MidiBleParser
     \brief  A simple Midi Parser for BLE Midi messages
     that calls the corresponding events. 
   
@@ -24,11 +24,11 @@ namespace midi {
     by Phil Schatzmann
 */
 /***************************************************/
-class MidiBleEventHandler 
-: public BLECharacteristicCallbacks , public  MidiEventHandler {
+class MidiBleParser 
+: public BLECharacteristicCallbacks , public  MidiParser {
     public:
-        MidiBleEventHandler(MidiAction *MidiAction, int channelFilter = -1 );
-        virtual ~MidiBleEventHandler();
+        MidiBleParser(MidiAction *MidiAction, int channelFilter = -1 );
+        virtual ~MidiBleParser();
         virtual void onRead(BLECharacteristic* pCharacteristic);
 	    virtual void onWrite(BLECharacteristic* pCharacteristic);
 

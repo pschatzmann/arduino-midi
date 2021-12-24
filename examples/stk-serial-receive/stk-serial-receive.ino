@@ -13,7 +13,7 @@
 ArdI2SOut i2s;
 Clarinet clarinet(440);
 StkMidiAction action(&clarinet);
-MidiEventHandler handler(&action);
+MidiParser handler(&action);
 MidiStreamIn in(Serial, handler);
 
 void setup() {

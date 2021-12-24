@@ -8,7 +8,8 @@ namespace midi {
 
 /***************************************************/
 /*! \class MidiCallbackAction
-    \brief Abstract class for a MidiAction
+    \brief MidiAction which can be defined with the
+    help of callback methods
 
     by Phil Schatzmann
 */
@@ -22,7 +23,6 @@ class MidiCallbackAction : public MidiAction {
 
         virtual void onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity) {
             if (callbackOnNoteOff!=nullptr) callbackOnNoteOff(channel, note, velocity);
-
         }
 
         virtual void onControlChange(uint8_t channel, uint8_t controller, uint8_t value) {

@@ -1,22 +1,22 @@
-#include "MidiBleEventHandler.h"
+#include "MidiBleParser.h"
 #if MIDI_BLE_ACTIVE
 
 namespace midi {
 
-const char * APP_EVENT_HDLR = "MidiBleEventHandler";
+const char * APP_EVENT_HDLR = "MidiBleParser";
 
-MidiBleEventHandler::MidiBleEventHandler(MidiAction *p_MidiAction, int channelFilter)
-: MidiEventHandler(p_MidiAction, channelFilter) {
+MidiBleParser::MidiBleParser(MidiAction *p_MidiAction, int channelFilter)
+: MidiParser(p_MidiAction, channelFilter) {
 };
 
-MidiBleEventHandler::~MidiBleEventHandler(){
+MidiBleParser::~MidiBleParser(){
 }
 
 /**
  * @brief Callback function to support a read request.
  * @param [in] pCharacteristic The characteristic that is the source of the event.
  */
-void MidiBleEventHandler::onRead(BLECharacteristic* pCharacteristic) {
+void MidiBleParser::onRead(BLECharacteristic* pCharacteristic) {
 	MIDI_LOGD( "%s - onRead",__func__);
 } // onRead
 
@@ -25,7 +25,7 @@ void MidiBleEventHandler::onRead(BLECharacteristic* pCharacteristic) {
  * @brief Callback function to support a write request.
  * @param [in] pCharacteristic The characteristic that is the source of the event.
  */
-void MidiBleEventHandler::onWrite(BLECharacteristic* pCharacteristic) {
+void MidiBleParser::onWrite(BLECharacteristic* pCharacteristic) {
 	MIDI_LOGD( "%s, onWrite",__func__);
   const char* str = pCharacteristic->getValue().c_str();
   int len = pCharacteristic->getValue().length();

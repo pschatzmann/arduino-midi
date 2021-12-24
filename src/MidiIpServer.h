@@ -54,7 +54,7 @@ class MidiIpServer : public MidiServer {
                     client = p_wifi_server->accept();
                     if (client.connected()){
                         MIDI_LOGI("MidiIpServer->connected");
-                        in.setup(&client, new MidiEventHandler(p_action), true);
+                        in.setup(&client, new MidiParser(p_action), true);
                         out.setup(&client);
                         out.resetAllControllers();
                     }

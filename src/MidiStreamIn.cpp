@@ -6,10 +6,10 @@ namespace midi {
 
 MidiStreamIn :: MidiStreamIn(Stream &stream, MidiAction &action){
     MIDI_LOGI( __PRETTY_FUNCTION__);
-    setup(&stream, new MidiEventHandler(&action), true);
+    setup(&stream, new MidiParser(&action), true);
 }
 
-MidiStreamIn :: MidiStreamIn(Stream &stream, MidiEventHandler &handler) {
+MidiStreamIn :: MidiStreamIn(Stream &stream, MidiParser &handler) {
     MIDI_LOGI( __PRETTY_FUNCTION__);
     setup(&stream, &handler, false);
 }
@@ -22,7 +22,7 @@ MidiStreamIn :: ~MidiStreamIn(){
     }
 }
 
-void MidiStreamIn :: setup(Stream *stream, MidiEventHandler *handler, bool releaseHandler) {
+void MidiStreamIn :: setup(Stream *stream, MidiParser *handler, bool releaseHandler) {
     MIDI_LOGI( __PRETTY_FUNCTION__);
     pStream = stream;
     // without this I was getting a 2 sec delay!
