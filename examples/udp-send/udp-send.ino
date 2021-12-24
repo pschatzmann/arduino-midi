@@ -23,10 +23,7 @@ const char *PWD = "your password";
 uint16_t note = 64; // 0 to 128
 uint16_t amplitude = 100; // 0 to 128
 
-void setup() {
-  Serial.begin(115200);
-  
-  // startup wifi
+void setupWIFI() {
   WiFi.begin(SSID, PWD);
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print('.');
@@ -35,7 +32,11 @@ void setup() {
 
   Serial.print("Connected to IP address: ");
   Serial.println(WiFi.localIP());
-  
+}
+
+void setup() {
+  Serial.begin(115200);
+  setupWIFI();    
 }
 
 void loop() {

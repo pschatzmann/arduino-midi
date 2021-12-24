@@ -24,6 +24,10 @@ bool MidiUdp :: isValidHost() {
     return this->isValidHostFlag;
 }
 
+void MidiUdp :: setTargetPort(int port){
+    targetPort = port;   
+}
+
 size_t MidiUdp :: write(const uint8_t * buffer, size_t size ) {
     size_t result = 0;
     if (this->beginPacket(targetUdpAddress, targetPort) == 1){

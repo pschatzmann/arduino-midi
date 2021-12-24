@@ -27,7 +27,7 @@ class MidiBleServer : public MidiCommon {
         //! Starts the BLE server
         void start(MidiAction &MidiAction);
         void start();
-        void  writeData(MidiMessage *pMsg, int len);
+        void writeData(MidiMessage *pMsg, int len);
 
 
     protected:

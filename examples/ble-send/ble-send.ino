@@ -9,7 +9,6 @@
  * 
  */
 #include <Midi.h>
-#include <StkAll.h>
 
 MidiBleServer ble("MidiServer");
 

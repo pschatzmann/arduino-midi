@@ -8,22 +8,27 @@
  * 
  */
 #include <Midi.h>
-#include <StkAll.h>
 
-Clarinet clarinet(440);
-StkMidiAction action; // or implement your own handler
+
+MidiCallbackAction action;
 MidiBleServer ble("MidiServer", &action);
 
-AudioKitStream kit; // audio output to ESP32 AudioKit
-ArdStreamOut output(kit);
+void onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) {
+  Serial.print("onNoteOn: ");
+  Serial.println(note);
+}
+
+void onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity) {
+  Serial.print("onNoteOff: ");
+  Serial.println(note);
+}
 
 void setup() {
   Serial.begin(115200);
 
-  action.addInstrument(&clarinet, 0);
+  action.setCallbacks(onNoteOn, onNoteOff);
   ble.start(action);
 }
 
 void loop() {
-  output.tick( action.tick() );
 }

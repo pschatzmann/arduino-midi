@@ -33,15 +33,23 @@ class MidiStreamIn : public MidiCommon {
         /// Destructor
         ~MidiStreamIn();
         // Parse/Process the next midi message
-        void loop();
+        bool loop();
         
     protected:
+        friend class MidiServer;
+        friend class MidiIpServer;
+        friend class MidiUdpServer;
+
         int getLastStatusPos(uint8_t *buffer, int endPos);
         Stream *pStream = nullptr;
         MidiEventHandler *pHandler = nullptr;
         bool ownsHandler = false;
         uint8_t buffer[BUFFER_LEN];
         int startPos = 0;
+
+        MidiStreamIn() = default;
+
+        void setup(Stream *stream, MidiEventHandler *handler, bool releaseHandler);
 };
 
 } // namespace

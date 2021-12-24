@@ -27,6 +27,7 @@ class MidiUdp : public WiFiUDP { // EthernetUDP {
         MidiUdp(IPAddress targetUdpAddress,int targetPort);
         size_t write(const uint8_t * buffer,size_t size );
         bool isValidHost();
+        void setTargetPort(int port);
 
     protected:
         IPAddress targetUdpAddress;

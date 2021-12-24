@@ -17,12 +17,20 @@ namespace midi {
 class MidiStreamOut : public MidiCommon {
     public:
         /// Default Constructor
-        MidiStreamOut(Stream &stream);
+        MidiStreamOut(Print &stream);
 
     protected:
+        friend class MidiServer;
+        friend class MidiIpServer;
+        friend class MidiUdpServer;
+
+        MidiStreamOut() = default;
+
         virtual void writeData(MidiMessage *pMsg, int len);
 
-        Stream *pStream;
+        virtual void setup(Print *stream);
+
+        Print *pStream;
         uint8_t buffer[4];
 };
 

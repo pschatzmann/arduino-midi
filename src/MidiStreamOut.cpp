@@ -1,12 +1,16 @@
 
 #include "MidiStreamOut.h"
+#include "MidiLogger.h"
 
 namespace midi {
 
-MidiStreamOut :: MidiStreamOut(Stream &stream) {
-    pStream = &stream;
-    
+MidiStreamOut :: MidiStreamOut(Print &stream) {
+    setup(&stream);
     //this->setConnectionStatus(stream ? Connected : Unconnected);
+}
+
+void MidiStreamOut :: setup(Print *stream){
+    pStream = stream;
 }
 
 void MidiStreamOut :: writeData(MidiMessage *pMsg, int len) {
@@ -26,8 +30,9 @@ void MidiStreamOut :: writeData(MidiMessage *pMsg, int len) {
         size++;
     }
     pStream->write(buffer,size);
-    pStream->flush();
 }
+
+
 
 } // namespace
 

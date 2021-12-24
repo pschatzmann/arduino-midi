@@ -1,30 +1,28 @@
 /**
- * @file MidiToIP.ino
+ * @file ip-send.ino
  * @author Phil Schatzmann
- * @brief Example of handling midi input over ip - sound beneration requires arduino-stk
- * 
- * 
+ * @brief Midi output over ip 
+
  * @copyright Copyright (c) 2021
  * 
  */
+#include "Midi.h"
+
 #include <WiFi.h>
 #include <WiFiMulti.h>
-#include <Midi.h>
-#include <StkAll.h>
 
-IPAddress ip(192, 168, 1, 35);
-int port = 9999;
+IPAddress target_ip(192, 168, 1, 38);
+int target_port = 5008;
 WiFiClient client;
-MidiStreamOut out(client);
 const char *SSID = "your ssid";
 const char *PWD = "your password";
+MidiStreamOut out(client);
 
 uint16_t note = 64; // 0 to 128
 uint16_t amplitude = 100; // 0 to 128
 
-void setup() {
-  Serial.begin(115200);
-  
+
+void setupWIFI() {
   WiFi.begin(SSID, PWD);
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print('.');
@@ -33,8 +31,13 @@ void setup() {
 
   Serial.print("Connected to IP address: ");
   Serial.println(WiFi.localIP());
+}
 
-  client.connect(ip, port);
+void setup() {
+  Serial.begin(115200);
+
+  setupWIFI();
+  client.connect(target_ip, target_port);
 }
 
 void loop() {

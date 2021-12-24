@@ -6,17 +6,20 @@ of my projects.
 
 The library supports
 
-- Midi over an Arduino Streams (e.g. Serial)
-- Midi over TCP/IP
-- Midi over Bluetooth
+- Midi over an Arduino Streams
+  - Midi over Serial
+  - Midi over Bluetooth Serial
+  - Midi over TCP/IP
+  - Midi over UDP
 - Midi over BLE
+- Apple Midi
 
 
 Please note that most of the examples that generate sound are based on __Arduino-STK__!
 
 ### Documentation
 
-The functionality is based on Arduino Streams (Except the BLE functionality). You give the [MidiStreamOut](https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html) class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP. 
+The basic functionality is based on Arduino Streams (Except the BLE functionality). You give the [MidiStreamOut](https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html) class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP. 
 
 ```
 #include "Midi.h"
@@ -61,8 +64,16 @@ void loop() {
 }
 
 ```
+We also provide some higher level API  "Server" classes which can be used for both, input and output: MidiServer, MidiIpServer, AppleMidiServer...
 
 Here is the generated [Class Documentation](https://pschatzmann.github.io/arduino-midi/html/annotated.html). 
+
+
+### Namespace
+
+All the midi classes are defined using the midi namespace. If you include Midi.h the using namespace is already defined. However, if you include the individual class specific header files you need to add a using namespace midi; in your sketch.
+
+
 
 ### Installation in Arduino
 
