@@ -16,7 +16,7 @@
 namespace midi {
 
 class AppleMidiServer;
-AppleMidiServer *SelfAppleMidi = nullptr;
+extern AppleMidiServer *SelfAppleMidi;
 typedef void* apple_midi_cb_t;
 
 /***************************************************/

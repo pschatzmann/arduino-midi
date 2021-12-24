@@ -2,12 +2,10 @@
 
 namespace midi {
 
-void AppleMidiServer :: setName(const char* name){
-    dns_name = name;
-}
+AppleMidiServer *SelfAppleMidi = nullptr;
 
 /// Starts the listening 
-bool AppleMidiServer ::  begin(int control_port=APPLEMIDI_DEFAULT_PORT){
+bool AppleMidiServer ::  begin(int control_port){
     MIDI_LOGI( __PRETTY_FUNCTION__);
     if (WiFi.status() != WL_CONNECTED){
         MIDI_LOGE("WIFI is not connected");
@@ -26,7 +24,7 @@ bool AppleMidiServer ::  begin(int control_port=APPLEMIDI_DEFAULT_PORT){
 
 
 /// Starts a session with the indicated address
-bool AppleMidiServer :: begin(IPAddress adress, int control_port=APPLEMIDI_DEFAULT_PORT, int data_port_opt=-1){
+bool AppleMidiServer :: begin(IPAddress adress, int control_port, int data_port_opt){
     MIDI_LOGI( __PRETTY_FUNCTION__);
     if (WiFi.status() != WL_CONNECTED){
         MIDI_LOGE("WIFI is not connected");
@@ -118,7 +116,7 @@ void AppleMidiServer :: setupLogger() {
 }
 
 /// Callback method to parse midi message
-static void AppleMidiServer ::  applemidi_callback_midi_message_received(uint8_t port, uint32_t timestamp, uint8_t midi_status, uint8_t *remaining_message, size_t len, size_t continued_sysex_pos) {
+void AppleMidiServer :: applemidi_callback_midi_message_received(uint8_t port, uint32_t timestamp, uint8_t midi_status, uint8_t *remaining_message, size_t len, size_t continued_sysex_pos) {
     MIDI_LOGI("applemidi_callback_midi_message_received: port=%d", port);
     // the parser expects a midi message with the status and the parameters
     uint8_t message[len+1];
@@ -128,7 +126,7 @@ static void AppleMidiServer ::  applemidi_callback_midi_message_received(uint8_t
 }
 
 /// Callback method to send UDP message with the help of the Arduino API
-static int32_t AppleMidiServer ::  applemidi_if_send_udp_datagram(uint8_t *ip_addr, uint16_t port, uint8_t *tx_data, size_t tx_len){
+int32_t AppleMidiServer :: applemidi_if_send_udp_datagram(uint8_t *ip_addr, uint16_t port, uint8_t *tx_data, size_t tx_len){
     MIDI_LOGI( "applemidi_if_send_udp_datagram: port=%d", port);
     IPAddress *p_adr = (IPAddress *) ip_addr;
     WiFiUDP *p_udp = port == SelfAppleMidi->remote_port ? &(SelfAppleMidi->udpControl) :  &(SelfAppleMidi->udpData);

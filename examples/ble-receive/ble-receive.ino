@@ -27,7 +27,7 @@ void setup() {
   Serial.begin(115200);
 
   action.setCallbacks(onNoteOn, onNoteOff);
-  ble.start(action);
+  ble.begin(action);
 }
 
 void loop() {

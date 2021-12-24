@@ -19,7 +19,7 @@ MidiBleServer::MidiBleServer(const char* name, MidiBleEventHandler* pEventHandle
      this->connectionStatus = Unconnected;
  }
 
-void MidiBleServer :: start() {
+void MidiBleServer :: begin() {
     // Create the BLE Device
     BLEDevice::init(this->name);
 
@@ -75,10 +75,10 @@ void MidiBleServer :: start() {
 
 }
 
-void MidiBleServer :: start(MidiAction &MidiAction) {
+void MidiBleServer :: begin(MidiAction &MidiAction) {
 	MIDI_LOGD(__func__);
     setMidiAction(MidiAction);
-    start();
+    begin();
 }
 
 void MidiBleServer :: writeData(MidiMessage *pMsg, int len) {

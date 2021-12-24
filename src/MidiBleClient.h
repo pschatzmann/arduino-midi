@@ -25,10 +25,10 @@ class MidiBleClient : public MidiCommon {
         MidiBleClient(const char* serverName, MidiBleEventHandler* pEventHandler = nullptr);
 
         //! starts the discover and connects if the serverName was found
-        void start(MidiAction &MidiAction);
+        void begin(MidiAction &MidiAction);
 
         //! connects to the indicated device
-        void start(BLEAdvertisedDevice *pDevice);
+        void begin(BLEAdvertisedDevice *pDevice);
         
         //! Processes a message
         void writeData(MidiMessage *pMsg, int len);

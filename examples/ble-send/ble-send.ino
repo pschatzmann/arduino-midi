@@ -14,7 +14,7 @@ MidiBleServer ble("MidiServer");
 
 void setup() {
   Serial.begin(115200);
-  ble.start(action);
+  ble.begin(action);
   ble.setDefaultSendingChannel(0);
 }
 

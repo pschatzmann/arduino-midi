@@ -17,10 +17,9 @@ namespace midi {
 */
 /***************************************************/
 
-class MidiUdpServer : public MidiCommon {
+class MidiUdpServer : public MidiServer {
     public:
-        MidiUdpServer(MidiAction *action){
-            p_action = action;
+        MidiUdpServer(MidiAction *action):MidiServer(action){
         } 
 
         ~MidiUdpServer() {
@@ -64,16 +63,8 @@ class MidiUdpServer : public MidiCommon {
 
     protected:
         MidiUdp *udp=nullptr;
-        MidiStreamIn in;
-        MidiStreamOut out;
-        MidiAction* p_action;
         bool is_connected = false;
         int remote_port = 0;
-
-        virtual void writeData(MidiMessage *msg, int len) {
-            MIDI_LOGI( __PRETTY_FUNCTION__);
-            out.writeData(msg, len);
-        }
 
 };
 

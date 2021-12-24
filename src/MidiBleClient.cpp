@@ -13,7 +13,7 @@ MidiBleClient :: MidiBleClient(const char* name, MidiBleEventHandler* pEventHand
     this->connectionStatus = Unconnected;
 }
 
-void MidiBleClient :: start(MidiAction &MidiAction) {
+void MidiBleClient :: begin(MidiAction &MidiAction) {
     this->pMidiAction = &MidiAction;
     BLEScan* pBLEScan = BLEDevice::getScan();
     pBLEScan->setAdvertisedDeviceCallbacks(new MidiBleClientAdvertisedDeviceCallbacks(this));
@@ -30,7 +30,7 @@ void characteristic_notify_callback(BLERemoteCharacteristic* pBLERemoteCharacter
 }
 
 
-void MidiBleClient :: start(BLEAdvertisedDevice *pDevice) {
+void MidiBleClient :: begin(BLEAdvertisedDevice *pDevice) {
     this->pDevice = pDevice;
     BLEClient*  pClient  = BLEDevice::createClient();
     pClient->setClientCallbacks(new MidiBleClientCallback(&connectionStatus));
@@ -111,7 +111,7 @@ void MidiBleClientAdvertisedDeviceCallbacks :: onResult(BLEAdvertisedDevice adve
     if (advertisedDevice.haveServiceUUID() && advertisedDevice.isAdvertisingService(BLEUUID(MIDI_SERVICE_UUID))) {
       BLEDevice::getScan()->stop();
       BLEAdvertisedDevice* pDevice = new BLEAdvertisedDevice(advertisedDevice);
-      pClient->start(pDevice);
+      pClient->begin(pDevice);
     }
 }
 

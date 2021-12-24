@@ -25,8 +25,8 @@ class MidiBleServer : public MidiCommon {
         MidiBleServer(const char* name, MidiAction *MidiAction, int channelFilter = -1);
             
         //! Starts the BLE server
-        void start(MidiAction &MidiAction);
-        void start();
+        void begin(MidiAction &MidiAction);
+        void begin();
         void writeData(MidiMessage *pMsg, int len);
 
 
@@ -50,7 +50,7 @@ class MidiBleServer : public MidiCommon {
 class MidiBleServerCallback: public BLEServerCallbacks {
     public:
         MidiBleServerCallback(ConnectionStatus *pStatus);
-        void start(MidiAction &MidiAction);
+        void begin(MidiAction &MidiAction);
         void onConnect(BLEServer* pServer);
         void onDisconnect(BLEServer* pServer);
 
