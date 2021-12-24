@@ -85,28 +85,40 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/***************************************************/</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classmidi_1_1_midi_stream_in.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_stream_in.html">MidiStreamIn</a> : <span class="keyword">public</span> <a class="code" href="classmidi_1_1_midi_common.html">MidiCommon</a> {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classmidi_1_1_midi_stream_in.html#a73ec2d94884c80251c1c6e361fd8de7a">MidiStreamIn</a>(Stream &amp;stream, <a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;action);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classmidi_1_1_midi_stream_in.html#a73ec2d94884c80251c1c6e361fd8de7a">MidiStreamIn</a>(Stream &amp;stream, <a class="code" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> &amp;handler);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">// Parse/Process the next midi message</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> loop();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> getLastStatusPos(uint8_t *buffer, <span class="keywordtype">int</span> endPos);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Stream *pStream = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> *pHandler = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">bool</span> ownsHandler = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        uint8_t buffer[BUFFER_LEN];</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">int</span> startPos = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classmidi_1_1_midi_stream_in.html">MidiStreamIn</a>(Stream &amp;stream, <a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;action);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classmidi_1_1_midi_stream_in.html">MidiStreamIn</a>(Stream &amp;stream, <a class="code" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> &amp;handler);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classmidi_1_1_midi_stream_in.html#aadf64b3479f9b35bf466c49595622131">~MidiStreamIn</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// Parse/Process the next midi message</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">bool</span> loop();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_server.html">MidiServer</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_ip_server.html">MidiIpServer</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classmidi_1_1_midi_udp_server.html">MidiUdpServer</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">int</span> getLastStatusPos(uint8_t *buffer, <span class="keywordtype">int</span> endPos);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        Stream *pStream = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> *pHandler = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> ownsHandler = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        uint8_t buffer[BUFFER_LEN];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">int</span> startPos = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classmidi_1_1_midi_stream_in.html">MidiStreamIn</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> setup(Stream *stream, <a class="code" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> *handler, <span class="keywordtype">bool</span> releaseHandler);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmidi_1_1_midi_action_html"><div class="ttname"><a href="classmidi_1_1_midi_action.html">midi::MidiAction</a></div><div class="ttdoc">Abstract class for a MidiAction.</div><div class="ttdef"><b>Definition:</b> MidiAction.h:15</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html"><div class="ttname"><a href="classmidi_1_1_midi_common.html">midi::MidiCommon</a></div><div class="ttdoc">The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message...</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:75</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_event_handler_html"><div class="ttname"><a href="classmidi_1_1_midi_event_handler.html">midi::MidiEventHandler</a></div><div class="ttdoc">A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....</div><div class="ttdef"><b>Definition:</b> MidiEventHandler.h:29</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_ip_server_html"><div class="ttname"><a href="classmidi_1_1_midi_ip_server.html">midi::MidiIpServer</a></div><div class="ttdoc">A simple IP Server which which receives and creates MIDI messages.</div><div class="ttdef"><b>Definition:</b> MidiIpServer.h:20</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_server_html"><div class="ttname"><a href="classmidi_1_1_midi_server.html">midi::MidiServer</a></div><div class="ttdoc">A simple Serial Server which which receives and creates MIDI messages.</div><div class="ttdef"><b>Definition:</b> MidiServer.h:19</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_stream_in_html"><div class="ttname"><a href="classmidi_1_1_midi_stream_in.html">midi::MidiStreamIn</a></div><div class="ttdoc">Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default MidiEventH...</div><div class="ttdef"><b>Definition:</b> MidiStreamIn.h:27</div></div>
-<div class="ttc" id="aclassmidi_1_1_midi_stream_in_html_a73ec2d94884c80251c1c6e361fd8de7a"><div class="ttname"><a href="classmidi_1_1_midi_stream_in.html#a73ec2d94884c80251c1c6e361fd8de7a">midi::MidiStreamIn::MidiStreamIn</a></div><div class="ttdeci">MidiStreamIn(Stream &amp;stream, MidiAction &amp;action)</div><div class="ttdoc">Default Constructor.</div><div class="ttdef"><b>Definition:</b> MidiStreamIn.cpp:6</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_stream_in_html_aadf64b3479f9b35bf466c49595622131"><div class="ttname"><a href="classmidi_1_1_midi_stream_in.html#aadf64b3479f9b35bf466c49595622131">midi::MidiStreamIn::~MidiStreamIn</a></div><div class="ttdeci">~MidiStreamIn()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> MidiStreamIn.cpp:17</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_udp_server_html"><div class="ttname"><a href="classmidi_1_1_midi_udp_server.html">midi::MidiUdpServer</a></div><div class="ttdoc">A simple UDP Server which receives and creates MIDI messages.</div><div class="ttdef"><b>Definition:</b> MidiUdpServer.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

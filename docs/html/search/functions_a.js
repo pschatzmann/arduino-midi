@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['setdefaultsendingchannel_69',['setDefaultSendingChannel',['../classmidi_1_1_midi_common.html#a1fc898c0b3dfeddef8515df50abac9d2',1,'midi::MidiCommon']]],
-  ['setfilterreceivingchannel_70',['setFilterReceivingChannel',['../classmidi_1_1_midi_common.html#a0ccfb10ae26c6855310de2443c319af1',1,'midi::MidiCommon']]],
-  ['setmidiaction_71',['setMidiAction',['../classmidi_1_1_midi_common.html#afdc7e84bfe245486503768f271680e1f',1,'midi::MidiCommon']]],
-  ['start_72',['start',['../classmidi_1_1_midi_ble_client.html#a083e342e202d32400ba517e7d40619d5',1,'midi::MidiBleClient::start(MidiAction &amp;MidiAction)'],['../classmidi_1_1_midi_ble_client.html#a0a5c65672b469dae1d01177ba9f249ff',1,'midi::MidiBleClient::start(BLEAdvertisedDevice *pDevice)'],['../classmidi_1_1_midi_ble_server.html#a7fb41839e32412bb994aca8f131cbcbd',1,'midi::MidiBleServer::start()']]]
+  ['parse_91',['parse',['../classmidi_1_1_midi_event_handler.html#a47aaa17332283a5d65b9ba68a73ab896',1,'midi::MidiEventHandler']]],
+  ['pitchbend_92',['pitchBend',['../classmidi_1_1_midi_common.html#ac1ef192cf2b1adfcc89d4cf3db5e80a3',1,'midi::MidiCommon']]],
+  ['polypressure_93',['polyPressure',['../classmidi_1_1_midi_common.html#a00771509caca2e46fb273b1ae8178517',1,'midi::MidiCommon']]],
+  ['programchange_94',['programChange',['../classmidi_1_1_midi_common.html#aee00ffec71667ca134c697a115e649f9',1,'midi::MidiCommon']]]
 ];

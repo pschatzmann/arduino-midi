@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['parse_25',['parse',['../classmidi_1_1_midi_event_handler.html#a47aaa17332283a5d65b9ba68a73ab896',1,'midi::MidiEventHandler']]],
-  ['pitchbend_26',['pitchBend',['../classmidi_1_1_midi_common.html#ac1ef192cf2b1adfcc89d4cf3db5e80a3',1,'midi::MidiCommon']]],
-  ['polypressure_27',['polyPressure',['../classmidi_1_1_midi_common.html#a00771509caca2e46fb273b1ae8178517',1,'midi::MidiCommon']]],
-  ['programchange_28',['programChange',['../classmidi_1_1_midi_common.html#aee00ffec71667ca134c697a115e649f9',1,'midi::MidiCommon']]]
+  ['noteoff_31',['noteOff',['../classmidi_1_1_midi_common.html#a7bffbeb8f4f625a551f741d6ec515da3',1,'midi::MidiCommon']]],
+  ['noteon_32',['noteOn',['../classmidi_1_1_midi_common.html#a7e026258c4355d38dedda82f1862141c',1,'midi::MidiCommon']]],
+  ['notetofrequency_33',['noteToFrequency',['../classmidi_1_1_midi_common.html#a95a089c4af7d0809094255de9a4bf242',1,'midi::MidiCommon']]]
 ];

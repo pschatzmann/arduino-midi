@@ -70,6 +70,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classmidi_1_1_midi_stream_in-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">midi::MidiStreamIn Class Reference</div>  </div>
@@ -97,8 +98,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a73ec2d94884c80251c1c6e361fd8de7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
 <tr class="separator:a73ec2d94884c80251c1c6e361fd8de7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcba0bd0adccc688d86f9045e3955e39"><td class="memItemLeft" align="right" valign="top"><a id="adcba0bd0adccc688d86f9045e3955e39"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MidiStreamIn</b> (Stream &amp;stream, <a class="el" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> &amp;handler)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_in.html#adcba0bd0adccc688d86f9045e3955e39">MidiStreamIn</a> (Stream &amp;stream, <a class="el" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> &amp;handler)</td></tr>
+<tr class="memdesc:adcba0bd0adccc688d86f9045e3955e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to implement you custom <a class="el" href="classmidi_1_1_midi_event_handler.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiEventHandler</a>. <br /></td></tr>
 <tr class="separator:adcba0bd0adccc688d86f9045e3955e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf64b3479f9b35bf466c49595622131"><td class="memItemLeft" align="right" valign="top"><a id="aadf64b3479f9b35bf466c49595622131"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_in.html#aadf64b3479f9b35bf466c49595622131">~MidiStreamIn</a> ()</td></tr>
+<tr class="memdesc:aadf64b3479f9b35bf466c49595622131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:aadf64b3479f9b35bf466c49595622131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae14155807a18449e6c3a2117b99aef82"><td class="memItemLeft" align="right" valign="top"><a id="ae14155807a18449e6c3a2117b99aef82"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#ae14155807a18449e6c3a2117b99aef82">allNotesOff</a> (int8_t channel=-1)</td></tr>
 <tr class="memdesc:ae14155807a18449e6c3a2117b99aef82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a allNotesOff MIDI command to the output. <br /></td></tr>
@@ -118,9 +124,9 @@ virtual ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><b>g
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a164dfde583e2e3fdf3e8a277954a3632">localControl</a> (bool active, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a164dfde583e2e3fdf3e8a277954a3632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a localControl MIDI command to the output. <br /></td></tr>
 <tr class="separator:a164dfde583e2e3fdf3e8a277954a3632"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07dd539f9f33bba84f9fb67844411c8d"><td class="memItemLeft" align="right" valign="top"><a id="a07dd539f9f33bba84f9fb67844411c8d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
-<tr class="separator:a07dd539f9f33bba84f9fb67844411c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d1d6cc018c8138fc9a1a9aa09859c65"><td class="memItemLeft" align="right" valign="top"><a id="a3d1d6cc018c8138fc9a1a9aa09859c65"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
+<tr class="separator:a3d1d6cc018c8138fc9a1a9aa09859c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bffbeb8f4f625a551f741d6ec515da3"><td class="memItemLeft" align="right" valign="top"><a id="a7bffbeb8f4f625a551f741d6ec515da3"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a7bffbeb8f4f625a551f741d6ec515da3">noteOff</a> (uint8_t note, uint8_t velocity, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a7bffbeb8f4f625a551f741d6ec515da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a noteOff MIDI command to the output. <br /></td></tr>
@@ -177,6 +183,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getLastStatusPos</b> (
 <tr class="memitem:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memItemLeft" align="right" valign="top"><a id="a20f19c66fe44a0e3998639d4b28c11e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setConnectionStatus</b> (ConnectionStatus status)</td></tr>
 <tr class="separator:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a62ce879950628f6722ac878accc208"><td class="memItemLeft" align="right" valign="top"><a id="a4a62ce879950628f6722ac878accc208"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (Stream *stream, <a class="el" href="classmidi_1_1_midi_event_handler.html">MidiEventHandler</a> *handler, bool releaseHandler)</td></tr>
+<tr class="separator:a4a62ce879950628f6722ac878accc208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memItemLeft" align="right" valign="top"><a id="a75a6f9752d8a2428d83b27977e18d3d4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTimestamp</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg)</td></tr>
 <tr class="separator:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,6 +234,18 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampHigh</b><
 <tr class="memitem:acde612eb9123a757be8216ad7868ded3"><td class="memItemLeft" align="right" valign="top"><a id="acde612eb9123a757be8216ad7868ded3"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampLow</b></td></tr>
 <tr class="separator:acde612eb9123a757be8216ad7868ded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a4d9c21e710eefe8ab0281202f1962e50"><td class="memItemLeft" align="right" valign="top"><a id="a4d9c21e710eefe8ab0281202f1962e50"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiIpServer</b></td></tr>
+<tr class="separator:a4d9c21e710eefe8ab0281202f1962e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af881146456b7eb2cd6854aa71ef253dc"><td class="memItemLeft" align="right" valign="top"><a id="af881146456b7eb2cd6854aa71ef253dc"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiServer</b></td></tr>
+<tr class="separator:af881146456b7eb2cd6854aa71ef253dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e179aebdac7192a6ba3c60cbd1aea15"><td class="memItemLeft" align="right" valign="top"><a id="a3e179aebdac7192a6ba3c60cbd1aea15"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiUdpServer</b></td></tr>
+<tr class="separator:a3e179aebdac7192a6ba3c60cbd1aea15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default <a class="el" href="classmidi_1_1_midi_event_handler.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiEventHandler</a> or your own subclassed implementation in the constructor to process the midi records. </p>

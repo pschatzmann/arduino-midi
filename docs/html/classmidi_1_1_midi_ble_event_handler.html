@@ -90,9 +90,13 @@ Inheritance diagram for midi::MidiBleEventHandler:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad2cca8dc3fa56d0c29e6bba7e07f635c"><td class="memItemLeft" align="right" valign="top"><a id="ad2cca8dc3fa56d0c29e6bba7e07f635c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MidiBleEventHandler</b> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>, int *p_channel=nullptr)</td></tr>
-<tr class="separator:ad2cca8dc3fa56d0c29e6bba7e07f635c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed7accc6de308e3dfb2dfd7d03b8efd"><td class="memItemLeft" align="right" valign="top"><a id="aeed7accc6de308e3dfb2dfd7d03b8efd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>MidiBleEventHandler</b> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>, int channelFilter=-1)</td></tr>
+<tr class="separator:aeed7accc6de308e3dfb2dfd7d03b8efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7677f8979d3ba6368ac3df2fcf9fc98b"><td class="memItemLeft" align="right" valign="top"><a id="a7677f8979d3ba6368ac3df2fcf9fc98b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_event_handler.html#a7677f8979d3ba6368ac3df2fcf9fc98b">begin</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>, int filter_channel=-1)</td></tr>
+<tr class="memdesc:a7677f8979d3ba6368ac3df2fcf9fc98b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns the <a class="el" href="classmidi_1_1_midi_action.html" title="Abstract class for a MidiAction.">MidiAction</a> and optinally defines a midi channel. <br /></td></tr>
+<tr class="separator:a7677f8979d3ba6368ac3df2fcf9fc98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a852e5f9c8f3a2351b455e9f46094d7"><td class="memItemLeft" align="right" valign="top"><a id="a1a852e5f9c8f3a2351b455e9f46094d7"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onCommand</b> (uint8_t channel, uint8_t status, uint8_t p1, uint8_t p2)</td></tr>
 <tr class="separator:a1a852e5f9c8f3a2351b455e9f46094d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,14 +119,14 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onPitchBend</
 <tr class="memdesc:a2729bd231cc4f50cb202c3e7b69b0bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function to support a write request.  <a href="classmidi_1_1_midi_ble_event_handler.html#a2729bd231cc4f50cb202c3e7b69b0bab">More...</a><br /></td></tr>
 <tr class="separator:a2729bd231cc4f50cb202c3e7b69b0bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47aaa17332283a5d65b9ba68a73ab896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_event_handler.html#a47aaa17332283a5d65b9ba68a73ab896">parse</a> (uint8_t *msg, uint8_t len)</td></tr>
-<tr class="memdesc:a47aaa17332283a5d65b9ba68a73ab896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse byte stream for ble midi messages.  <a href="classmidi_1_1_midi_event_handler.html#a47aaa17332283a5d65b9ba68a73ab896">More...</a><br /></td></tr>
+<tr class="memdesc:a47aaa17332283a5d65b9ba68a73ab896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a string into midi messages.  <a href="classmidi_1_1_midi_event_handler.html#a47aaa17332283a5d65b9ba68a73ab896">More...</a><br /></td></tr>
 <tr class="separator:a47aaa17332283a5d65b9ba68a73ab896"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a20767b63ca2bb44e6d9361ac38d94114"><td class="memItemLeft" align="right" valign="top"><a id="a20767b63ca2bb44e6d9361ac38d94114"></a>
-int *&#160;</td><td class="memItemRight" valign="bottom"><b>p_channel</b> = nullptr</td></tr>
-<tr class="separator:a20767b63ca2bb44e6d9361ac38d94114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af98f561d6a3e527200f00c4c16f0476d"><td class="memItemLeft" align="right" valign="top"><a id="af98f561d6a3e527200f00c4c16f0476d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>filter_channel</b> = -1</td></tr>
+<tr class="separator:af98f561d6a3e527200f00c4c16f0476d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5286e8f64b98af280b60bd0981703819"><td class="memItemLeft" align="right" valign="top"><a id="a5286e8f64b98af280b60bd0981703819"></a>
 <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>p_MidiAction</b> = nullptr</td></tr>
 <tr class="separator:a5286e8f64b98af280b60bd0981703819"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,7 +239,8 @@ int *&#160;</td><td class="memItemRight" valign="bottom"><b>p_channel</b> = null
 </table>
 </div><div class="memdoc">
 
-<p>Parse byte stream for ble midi messages. </p>
+<p>Parse a string into midi messages. </p>
+<p>Parse byte stream for ble midi messages.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>byte stream </td></tr>

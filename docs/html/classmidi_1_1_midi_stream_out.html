@@ -70,6 +70,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classmidi_1_1_midi_stream_out-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">midi::MidiStreamOut Class Reference</div>  </div>
@@ -92,10 +93,10 @@ Inheritance diagram for midi::MidiStreamOut:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acf0a01424848cc93924157e26fc7a2f9"><td class="memItemLeft" align="right" valign="top"><a id="acf0a01424848cc93924157e26fc7a2f9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_out.html#acf0a01424848cc93924157e26fc7a2f9">MidiStreamOut</a> (Stream &amp;stream)</td></tr>
-<tr class="memdesc:acf0a01424848cc93924157e26fc7a2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
-<tr class="separator:acf0a01424848cc93924157e26fc7a2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fbeff09783349216997619e9eadd9a7"><td class="memItemLeft" align="right" valign="top"><a id="a0fbeff09783349216997619e9eadd9a7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_out.html#a0fbeff09783349216997619e9eadd9a7">MidiStreamOut</a> (Print &amp;stream)</td></tr>
+<tr class="memdesc:a0fbeff09783349216997619e9eadd9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
+<tr class="separator:a0fbeff09783349216997619e9eadd9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae14155807a18449e6c3a2117b99aef82"><td class="memItemLeft" align="right" valign="top"><a id="ae14155807a18449e6c3a2117b99aef82"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#ae14155807a18449e6c3a2117b99aef82">allNotesOff</a> (int8_t channel=-1)</td></tr>
 <tr class="memdesc:ae14155807a18449e6c3a2117b99aef82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a allNotesOff MIDI command to the output. <br /></td></tr>
@@ -168,6 +169,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memItemLeft" align="right" valign="top"><a id="a20f19c66fe44a0e3998639d4b28c11e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setConnectionStatus</b> (ConnectionStatus status)</td></tr>
 <tr class="separator:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d9f4f789bd9e65c43e660f8b19fb704"><td class="memItemLeft" align="right" valign="top"><a id="a3d9f4f789bd9e65c43e660f8b19fb704"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (Print *stream)</td></tr>
+<tr class="separator:a3d9f4f789bd9e65c43e660f8b19fb704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memItemLeft" align="right" valign="top"><a id="a75a6f9752d8a2428d83b27977e18d3d4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTimestamp</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg)</td></tr>
 <tr class="separator:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,9 +196,9 @@ char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="memitem:a7751c98be6e174fe88b509ad0e28bac1"><td class="memItemLeft" align="right" valign="top"><a id="a7751c98be6e174fe88b509ad0e28bac1"></a>
 <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiAction</b></td></tr>
 <tr class="separator:a7751c98be6e174fe88b509ad0e28bac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49a189222150ed571c509ce6b88c38a2"><td class="memItemLeft" align="right" valign="top"><a id="a49a189222150ed571c509ce6b88c38a2"></a>
-Stream *&#160;</td><td class="memItemRight" valign="bottom"><b>pStream</b></td></tr>
-<tr class="separator:a49a189222150ed571c509ce6b88c38a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbb90230bd4a93887b2ed374229c2285"><td class="memItemLeft" align="right" valign="top"><a id="afbb90230bd4a93887b2ed374229c2285"></a>
+Print *&#160;</td><td class="memItemRight" valign="bottom"><b>pStream</b></td></tr>
+<tr class="separator:afbb90230bd4a93887b2ed374229c2285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaffd3a4348b3a4bd5e2884f0105c460"><td class="memItemLeft" align="right" valign="top"><a id="aaaffd3a4348b3a4bd5e2884f0105c460"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>receivingChannel</b> = -1</td></tr>
 <tr class="separator:aaaffd3a4348b3a4bd5e2884f0105c460"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,6 +211,18 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampHigh</b><
 <tr class="memitem:acde612eb9123a757be8216ad7868ded3"><td class="memItemLeft" align="right" valign="top"><a id="acde612eb9123a757be8216ad7868ded3"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampLow</b></td></tr>
 <tr class="separator:acde612eb9123a757be8216ad7868ded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a4d9c21e710eefe8ab0281202f1962e50"><td class="memItemLeft" align="right" valign="top"><a id="a4d9c21e710eefe8ab0281202f1962e50"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiIpServer</b></td></tr>
+<tr class="separator:a4d9c21e710eefe8ab0281202f1962e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af881146456b7eb2cd6854aa71ef253dc"><td class="memItemLeft" align="right" valign="top"><a id="af881146456b7eb2cd6854aa71ef253dc"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiServer</b></td></tr>
+<tr class="separator:af881146456b7eb2cd6854aa71ef253dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e179aebdac7192a6ba3c60cbd1aea15"><td class="memItemLeft" align="right" valign="top"><a id="a3e179aebdac7192a6ba3c60cbd1aea15"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiUdpServer</b></td></tr>
+<tr class="separator:a3e179aebdac7192a6ba3c60cbd1aea15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Output of Midi Messages to an Arduino Stream (eg output to Serial, UDP or IP). </p>

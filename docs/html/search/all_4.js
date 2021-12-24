@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['localcontrol_6',['localControl',['../classmidi_1_1_midi_common.html#a164dfde583e2e3fdf3e8a277954a3632',1,'midi::MidiCommon']]]
+  ['frequencytonote_10',['frequencyToNote',['../classmidi_1_1_midi_common.html#a3e35624c72c46369acd5eda8e293b056',1,'midi::MidiCommon']]]
 ];

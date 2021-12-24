@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getbleadvertiseddevice_5',['getBLEAdvertisedDevice',['../classmidi_1_1_midi_ble_client.html#aca50f8ddc38a5939e17db59434d0f485',1,'midi::MidiBleClient']]]
+  ['end_9',['end',['../classmidi_1_1_apple_midi_server.html#a9b495dd596d1aa3f146e07e675c8be4e',1,'midi::AppleMidiServer']]]
 ];
