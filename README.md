@@ -15,7 +15,7 @@ The library supports
 - Apple Midi
 
 
-Please note that most of the examples that generate sound are based on __Arduino-STK__!
+Please note that some of the examples that generate sound are based on __Arduino-STK__!
 
 ### Documentation
 
