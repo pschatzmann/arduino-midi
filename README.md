@@ -67,6 +67,7 @@ void loop() {
 We also provide some higher level API  "Server" classes which can be used for both, input and output: MidiServer, MidiIpServer, AppleMidiServer...
 
 Here is the generated [Class Documentation](https://pschatzmann.github.io/arduino-midi/html/annotated.html). 
+You can find [further information in my blogs](https://www.pschatzmann.ch/home/tag/midi/).
 
 
 ### Namespace
