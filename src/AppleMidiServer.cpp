@@ -34,13 +34,20 @@ bool AppleMidiServer :: begin(IPAddress adress, int control_port, int data_port_
     setupMDns(control_port);
     applemidi_init((apple_midi_cb_t) applemidi_callback_midi_message_received, (apple_midi_cb_t) applemidi_if_send_udp_datagram);
     int data_port = data_port_opt > 0 ? data_port_opt : control_port+1;
-    MIDI_LOGI("MIDI using address: %s port: %d",adress.toString().c_str(), control_port);
+    MIDI_LOGI("MIDI using address: %s port: %d",toStr(adress), control_port);
     // listen for udp on port
     udpControl.begin(control_port);
     udpData.begin(data_port);
     int status = applemidi_start_session(data_port, (uint8_t*) &adress, control_port);
 
     return status>=0;
+}
+
+const char* AppleMidiServer :: toStr(IPAddress &adress){
+    static char networ_str[10];
+    //adress.toString() is not supported on all environemnts
+    sprintf(networ_str,"%u.%u.%u.%u",adress[0],adress[1],adress[2],adress[3]);
+    return networ_str;
 }
 
 void AppleMidiServer :: end(){

@@ -73,12 +73,15 @@ class AppleMidiServer : public MidiCommon  {
         virtual void writeData(MidiMessage *msg, int len);
         /// Setup MDNS apple-midi service
         virtual void setupMDns(int port);
+        /// provides the network address as string
+        const char* toStr(IPAddress &adress);
         /// Activate apple midi debug messages
         void setupLogger();
         /// Callback method to parse midi message
         static void applemidi_callback_midi_message_received(uint8_t port, uint32_t timestamp, uint8_t midi_status, uint8_t *remaining_message, size_t len, size_t continued_sysex_pos);
         /// Callback method to send UDP message with the help of the Arduino API
         static int32_t applemidi_if_send_udp_datagram(uint8_t *ip_addr, uint16_t port, uint8_t *tx_data, size_t tx_len);
+
 
 };
 

@@ -1,6 +1,6 @@
-#ifdef ESP32
-
 #include <MidiUdp.h>
+#ifdef MIDI_ACTIVE
+
 #include "MidiLogger.h"
 
 namespace midi {

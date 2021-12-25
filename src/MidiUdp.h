@@ -1,6 +1,6 @@
 #pragma once
 #include "ArdConfig.h"
-#ifdef ESP32
+#ifdef MIDI_ACTIVE
 
 #include <WiFi.h>
 #include <WiFiClient.h>

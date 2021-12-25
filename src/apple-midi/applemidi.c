@@ -36,8 +36,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/time.h>
-#include <arpa/inet.h>
-
 
 // from https://en.wikipedia.org/wiki/RTP-MIDI#Apple's_session_protocol
 #define APPLEMIDI_COMMAND_INVITATION            0x494e  // IN

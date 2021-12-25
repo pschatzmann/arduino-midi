@@ -36,7 +36,9 @@ class MidiIpServer : public MidiServer {
                 return false;
             }
 
-            p_wifi_server = new WiFiServer(serverPort);
+            if (p_wifi_server==nullptr){
+                p_wifi_server = new WiFiServer(serverPort);
+            }
             p_wifi_server->begin();
             MIDI_LOGI("server started on port %d", serverPort);
             return true;
@@ -44,14 +46,15 @@ class MidiIpServer : public MidiServer {
 
         void end() {
             if (p_wifi_server!=nullptr){
-                p_wifi_server->stopAll();
+                delete p_wifi_server;
+                p_wifi_server = nullptr;
             }
         }
 
         void loop() {
             if (p_wifi_server!=nullptr){
                 if (!client.connected()){
-                    client = p_wifi_server->accept();
+                    client = p_wifi_server->available();
                     if (client.connected()){
                         MIDI_LOGI("MidiIpServer->connected");
                         in.setup(&client, new MidiParser(p_action), true);
