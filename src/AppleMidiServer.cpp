@@ -44,7 +44,7 @@ bool AppleMidiServer :: begin(IPAddress adress, int control_port, int data_port_
 }
 
 const char* AppleMidiServer :: toStr(IPAddress &adress){
-    static char networ_str[10];
+    static char networ_str[20];
     //adress.toString() is not supported on all environemnts
     sprintf(networ_str,"%u.%u.%u.%u",adress[0],adress[1],adress[2],adress[3]);
     return networ_str;
