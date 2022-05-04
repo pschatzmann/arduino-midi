@@ -67,7 +67,7 @@ bool AppleMidiServer ::  tick(uint32_t timestamp){
         // We got some control data
         IPAddress remote_address = udpControl.remoteIP();
         int len = udpControl.read(rx_buffer, MIDI_BUFFER_SIZE);
-        MIDI_LOGI("control: %d -> %d ",remote_port, len);
+        MIDI_LOGD("control: %d -> %d ",remote_port, len);
         applemidi_parse_udp_datagram((uint8_t*)&remote_address, remote_port, rx_buffer, len, false);
         active = true;
     } 
@@ -78,7 +78,7 @@ bool AppleMidiServer ::  tick(uint32_t timestamp){
         int remote_port = udpData.remotePort();
         IPAddress remote_address = udpData.remoteIP();
         int len = udpData.read(rx_buffer, MIDI_BUFFER_SIZE);
-        MIDI_LOGI("data: %d -> %d",remote_port, len);
+        MIDI_LOGD("data: %d -> %d",remote_port, len);
         applemidi_parse_udp_datagram((uint8_t*) &remote_address, remote_port, rx_buffer, len, true);
         active = true;
     }
@@ -134,7 +134,7 @@ void AppleMidiServer :: applemidi_callback_midi_message_received(uint8_t port, u
 
 /// Callback method to send UDP message with the help of the Arduino API
 int32_t AppleMidiServer :: applemidi_if_send_udp_datagram(uint8_t *ip_addr, uint16_t port, uint8_t *tx_data, size_t tx_len){
-    MIDI_LOGI( "applemidi_if_send_udp_datagram: port=%d", port);
+    MIDI_LOGD( "applemidi_if_send_udp_datagram: port=%d", port);
     IPAddress *p_adr = (IPAddress *) ip_addr;
     WiFiUDP *p_udp = port == SelfAppleMidi->remote_port ? &(SelfAppleMidi->udpControl) :  &(SelfAppleMidi->udpData);
     p_udp->beginPacket(*p_adr, port);

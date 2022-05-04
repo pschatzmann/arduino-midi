@@ -99,8 +99,8 @@ void MidiCommon :: controlChange(uint8_t msg, uint8_t value, int8_t channel){
 }
 
 float MidiCommon :: noteToFrequency(uint8_t x) {
-    int a = 440; //frequency of A (coomon value is 440Hz)
-    return (a / 32) * pow(2, ((x - 9) / 12));
+    float note = x;
+    return 440.0 * pow(2.0f, (note-69)/12);
 }
 
 uint8_t MidiCommon :: frequencyToNote(float freq) {
