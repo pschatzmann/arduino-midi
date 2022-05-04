@@ -1,5 +1,5 @@
 #pragma once
-#include "ArdConfig.h"
+#include "ConfigMidi.h"
 #ifdef MIDI_ACTIVE
 
 #include <WiFi.h>
