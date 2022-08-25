@@ -36,8 +36,8 @@
 //#include "Arduino.h"
 #include "MidiParser.h"
 #include "MidiAction.h"
+#include "MidiControlChange.h"
 #include <stdint.h>
-
 
 namespace midi {
 
