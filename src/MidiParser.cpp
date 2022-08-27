@@ -1,5 +1,6 @@
 #include "MidiParser.h"
 #include "MidiLogger.h"
+#include <stdio.h>
 
 namespace midi {
 
@@ -22,8 +23,14 @@ void MidiParser::begin(MidiAction *p_MidiAction, int filter_channel){
  */
 
 void MidiParser::parse(uint8_t* msg, uint8_t len){
-  MIDI_LOGD( "parse: len: %d", len);
-
+  // log hex values of msg
+  if (MidiLogLevel==MidiDebug){
+    char msg_hex[len*3+1];
+    for (int j=0;j<len;j++){
+      sprintf(&msg_hex[j*3], "%02X ", msg[j]);
+    }
+    MIDI_LOGD( "parse: len: %d - %s", len, msg_hex);
+  } 
   int pos = 0;
   uint8_t status=0;
   uint8_t channel=0;
