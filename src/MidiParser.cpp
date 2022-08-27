@@ -73,7 +73,11 @@ void MidiParser::onCommand(uint8_t channel, uint8_t status, uint8_t p1,uint8_t p
   if (filter_channel==-1 || filter_channel == channel) {
     switch (status) {
       case 0b1001:
-        onNoteOn(channel, p1, p2);
+        // midi on with velocity 0 -> midi off
+        if (p2==0)
+          onNoteOff(channel, p1, p2);
+        else 
+          onNoteOn(channel, p1, p2);
         break;
       case 0b1000:
         onNoteOff(channel, p1, p2);
