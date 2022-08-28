@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "MidiLogger.h"
+#include "MidiConfig.h"
 
 // global actual loggin level for application
 MidiLogLevel_t MidiLogLevel= MidiWarning;
@@ -19,7 +20,6 @@ void midi_log(MidiLogLevel_t level, const char* fmt ...) {
     va_start(arg, fmt);
     vsprintf(log_buffer+9, fmt, arg);
     va_end(arg);
-    strcat(log_buffer, "\n");
-    printf(log_buffer);
+    LOG_OUT.println(log_buffer);
   }
 }

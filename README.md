@@ -78,17 +78,17 @@ We also provide some higher level API  "Server" classes which can be used for bo
 Here is the generated [Class Documentation](https://pschatzmann.github.io/arduino-midi/html/annotated.html). 
 You can find [further information in my blogs](https://www.pschatzmann.ch/home/tag/midi/).
 
-
-### Namespace
-
-All the midi classes are defined using the midi namespace. If you include Midi.h the using namespace is already defined. However, if you include the individual class specific header files you need to add a using namespace midi; in your sketch.
-
 ### Logging
 
 The library provides some logging functionality. By default the log level is set to MidiDebug. You can change the level with 
 ```
 MidiLogLevel = MidiDebug; // or MidiInfo, MidiWarning, MidiError
 ```
+
+### Namespace
+
+All the midi classes are defined using the midi namespace. If you include Midi.h the using namespace is already defined. However, if you include the individual class specific header files you need to add a using namespace midi; in your sketch.
+
 
 
 ### Installation in Arduino

@@ -4,6 +4,7 @@
 #include "MidiStreamIn.h"
 #include "MidiStreamOut.h"
 #include "MidiCallbackAction.h"
+
 #include "MidiBleClient.h"		
 #include "MidiBleServer.h"		
 #include "MidiBleParser.h"
@@ -16,6 +17,6 @@
 #if APPLE_MIDI_ACTIVE
 #include "AppleMidiServer.h"
 #endif
-#if NAMESPACE_ACTIVE
+#if NAMESPACE_ACTIVE || MIDI_NAMESPACE_ACTIVE
 using namespace midi;
 #endif
