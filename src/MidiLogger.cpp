@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "MidiLogger.h"
-#include "MidiConfig.h"
+#include "ConfigMidi.h"
 
 // global actual loggin level for application
 MidiLogLevel_t MidiLogLevel= MidiWarning;
