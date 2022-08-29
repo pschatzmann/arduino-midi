@@ -1,9 +1,12 @@
 #pragma once
+#include "Arduino.h"
 
 #define MIDI_ACTIVE true
 
 #define NAMESPACE_ACTIVE true
+#ifndef LOG_OUT
 #define LOG_OUT Serial
+#endif
 
 #if defined(ESP32) 
 #  define MIDI_BLE_ACTIVE true
