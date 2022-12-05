@@ -1,5 +1,5 @@
 #include <MidiUdp.h>
-#ifdef MIDI_ACTIVE
+#if MIDI_ACTIVE && TCP_ACTIVE
 
 #include "MidiLogger.h"
 

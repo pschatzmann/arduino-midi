@@ -1,6 +1,6 @@
 #pragma once
 #include "ConfigMidi.h"
-#ifdef MIDI_ACTIVE
+#if MIDI_ACTIVE && TCP_ACTIVE
 
 #include <WiFi.h>
 #include <WiFiClient.h>

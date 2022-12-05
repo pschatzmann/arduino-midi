@@ -20,6 +20,12 @@
 #  define MDNS_ACTIVE false
 #  define UDP_ACTIVE true
 #  define TCP_ACTIVE true
+#elif defined(ARDUINO_ARCH_MBED)
+#  define APPLE_MIDI_ACTIVE true
+#  define MIDI_BLE_ACTIVE false
+#  define MDNS_ACTIVE false
+#  define UDP_ACTIVE false
+#  define TCP_ACTIVE false
 #elif defined(ARDUINO)
 #  define APPLE_MIDI_ACTIVE true
 #  define MIDI_BLE_ACTIVE false

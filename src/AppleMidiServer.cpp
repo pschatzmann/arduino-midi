@@ -1,4 +1,5 @@
 #include "AppleMidiServer.h"
+#if TCP_ACTIVE
 
 namespace midi {
 
@@ -143,5 +144,6 @@ int32_t AppleMidiServer :: applemidi_if_send_udp_datagram(uint8_t *ip_addr, uint
     return result;
 }
 
-
 }
+
+#endif

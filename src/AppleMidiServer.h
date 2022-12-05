@@ -1,7 +1,7 @@
 #pragma once
-
-#include <WiFi.h>
 #include "ConfigMidi.h"
+#if TCP_ACTIVE
+#include <WiFi.h>
 #include "MidiAction.h"
 #include "MidiCommon.h"
 #include "MidiLogger.h"
@@ -86,3 +86,4 @@ class AppleMidiServer : public MidiCommon  {
 };
 
 }
+#endif
