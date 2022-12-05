@@ -29,6 +29,7 @@
  *
  * =============================================================================
  */
+#ifndef AVR
 
 #include "applemidi.h"
 
@@ -36,7 +37,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/time.h>
-
 // from https://en.wikipedia.org/wiki/RTP-MIDI#Apple's_session_protocol
 #define APPLEMIDI_COMMAND_INVITATION            0x494e  // IN
 #define APPLEMIDI_COMMAND_INVITATION_ACCEPTED   0x4f4b  // OK
@@ -1147,3 +1147,5 @@ int32_t applemidi_terminate_session(uint8_t applemidi_port)
 
   return 0; // no error
 }
+
+#endif
