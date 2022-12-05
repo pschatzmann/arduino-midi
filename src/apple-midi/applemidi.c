@@ -29,7 +29,7 @@
  *
  * =============================================================================
  */
-#if TCP_ACTIVE
+#if TCP_ACTIVE && APPLE_MIDI_ACTIVE
 
 #include "applemidi.h"
 
