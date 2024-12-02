@@ -68,17 +68,17 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md_README"></a> Quite some time ago, I spent some effort to add Midi support to the <a href="https://github.com/pschatzmann/Arduino-STK.git">Arduino-STK</a> library. In the meantime I came to the conclusion that it would be better to have this as a separate functionality, so that it could be used by other of my projects.</p>
 <p>The library supports</p>
 <ul>
-<li>Midi over an Arduino Streams<ul>
+<li>Midi over Arduino Streams<ul>
 <li>Midi over Serial</li>
 <li>Midi over Bluetooth Serial</li>
 <li>Midi over TCP/IP</li>
 <li>Midi over UDP</li>
+<li>Files</li>
 </ul>
 </li>
 <li>Midi over BLE</li>
 <li>Apple Midi</li>
 </ul>
-<p>Please note that most of the examples that generate sound are based on <b>Arduino-STK</b>!</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Documentation</h2>
 <p>The basic functionality is based on Arduino Streams (Except the BLE functionality). You give the <a href="https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html">MidiStreamOut</a> class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP.</p>
@@ -108,27 +108,42 @@ Documentation</h2>
 </div><!-- fragment --><p>The same is true for the <a href="https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_in.html">MidiStreamIn</a> which is used for receiving and parsing midi messages. There you also need to specify the <a href="https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_action.html">MidiAction</a> which implements the actions to be performed on the received events. The loop method processes the next message:</p>
 <div class="fragment"><div class="line">#include &quot;Midi.h&quot;</div>
 <div class="line"> </div>
-<div class="line">MyEventHandler handler</div>
-<div class="line">MidiStreamIn in(Serial, handler);</div>
+<div class="line">MidiCallbackAction action;</div>
+<div class="line">MidiStreamIn in(Serial, &amp;action);</div>
+<div class="line"> </div>
+<div class="line">void onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) {</div>
+<div class="line">  Serial.print(&quot;onNoteOn: &quot;);</div>
+<div class="line">  Serial.println(note);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">void onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity) {</div>
+<div class="line">  Serial.print(&quot;onNoteOff: &quot;);</div>
+<div class="line">  Serial.println(note);</div>
+<div class="line">}</div>
 <div class="line"> </div>
 <div class="line">void setup() {</div>
 <div class="line">  Serial.begin(115200);</div>
+<div class="line">  action.setCallbacks(onNoteOn, onNoteOff);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">void loop() {</div>
 <div class="line">  in.loop();</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> We also provide some higher level API "Server" classes which can be used for both, input and output: MidiServer, MidiIpServer, AppleMidiServer...</p>
-<p>Here is the generated <a href="https://pschatzmann.github.io/arduino-midi/html/annotated.html">Class Documentation</a>.</p>
+<p>Here is the generated <a href="https://pschatzmann.github.io/arduino-midi/html/annotated.html">Class Documentation</a>. You can find <a href="https://www.pschatzmann.ch/home/tag/midi/">further information in my blogs</a>.</p>
 <h2><a class="anchor" id="autotoc_md2"></a>
+Logging</h2>
+<p>The library provides some logging functionality. By default the log level is set to MidiDebug. You can change the level with </p><div class="fragment"><div class="line">MidiLogLevel = MidiDebug; // or MidiInfo, MidiWarning, MidiError</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 Namespace</h2>
 <p>All the midi classes are defined using the midi namespace. If you include <a class="el" href="_midi_8h_source.html">Midi.h</a> the using namespace is already defined. However, if you include the individual class specific header files you need to add a using namespace midi; in your sketch.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Installation in Arduino</h2>
 <p>You can download the library as zip and call include Library -&gt; zip library. Or you can git clone this project into the Arduino libraries folder e.g. with</p>
 <div class="fragment"><div class="line">cd  ~/Documents/Arduino/libraries</div>
-<div class="line">git clone pschatzmann/arduino-midi.git</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+<div class="line">git clone https://github.com/pschatzmann/arduino-midi.git</div>
+</div><!-- fragment --><p> I recommend to use git because you can easily update to the latest version just by executing the git pull command in the project folder. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

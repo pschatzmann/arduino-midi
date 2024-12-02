@@ -5,7 +5,7 @@ var searchData=
   ['midibleclientadvertiseddevicecallbacks_15',['MidiBleClientAdvertisedDeviceCallbacks',['../classmidi_1_1_midi_ble_client_advertised_device_callbacks.html',1,'midi']]],
   ['midibleclientcallback_16',['MidiBleClientCallback',['../classmidi_1_1_midi_ble_client_callback.html',1,'midi']]],
   ['midibleparser_17',['MidiBleParser',['../classmidi_1_1_midi_ble_parser.html',1,'midi']]],
-  ['midibleserver_18',['MidiBleServer',['../classmidi_1_1_midi_ble_server.html',1,'midi::MidiBleServer'],['../classmidi_1_1_midi_ble_server.html#a638f856c98c372fc8c701dbd3b456d7a',1,'midi::MidiBleServer::MidiBleServer(const char *name, MidiBleParser *pEventHandler=nullptr)'],['../classmidi_1_1_midi_ble_server.html#a088de9cfdaef1106d379dd5362df25dc',1,'midi::MidiBleServer::MidiBleServer(const char *name, MidiAction *MidiAction, int channelFilter=-1)']]],
+  ['midibleserver_18',['MidiBleServer',['../classmidi_1_1_midi_ble_server.html',1,'midi::MidiBleServer'],['../classmidi_1_1_midi_ble_server.html#a088de9cfdaef1106d379dd5362df25dc',1,'midi::MidiBleServer::MidiBleServer(const char *name, MidiAction *MidiAction, int channelFilter=-1)'],['../classmidi_1_1_midi_ble_server.html#a638f856c98c372fc8c701dbd3b456d7a',1,'midi::MidiBleServer::MidiBleServer(const char *name, MidiBleParser *pEventHandler=nullptr)']]],
   ['midibleservercallback_19',['MidiBleServerCallback',['../classmidi_1_1_midi_ble_server_callback.html',1,'midi']]],
   ['midicallbackaction_20',['MidiCallbackAction',['../classmidi_1_1_midi_callback_action.html',1,'midi']]],
   ['midicommon_21',['MidiCommon',['../classmidi_1_1_midi_common.html',1,'midi::MidiCommon'],['../classmidi_1_1_midi_common.html#a5d28740bb1ff94ae47c41fbf6fa6386f',1,'midi::MidiCommon::MidiCommon()']]],

@@ -56,7 +56,7 @@ void MidiBleClient :: begin(BLEAdvertisedDevice *pDevice) {
 
     // Read the value of the characteristic.
     if(pRemoteCharacteristic->canRead()) {
-        std::string value = pRemoteCharacteristic->readValue();
+        String value = pRemoteCharacteristic->readValue();
         MIDI_LOGE( "The characteristic value was: %s",value.c_str());
     }
 
