@@ -122,10 +122,10 @@ class MidiCommon {
         //! Defines the voice which is used in inbound processing
         virtual void setMidiAction(MidiAction &MidiAction);
 
-        // //! Determines the connection status
+        //! Determines the connection status
         virtual ConnectionStatus getConnectionStatus() { return connectionStatus; }
 
-        //! Public proxy method to writeData
+        //! write multiple MidiMessage objects to final output
         void write(MidiMessage *msg, int len);
 
     protected:
