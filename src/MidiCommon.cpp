@@ -110,6 +110,10 @@ uint8_t MidiCommon :: frequencyToNote(float freq) {
 void MidiCommon :: writeData(MidiMessage *msg, int len){
 }
 
+void MidiCommon :: write(MidiMessage *msg, int len){
+    writeData(msg, len);
+}
+
 
 
 } // namespace
