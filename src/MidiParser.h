@@ -30,7 +30,7 @@ class MidiParser  {
     public:
         MidiParser() = default;
         MidiParser(MidiAction *MidiAction, int filter_channel = -1 );
-         ~MidiParser();
+        virtual ~MidiParser();
 
         /// Assigns the MidiAction and optinally defines a midi channel
         void begin(MidiAction *MidiAction, int filter_channel = -1 );

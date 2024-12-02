@@ -18,7 +18,7 @@ The library supports
 
 ### Documentation
 
-The basic functionality is based on Arduino Streams (Except the BLE functionality). You give the [MidiStreamOut](https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html) class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP. 
+The basic functionality is based on Arduino Streams (Except the BLE functionality). You give the [MidiStreamOut](https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html) class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP and even USB together with the TinyUSB library. 
 
 ```
 #include "Midi.h"

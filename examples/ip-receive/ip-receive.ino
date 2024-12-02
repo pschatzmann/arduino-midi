@@ -54,14 +54,7 @@ void setup() {
 }
 
 void loop() {
-    Serial.print("playing ");
-    Serial.println(++note);
-
-    out.noteOn( note, amplitude );
-    delay(900);
-    out.noteOff( note, 20 );
-    delay(200);
-    if (note>=90) {
-      note = 30;
-    }
+  if (!in.loop()){
+    delay(10);
+  }
 }

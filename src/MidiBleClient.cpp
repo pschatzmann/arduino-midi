@@ -56,7 +56,11 @@ void MidiBleClient :: begin(BLEAdvertisedDevice *pDevice) {
 
     // Read the value of the characteristic.
     if(pRemoteCharacteristic->canRead()) {
+#if ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 0, 0)
+        std::string value = pRemoteCharacteristic->readValue();
+#else
         String value = pRemoteCharacteristic->readValue();
+#endif
         MIDI_LOGE( "The characteristic value was: %s",value.c_str());
     }
 
@@ -68,7 +72,7 @@ void MidiBleClient :: writeData(MidiMessage *pMsg, int len) {
     if (pRemoteCharacteristic!=nullptr){
         updateTimestamp(&outMessage);
         uint8_t* cp = (uint8_t*)&outMessage;
-        int messageLen = sizeof(MidiMessage);
+        //int messageLen = sizeof(MidiMessage);
         switch (len) {
             case 1: {
                 pRemoteCharacteristic->writeValue(cp,len-1, false);

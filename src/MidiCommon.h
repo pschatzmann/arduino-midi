@@ -125,6 +125,9 @@ class MidiCommon {
         // //! Determines the connection status
         virtual ConnectionStatus getConnectionStatus() { return connectionStatus; }
 
+        //! Public proxy method to writeData
+        void write(MidiMessage *msg, int len);
+
     protected:
         void setConnectionStatus(ConnectionStatus status) {connectionStatus=status; }
         void updateTimestamp(MidiMessage *pMsg);
