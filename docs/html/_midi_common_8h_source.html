@@ -166,25 +166,27 @@ $(function() {
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment">// //! Determines the connection status</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">virtual</span> ConnectionStatus getConnectionStatus() { <span class="keywordflow">return</span> connectionStatus; }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">void</span> setConnectionStatus(ConnectionStatus status) {connectionStatus=status; }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">void</span> updateTimestamp(<a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> writeData(<a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> *msg, <span class="keywordtype">int</span> len);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        ConnectionStatus connectionStatus;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a> *pMidiAction;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> outMessage;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">int</span> receivingChannel = -1;  </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        uint8_t sendingChannel = 0;  </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        uint8_t timestampLow;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        uint8_t timestampHigh;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">char</span> *name;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;};</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmidi_1_1_midi_common.html#ab6d5f15c999e24882e9ddade36af1577">write</a>(<a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> *msg, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">void</span> setConnectionStatus(ConnectionStatus status) {connectionStatus=status; }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordtype">void</span> updateTimestamp(<a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> writeData(<a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> *msg, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        ConnectionStatus connectionStatus;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="classmidi_1_1_midi_action.html">MidiAction</a> *pMidiAction;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="structmidi_1_1_midi_message.html">MidiMessage</a> outMessage;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordtype">int</span> receivingChannel = -1;  </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        uint8_t sendingChannel = 0;  </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        uint8_t timestampLow;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        uint8_t timestampHigh;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordtype">char</span> *name;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;};</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmidi_1_1_midi_action_html"><div class="ttname"><a href="classmidi_1_1_midi_action.html">midi::MidiAction</a></div><div class="ttdoc">Abstract class for a MidiAction.</div><div class="ttdef"><b>Definition:</b> MidiAction.h:15</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html"><div class="ttname"><a href="classmidi_1_1_midi_common.html">midi::MidiCommon</a></div><div class="ttdoc">The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message...</div><div class="ttdef"><b>Definition:</b> MidiCommon.h:75</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html_a00771509caca2e46fb273b1ae8178517"><div class="ttname"><a href="classmidi_1_1_midi_common.html#a00771509caca2e46fb273b1ae8178517">midi::MidiCommon::polyPressure</a></div><div class="ttdeci">virtual void polyPressure(uint8_t valuePar, int8_t channel=-1)</div><div class="ttdoc">Sends a polyPressure MIDI command to the output.</div><div class="ttdef"><b>Definition:</b> MidiCommon.cpp:68</div></div>
@@ -199,6 +201,7 @@ $(function() {
 <div class="ttc" id="aclassmidi_1_1_midi_common_html_a7e026258c4355d38dedda82f1862141c"><div class="ttname"><a href="classmidi_1_1_midi_common.html#a7e026258c4355d38dedda82f1862141c">midi::MidiCommon::noteOn</a></div><div class="ttdeci">virtual void noteOn(uint8_t note, uint8_t velocity, int8_t channel=-1)</div><div class="ttdoc">Sends a noteOn MIDI command to the output.</div><div class="ttdef"><b>Definition:</b> MidiCommon.cpp:37</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html_a95a089c4af7d0809094255de9a4bf242"><div class="ttname"><a href="classmidi_1_1_midi_common.html#a95a089c4af7d0809094255de9a4bf242">midi::MidiCommon::noteToFrequency</a></div><div class="ttdeci">static float noteToFrequency(uint8_t note)</div><div class="ttdoc">Converts a MIDI note to a frequency in Hz.</div><div class="ttdef"><b>Definition:</b> MidiCommon.cpp:101</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html_aa80729b4b9932838ddef4fe48242510b"><div class="ttname"><a href="classmidi_1_1_midi_common.html#aa80729b4b9932838ddef4fe48242510b">midi::MidiCommon::controlChange</a></div><div class="ttdeci">virtual void controlChange(uint8_t msg, uint8_t value, int8_t channel=-1)</div><div class="ttdoc">Sends a control change MIDI command to the output.</div><div class="ttdef"><b>Definition:</b> MidiCommon.cpp:94</div></div>
+<div class="ttc" id="aclassmidi_1_1_midi_common_html_ab6d5f15c999e24882e9ddade36af1577"><div class="ttname"><a href="classmidi_1_1_midi_common.html#ab6d5f15c999e24882e9ddade36af1577">midi::MidiCommon::write</a></div><div class="ttdeci">void write(MidiMessage *msg, int len)</div><div class="ttdoc">Public proxy method to writeData.</div><div class="ttdef"><b>Definition:</b> MidiCommon.cpp:113</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html_ac1ef192cf2b1adfcc89d4cf3db5e80a3"><div class="ttname"><a href="classmidi_1_1_midi_common.html#ac1ef192cf2b1adfcc89d4cf3db5e80a3">midi::MidiCommon::pitchBend</a></div><div class="ttdeci">virtual void pitchBend(uint16_t value, int8_t channel=-1)</div><div class="ttdoc">Sends a pitchBend MIDI command to the output.</div><div class="ttdef"><b>Definition:</b> MidiCommon.cpp:53</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html_ae14155807a18449e6c3a2117b99aef82"><div class="ttname"><a href="classmidi_1_1_midi_common.html#ae14155807a18449e6c3a2117b99aef82">midi::MidiCommon::allNotesOff</a></div><div class="ttdeci">virtual void allNotesOff(int8_t channel=-1)</div><div class="ttdoc">Sends a allNotesOff MIDI command to the output.</div><div class="ttdef"><b>Definition:</b> MidiCommon.cpp:82</div></div>
 <div class="ttc" id="aclassmidi_1_1_midi_common_html_aee00ffec71667ca134c697a115e649f9"><div class="ttname"><a href="classmidi_1_1_midi_common.html#aee00ffec71667ca134c697a115e649f9">midi::MidiCommon::programChange</a></div><div class="ttdeci">virtual void programChange(uint8_t program, int8_t channel=-1)</div><div class="ttdoc">Sends a programChange MIDI command to the output.</div><div class="ttdef"><b>Definition:</b> MidiCommon.cpp:75</div></div>

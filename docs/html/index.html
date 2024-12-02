@@ -81,7 +81,7 @@ $(function() {
 </ul>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Documentation</h2>
-<p>The basic functionality is based on Arduino Streams (Except the BLE functionality). You give the <a href="https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html">MidiStreamOut</a> class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP.</p>
+<p>The basic functionality is based on Arduino Streams (Except the BLE functionality). You give the <a href="https://pschatzmann.github.io/arduino-midi/html/classmidi_1_1_midi_stream_out.html">MidiStreamOut</a> class an Arduino output stream as argument which will then be used to send/write out the midi data. This gives the flexibility that we can support Files, Serial, IP and UDP and even USB together with the TinyUSB library.</p>
 <div class="fragment"><div class="line">#include &quot;Midi.h&quot;</div>
 <div class="line"> </div>
 <div class="line">MidiStreamOut out(Serial);</div>
