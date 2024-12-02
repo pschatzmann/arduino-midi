@@ -66,7 +66,7 @@ enum ConnectionStatus {
 
     - MidiBleServer
     - MidiBleClient
-    - MidiSerialOut
+    - MidiStreamOut
 
     by Phil Schatzmann
 */
