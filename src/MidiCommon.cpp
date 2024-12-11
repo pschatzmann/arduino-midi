@@ -58,21 +58,24 @@ void MidiCommon :: pitchBend(uint16_t value, int8_t channelPar) {
     writeData(&outMessage, 2);
 }
 
-void MidiCommon :: channelPressure(uint8_t valuePar, int8_t channel){
+void MidiCommon :: channelPressure(uint8_t valuePar, int8_t channelPar) {
+    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
     uint8_t value = valuePar & 0b1111111;
     this->outMessage.status = 0b1101 << 4 | channel;
     this->outMessage.arg1 = value ;
     writeData(&outMessage, 1);
 }
 
-void MidiCommon :: polyPressure(uint8_t valuePar, int8_t channel){
+void MidiCommon :: polyPressure(uint8_t valuePar, int8_t channelPar) {
+    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
     uint8_t value = valuePar & 0b1111111;
     this->outMessage.status = 0b1010 << 4 | channel;
     this->outMessage.arg1 = value ;
     writeData(&outMessage, 1);
 }
 
-void MidiCommon :: programChange(uint8_t program, int8_t channel){
+void MidiCommon :: programChange(uint8_t program, int8_t channelPar) {
+    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
     uint8_t value = program & 0b1111111;
     this->outMessage.status = 0b1100 << 4 | channel;
     this->outMessage.arg1 = value ;
@@ -91,7 +94,8 @@ void MidiCommon :: localControl( bool active, int8_t channel){
     controlChange(122,active ? 127 : 0, channel);
 }
 
-void MidiCommon :: controlChange(uint8_t msg, uint8_t value, int8_t channel){
+void MidiCommon :: controlChange(uint8_t msg, uint8_t value, int8_t channelPar) {
+    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
     this->outMessage.status = 0b1011 << 4 | channel;
     this->outMessage.arg1 = msg;
     this->outMessage.arg2 = value;    
