@@ -132,6 +132,7 @@ class MidiCommon {
         void setConnectionStatus(ConnectionStatus status) {connectionStatus=status; }
         void updateTimestamp(MidiMessage *pMsg);
         virtual void writeData(MidiMessage *msg, int len);
+        uint8_t getChannel(uint8_t ch);
         
         ConnectionStatus connectionStatus;
         MidiAction *pMidiAction;

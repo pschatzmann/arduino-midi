@@ -1,8 +1,7 @@
 # Arduino MIDI Library
 
 Quite some time ago, I spent some effort to add Midi support to the [Arduino-STK](https://github.com/pschatzmann/Arduino-STK.git) library.
-In the meantime I came to the conclusion that it would be better to have this as a separate functionality, so that it could be used by other 
-of my projects.
+In the meantime I came to the conclusion that it would be better to have this as a separate functionality, so that it could be used by other of my projects.
 
 The library supports
 

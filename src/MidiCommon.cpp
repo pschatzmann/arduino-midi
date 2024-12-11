@@ -35,7 +35,7 @@ void MidiCommon ::  updateTimestamp(MidiMessage *pMsg) {
 
 
 void MidiCommon :: noteOn(uint8_t note, uint8_t velocity, int8_t channelPar) {
-    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
+    uint8_t channel = getChannel(channelPar);
     this->outMessage.status = 0b1001 << 4 | channel;
     this->outMessage.arg1 = note;
     this->outMessage.arg2 = velocity;
@@ -43,7 +43,7 @@ void MidiCommon :: noteOn(uint8_t note, uint8_t velocity, int8_t channelPar) {
 }
 
 void MidiCommon :: noteOff(uint8_t note, uint8_t velocity, int8_t channelPar) {
-    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
+    uint8_t channel = getChannel(channelPar);
     this->outMessage.status = 0b1000 << 4 | channel;
     this->outMessage.arg1 = note;
     this->outMessage.arg2 = velocity;
@@ -51,7 +51,7 @@ void MidiCommon :: noteOff(uint8_t note, uint8_t velocity, int8_t channelPar) {
 }
 
 void MidiCommon :: pitchBend(uint16_t value, int8_t channelPar) {
-    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
+    uint8_t channel = getChannel(channelPar);
     this->outMessage.status = 0b1110 << 4 | channel;
     this->outMessage.arg1 = value >> 8;
     this->outMessage.arg2 = value | 0xFF;
@@ -59,7 +59,7 @@ void MidiCommon :: pitchBend(uint16_t value, int8_t channelPar) {
 }
 
 void MidiCommon :: channelPressure(uint8_t valuePar, int8_t channelPar) {
-    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
+    uint8_t channel = getChannel(channelPar);
     uint8_t value = valuePar & 0b1111111;
     this->outMessage.status = 0b1101 << 4 | channel;
     this->outMessage.arg1 = value ;
@@ -67,7 +67,7 @@ void MidiCommon :: channelPressure(uint8_t valuePar, int8_t channelPar) {
 }
 
 void MidiCommon :: polyPressure(uint8_t valuePar, int8_t channelPar) {
-    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
+    uint8_t channel = getChannel(channelPar);
     uint8_t value = valuePar & 0b1111111;
     this->outMessage.status = 0b1010 << 4 | channel;
     this->outMessage.arg1 = value ;
@@ -75,7 +75,7 @@ void MidiCommon :: polyPressure(uint8_t valuePar, int8_t channelPar) {
 }
 
 void MidiCommon :: programChange(uint8_t program, int8_t channelPar) {
-    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
+    uint8_t channel = getChannel(channelPar);
     uint8_t value = program & 0b1111111;
     this->outMessage.status = 0b1100 << 4 | channel;
     this->outMessage.arg1 = value ;
@@ -95,7 +95,7 @@ void MidiCommon :: localControl( bool active, int8_t channel){
 }
 
 void MidiCommon :: controlChange(uint8_t msg, uint8_t value, int8_t channelPar) {
-    uint8_t channel = channelPar != -1 ? channelPar : sendingChannel;
+    uint8_t channel = getChannel(channelPar);
     this->outMessage.status = 0b1011 << 4 | channel;
     this->outMessage.arg1 = msg;
     this->outMessage.arg2 = value;    
@@ -118,6 +118,11 @@ void MidiCommon :: write(MidiMessage *msg, int len){
     writeData(msg, len);
 }
 
+uint8_t MidiCommon :: getChannel(uint8_t ch) {
+    uint8_t result_channel = (ch != -1) ? ch : sendingChannel;
+    assert(result_channel <= 0b1111);
+    return result_channel;
+}
 
 
 } // namespace
