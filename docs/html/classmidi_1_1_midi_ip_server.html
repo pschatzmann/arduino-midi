@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>arduino-midi: midi::MidiIpServer Class Reference</title>
+<title>arduino-midi: midi::MidiIpServer&lt; ServerClass, ClientClass &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classmidi_1_1_midi_ip_server-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">midi::MidiIpServer Class Reference</div>  </div>
+<div class="title">midi::MidiIpServer&lt; ServerClass, ClientClass &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -81,28 +81,28 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_midi_ip_server_8h_source.html">MidiIpServer.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for midi::MidiIpServer:</div>
+Inheritance diagram for midi::MidiIpServer&lt; ServerClass, ClientClass &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classmidi_1_1_midi_ip_server.png" usemap="#midi::MidiIpServer_map" alt=""/>
-  <map id="midi::MidiIpServer_map" name="midi::MidiIpServer_map">
-<area href="classmidi_1_1_midi_server.html" title="A simple Serial Server which which receives and creates MIDI messages." alt="midi::MidiServer" shape="rect" coords="0,56,113,80"/>
-<area href="classmidi_1_1_midi_common.html" title="The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message..." alt="midi::MidiCommon" shape="rect" coords="0,0,113,24"/>
+  <img src="classmidi_1_1_midi_ip_server.png" usemap="#midi::MidiIpServer_3C_20ServerClass_2C_20ClientClass_20_3E_map" alt=""/>
+  <map id="midi::MidiIpServer_3C_20ServerClass_2C_20ClientClass_20_3E_map" name="midi::MidiIpServer_3C_20ServerClass_2C_20ClientClass_20_3E_map">
+<area href="classmidi_1_1_midi_server.html" title="A simple Serial Server which which receives and creates MIDI messages." alt="midi::MidiServer" shape="rect" coords="0,56,279,80"/>
+<area href="classmidi_1_1_midi_common.html" title="The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message..." alt="midi::MidiCommon" shape="rect" coords="0,0,279,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae28407316384ec5dde74617e27099b23"><td class="memItemLeft" align="right" valign="top"><a id="ae28407316384ec5dde74617e27099b23"></a>
+<tr class="memitem:aea8c843c1db6c14420304722868cf7ac"><td class="memItemLeft" align="right" valign="top"><a id="aea8c843c1db6c14420304722868cf7ac"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>MidiIpServer</b> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *action)</td></tr>
-<tr class="separator:ae28407316384ec5dde74617e27099b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aea8c843c1db6c14420304722868cf7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae14155807a18449e6c3a2117b99aef82"><td class="memItemLeft" align="right" valign="top"><a id="ae14155807a18449e6c3a2117b99aef82"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#ae14155807a18449e6c3a2117b99aef82">allNotesOff</a> (int8_t channel=-1)</td></tr>
 <tr class="memdesc:ae14155807a18449e6c3a2117b99aef82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a allNotesOff MIDI command to the output. <br /></td></tr>
 <tr class="separator:ae14155807a18449e6c3a2117b99aef82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49488c0bda8149ab1c91569e3983c7b5"><td class="memItemLeft" align="right" valign="top"><a id="a49488c0bda8149ab1c91569e3983c7b5"></a>
+<tr class="memitem:a045d9c544216e833583657fbc1f06ea7"><td class="memItemLeft" align="right" valign="top"><a id="a045d9c544216e833583657fbc1f06ea7"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> (int serverPort=5008)</td></tr>
-<tr class="separator:a49488c0bda8149ab1c91569e3983c7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a045d9c544216e833583657fbc1f06ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60f02552293218c62c31e7c8480c31af"><td class="memItemLeft" align="right" valign="top"><a id="a60f02552293218c62c31e7c8480c31af"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> (Stream &amp;stream)</td></tr>
 <tr class="separator:a60f02552293218c62c31e7c8480c31af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,9 +114,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#aa80729b4b9932838ddef4fe48242510b">controlChange</a> (uint8_t msg, uint8_t value, int8_t channel=-1)</td></tr>
 <tr class="memdesc:aa80729b4b9932838ddef4fe48242510b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a control change MIDI command to the output. <br /></td></tr>
 <tr class="separator:aa80729b4b9932838ddef4fe48242510b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88386cd967abbf62221b2a7c58ee87d0"><td class="memItemLeft" align="right" valign="top"><a id="a88386cd967abbf62221b2a7c58ee87d0"></a>
+<tr class="memitem:afe14f8e9cf8295b77bdcc3868a39d34c"><td class="memItemLeft" align="right" valign="top"><a id="afe14f8e9cf8295b77bdcc3868a39d34c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
-<tr class="separator:a88386cd967abbf62221b2a7c58ee87d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:afe14f8e9cf8295b77bdcc3868a39d34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe9bfaacf6e738555f1394ef24fcb200"><td class="memItemLeft" align="right" valign="top"><a id="abe9bfaacf6e738555f1394ef24fcb200"></a>
 virtual ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#abe9bfaacf6e738555f1394ef24fcb200">getConnectionStatus</a> ()</td></tr>
 <tr class="memdesc:abe9bfaacf6e738555f1394ef24fcb200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the connection status. <br /></td></tr>
@@ -125,9 +125,9 @@ virtual ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><a c
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a164dfde583e2e3fdf3e8a277954a3632">localControl</a> (bool active, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a164dfde583e2e3fdf3e8a277954a3632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a localControl MIDI command to the output. <br /></td></tr>
 <tr class="separator:a164dfde583e2e3fdf3e8a277954a3632"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8325bfcd336f42f0d0d5f396da69c3a5"><td class="memItemLeft" align="right" valign="top"><a id="a8325bfcd336f42f0d0d5f396da69c3a5"></a>
+<tr class="memitem:a48b2072a9e38ec78f23c18914875c3d1"><td class="memItemLeft" align="right" valign="top"><a id="a48b2072a9e38ec78f23c18914875c3d1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
-<tr class="separator:a8325bfcd336f42f0d0d5f396da69c3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a48b2072a9e38ec78f23c18914875c3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bffbeb8f4f625a551f741d6ec515da3"><td class="memItemLeft" align="right" valign="top"><a id="a7bffbeb8f4f625a551f741d6ec515da3"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a7bffbeb8f4f625a551f741d6ec515da3">noteOff</a> (uint8_t note, uint8_t velocity, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a7bffbeb8f4f625a551f741d6ec515da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a noteOff MIDI command to the output. <br /></td></tr>
@@ -182,6 +182,9 @@ static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8d332933e0076b3c9d24aeeed73bdacc"><td class="memItemLeft" align="right" valign="top"><a id="a8d332933e0076b3c9d24aeeed73bdacc"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getChannel</b> (uint8_t ch)</td></tr>
+<tr class="separator:a8d332933e0076b3c9d24aeeed73bdacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memItemLeft" align="right" valign="top"><a id="a20f19c66fe44a0e3998639d4b28c11e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setConnectionStatus</b> (ConnectionStatus status)</td></tr>
 <tr class="separator:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,9 +197,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>writeData</b>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:adce58b8872cf3137829d2dffd5c1ac58"><td class="memItemLeft" align="right" valign="top"><a id="adce58b8872cf3137829d2dffd5c1ac58"></a>
-WiFiClient&#160;</td><td class="memItemRight" valign="bottom"><b>client</b></td></tr>
-<tr class="separator:adce58b8872cf3137829d2dffd5c1ac58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14edac279939f60ed2fafa006a02161d"><td class="memItemLeft" align="right" valign="top"><a id="a14edac279939f60ed2fafa006a02161d"></a>
+ClientClass&#160;</td><td class="memItemRight" valign="bottom"><b>client</b></td></tr>
+<tr class="separator:a14edac279939f60ed2fafa006a02161d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ee469ef9f02084576f6bbbc853abc13"><td class="memItemLeft" align="right" valign="top"><a id="a5ee469ef9f02084576f6bbbc853abc13"></a>
 ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><b>connectionStatus</b></td></tr>
 <tr class="separator:a5ee469ef9f02084576f6bbbc853abc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,9 +218,9 @@ char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="memitem:a16f52934f9449debc2de29d4c476e13d"><td class="memItemLeft" align="right" valign="top"><a id="a16f52934f9449debc2de29d4c476e13d"></a>
 <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>p_action</b></td></tr>
 <tr class="separator:a16f52934f9449debc2de29d4c476e13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b1299a843045a279ecfa0f363969c19"><td class="memItemLeft" align="right" valign="top"><a id="a4b1299a843045a279ecfa0f363969c19"></a>
-WiFiServer *&#160;</td><td class="memItemRight" valign="bottom"><b>p_wifi_server</b> = nullptr</td></tr>
-<tr class="separator:a4b1299a843045a279ecfa0f363969c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ffbfcef55c54978fad53efd4a1d14c4"><td class="memItemLeft" align="right" valign="top"><a id="a5ffbfcef55c54978fad53efd4a1d14c4"></a>
+ServerClass *&#160;</td><td class="memItemRight" valign="bottom"><b>p_wifi_server</b> = nullptr</td></tr>
+<tr class="separator:a5ffbfcef55c54978fad53efd4a1d14c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7751c98be6e174fe88b509ad0e28bac1"><td class="memItemLeft" align="right" valign="top"><a id="a7751c98be6e174fe88b509ad0e28bac1"></a>
 <a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidiAction</b></td></tr>
 <tr class="separator:a7751c98be6e174fe88b509ad0e28bac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,7 +238,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampLow</b></
 <tr class="separator:acde612eb9123a757be8216ad7868ded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A simple IP Server which which receives and creates MIDI messages. </p>
+<div class="textblock"><h3>template&lt;class ServerClass = WiFiServer, class ClientClass = WiFiClient&gt;<br />
+class midi::MidiIpServer&lt; ServerClass, ClientClass &gt;</h3>
+
+<p>A simple IP Server which which receives and creates MIDI messages. </p>
 <p>by Phil Schatzmann </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="_midi_ip_server_8h_source.html">MidiIpServer.h</a></li>

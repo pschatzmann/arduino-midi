@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>arduino-midi: midi::MidiUdp Class Reference</title>
+<title>arduino-midi: midi::MidiUdp&lt; UDPClass &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classmidi_1_1_midi_udp-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">midi::MidiUdp Class Reference</div>  </div>
+<div class="title">midi::MidiUdp&lt; UDPClass &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -79,7 +79,7 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_midi_udp_8h_source.html">MidiUdp.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for midi::MidiUdp:</div>
+Inheritance diagram for midi::MidiUdp&lt; UDPClass &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classmidi_1_1_midi_udp.png" alt=""/>
@@ -87,41 +87,43 @@ Inheritance diagram for midi::MidiUdp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a59274cffa1a0bd78592c2ad8999fc94e"><td class="memItemLeft" align="right" valign="top"><a id="a59274cffa1a0bd78592c2ad8999fc94e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MidiUdp</b> (char *targetUdpAddressStr, int targetPort)</td></tr>
-<tr class="separator:a59274cffa1a0bd78592c2ad8999fc94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fd032a30c2d08cc1db77bd0b2bec202"><td class="memItemLeft" align="right" valign="top"><a id="a6fd032a30c2d08cc1db77bd0b2bec202"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MidiUdp</b> (IPAddress targetUdpAddress, int targetPort)</td></tr>
-<tr class="separator:a6fd032a30c2d08cc1db77bd0b2bec202"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c86ff4fdc52297f18b31df24095b374"><td class="memItemLeft" align="right" valign="top"><a id="a1c86ff4fdc52297f18b31df24095b374"></a>
+<tr class="memitem:a684d10a6bb74c786f95997486cb8510b"><td class="memItemLeft" align="right" valign="top"><a id="a684d10a6bb74c786f95997486cb8510b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>MidiUdp</b> (char *addessStr, int targetPort)</td></tr>
+<tr class="separator:a684d10a6bb74c786f95997486cb8510b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90c4aa4bf7d1601b5ca58fc313ad123c"><td class="memItemLeft" align="right" valign="top"><a id="a90c4aa4bf7d1601b5ca58fc313ad123c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>MidiUdp</b> (IPAddress address, int targetPort)</td></tr>
+<tr class="separator:a90c4aa4bf7d1601b5ca58fc313ad123c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f5f703f4a6bf1ec589128d95fc60b1"><td class="memItemLeft" align="right" valign="top"><a id="ab8f5f703f4a6bf1ec589128d95fc60b1"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidHost</b> ()</td></tr>
-<tr class="separator:a1c86ff4fdc52297f18b31df24095b374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a714adc0e1b6ca517b66dbef82362402e"><td class="memItemLeft" align="right" valign="top"><a id="a714adc0e1b6ca517b66dbef82362402e"></a>
+<tr class="separator:ab8f5f703f4a6bf1ec589128d95fc60b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d5ebdd203d605f4dbd599fa71287ac"><td class="memItemLeft" align="right" valign="top"><a id="a35d5ebdd203d605f4dbd599fa71287ac"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setTargetPort</b> (int port)</td></tr>
-<tr class="separator:a714adc0e1b6ca517b66dbef82362402e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5f210e0283e01d06d39143cab610f3d"><td class="memItemLeft" align="right" valign="top"><a id="af5f210e0283e01d06d39143cab610f3d"></a>
+<tr class="separator:a35d5ebdd203d605f4dbd599fa71287ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee33708d9f844627c8c4bcead27ba315"><td class="memItemLeft" align="right" valign="top"><a id="aee33708d9f844627c8c4bcead27ba315"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const uint8_t *buffer, size_t size)</td></tr>
-<tr class="separator:af5f210e0283e01d06d39143cab610f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aee33708d9f844627c8c4bcead27ba315"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ae524b1fa6d41b0d9587be917e1127817"><td class="memItemLeft" align="right" valign="top"><a id="ae524b1fa6d41b0d9587be917e1127817"></a>
+<tr class="memitem:af905d68cf19e474db692b382188e6702"><td class="memItemLeft" align="right" valign="top"><a id="af905d68cf19e474db692b382188e6702"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValidHostFlag</b></td></tr>
-<tr class="separator:ae524b1fa6d41b0d9587be917e1127817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ec6d62ca7ca6308e86cd77aaf18aba8"><td class="memItemLeft" align="right" valign="top"><a id="a9ec6d62ca7ca6308e86cd77aaf18aba8"></a>
+<tr class="separator:af905d68cf19e474db692b382188e6702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a420fd3c30e4c49b7d3b542c59a3dd51f"><td class="memItemLeft" align="right" valign="top"><a id="a420fd3c30e4c49b7d3b542c59a3dd51f"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>targetPort</b></td></tr>
-<tr class="separator:a9ec6d62ca7ca6308e86cd77aaf18aba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a74d105ed3149baffa71babda3ce8d2"><td class="memItemLeft" align="right" valign="top"><a id="a6a74d105ed3149baffa71babda3ce8d2"></a>
+<tr class="separator:a420fd3c30e4c49b7d3b542c59a3dd51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a86e0b313888333fe41079770f6bc2c"><td class="memItemLeft" align="right" valign="top"><a id="a8a86e0b313888333fe41079770f6bc2c"></a>
 IPAddress&#160;</td><td class="memItemRight" valign="bottom"><b>targetUdpAddress</b></td></tr>
-<tr class="separator:a6a74d105ed3149baffa71babda3ce8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a8a86e0b313888333fe41079770f6bc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Simple UDP wrapper class which sends all packages to the same destination. </p>
+<div class="textblock"><h3>template&lt;class UDPClass = WiFiUDP&gt;<br />
+class midi::MidiUdp&lt; UDPClass &gt;</h3>
+
+<p>Simple UDP wrapper class which sends all packages to the same destination. </p>
 <p>This is useful when the API asks for a stream as parameter to output data.</p>
 <p>by Phil Schatzmann </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="_midi_udp_8h_source.html">MidiUdp.h</a></li>
-<li>src/MidiUdp.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

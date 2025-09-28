@@ -70,7 +70,6 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classmidi_1_1_midi_stream_in-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">midi::MidiStreamIn Class Reference</div>  </div>
@@ -164,6 +163,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#afdc7e84bfe245486503768f271680e1f">setMidiAction</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>)</td></tr>
 <tr class="memdesc:afdc7e84bfe245486503768f271680e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the voice which is used in inbound processing. <br /></td></tr>
 <tr class="separator:afdc7e84bfe245486503768f271680e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d28ac77f721f80b1a2c6e812b3804a9"><td class="memItemLeft" align="right" valign="top"><a id="a0d28ac77f721f80b1a2c6e812b3804a9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_stream_in.html#a0d28ac77f721f80b1a2c6e812b3804a9">setup</a> (Stream *stream, <a class="el" href="classmidi_1_1_midi_parser.html">MidiParser</a> *handler, bool releaseHandler)</td></tr>
+<tr class="memdesc:a0d28ac77f721f80b1a2c6e812b3804a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call setup when created with empty constructor. <br /></td></tr>
+<tr class="separator:a0d28ac77f721f80b1a2c6e812b3804a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6d5f15c999e24882e9ddade36af1577"><td class="memItemLeft" align="right" valign="top"><a id="ab6d5f15c999e24882e9ddade36af1577"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#ab6d5f15c999e24882e9ddade36af1577">write</a> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *msg, int len)</td></tr>
 <tr class="memdesc:ab6d5f15c999e24882e9ddade36af1577"><td class="mdescLeft">&#160;</td><td class="mdescRight">write multiple <a class="el" href="structmidi_1_1_midi_message.html" title="The content of the midi message: timestamp, status, arg1 and arg2.">MidiMessage</a> objects to final output <br /></td></tr>
@@ -182,15 +185,15 @@ static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8d332933e0076b3c9d24aeeed73bdacc"><td class="memItemLeft" align="right" valign="top"><a id="a8d332933e0076b3c9d24aeeed73bdacc"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getChannel</b> (uint8_t ch)</td></tr>
+<tr class="separator:a8d332933e0076b3c9d24aeeed73bdacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed4a3ee01871af8aa79b98e9ddcfa04f"><td class="memItemLeft" align="right" valign="top"><a id="aed4a3ee01871af8aa79b98e9ddcfa04f"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getLastStatusPos</b> (uint8_t *buffer, int endPos)</td></tr>
 <tr class="separator:aed4a3ee01871af8aa79b98e9ddcfa04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memItemLeft" align="right" valign="top"><a id="a20f19c66fe44a0e3998639d4b28c11e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setConnectionStatus</b> (ConnectionStatus status)</td></tr>
 <tr class="separator:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d28ac77f721f80b1a2c6e812b3804a9"><td class="memItemLeft" align="right" valign="top"><a id="a0d28ac77f721f80b1a2c6e812b3804a9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (Stream *stream, <a class="el" href="classmidi_1_1_midi_parser.html">MidiParser</a> *handler, bool releaseHandler)</td></tr>
-<tr class="separator:a0d28ac77f721f80b1a2c6e812b3804a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memItemLeft" align="right" valign="top"><a id="a75a6f9752d8a2428d83b27977e18d3d4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTimestamp</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg)</td></tr>
 <tr class="separator:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,18 +242,6 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampHigh</b><
 <tr class="memitem:acde612eb9123a757be8216ad7868ded3"><td class="memItemLeft" align="right" valign="top"><a id="acde612eb9123a757be8216ad7868ded3"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampLow</b></td></tr>
 <tr class="separator:acde612eb9123a757be8216ad7868ded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a4d9c21e710eefe8ab0281202f1962e50"><td class="memItemLeft" align="right" valign="top"><a id="a4d9c21e710eefe8ab0281202f1962e50"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiIpServer</b></td></tr>
-<tr class="separator:a4d9c21e710eefe8ab0281202f1962e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af881146456b7eb2cd6854aa71ef253dc"><td class="memItemLeft" align="right" valign="top"><a id="af881146456b7eb2cd6854aa71ef253dc"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiServer</b></td></tr>
-<tr class="separator:af881146456b7eb2cd6854aa71ef253dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e179aebdac7192a6ba3c60cbd1aea15"><td class="memItemLeft" align="right" valign="top"><a id="a3e179aebdac7192a6ba3c60cbd1aea15"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>MidiUdpServer</b></td></tr>
-<tr class="separator:a3e179aebdac7192a6ba3c60cbd1aea15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default <a class="el" href="classmidi_1_1_midi_parser.html" title="A simple Midi Parser which calls the corresponding events. It supports Midi and BLE Midi messages....">MidiParser</a> or your own subclassed implementation in the constructor to process the midi records. </p>

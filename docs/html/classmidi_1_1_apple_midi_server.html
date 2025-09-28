@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>arduino-midi: midi::AppleMidiServer Class Reference</title>
+<title>arduino-midi: midi::AppleMidiServer&lt; UDPClass &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,9 +71,10 @@ $(function() {
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="classmidi_1_1_apple_midi_server-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">midi::AppleMidiServer Class Reference</div>  </div>
+<div class="title">midi::AppleMidiServer&lt; UDPClass &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -82,32 +83,30 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_apple_midi_server_8h_source.html">AppleMidiServer.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for midi::AppleMidiServer:</div>
+Inheritance diagram for midi::AppleMidiServer&lt; UDPClass &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classmidi_1_1_apple_midi_server.png" usemap="#midi::AppleMidiServer_map" alt=""/>
-  <map id="midi::AppleMidiServer_map" name="midi::AppleMidiServer_map">
-<area href="classmidi_1_1_midi_common.html" title="The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message..." alt="midi::MidiCommon" shape="rect" coords="0,0,136,24"/>
+  <img src="classmidi_1_1_apple_midi_server.png" usemap="#midi::AppleMidiServer_3C_20UDPClass_20_3E_map" alt=""/>
+  <map id="midi::AppleMidiServer_3C_20UDPClass_20_3E_map" name="midi::AppleMidiServer_3C_20UDPClass_20_3E_map">
+<area href="classmidi_1_1_midi_common.html" title="The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message..." alt="midi::MidiCommon" shape="rect" coords="0,0,216,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acb9d6837b14e8bd140c0152b03642e9b"><td class="memItemLeft" align="right" valign="top"><a id="acb9d6837b14e8bd140c0152b03642e9b"></a>
+<tr class="memitem:aa812df897a678c36c3e295f02f01f049"><td class="memItemLeft" align="right" valign="top"><a id="aa812df897a678c36c3e295f02f01f049"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>AppleMidiServer</b> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> *action, int midiPort=-1)</td></tr>
-<tr class="separator:acb9d6837b14e8bd140c0152b03642e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aa812df897a678c36c3e295f02f01f049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae14155807a18449e6c3a2117b99aef82"><td class="memItemLeft" align="right" valign="top"><a id="ae14155807a18449e6c3a2117b99aef82"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#ae14155807a18449e6c3a2117b99aef82">allNotesOff</a> (int8_t channel=-1)</td></tr>
 <tr class="memdesc:ae14155807a18449e6c3a2117b99aef82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a allNotesOff MIDI command to the output. <br /></td></tr>
 <tr class="separator:ae14155807a18449e6c3a2117b99aef82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa000d4daf57fbbfa35e9c32833f0dddd"><td class="memItemLeft" align="right" valign="top"><a id="aa000d4daf57fbbfa35e9c32833f0dddd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#aa000d4daf57fbbfa35e9c32833f0dddd">begin</a> (int control_port=APPLEMIDI_DEFAULT_PORT)</td></tr>
-<tr class="memdesc:aa000d4daf57fbbfa35e9c32833f0dddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the listening. <br /></td></tr>
-<tr class="separator:aa000d4daf57fbbfa35e9c32833f0dddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16a4047422def0acca488ed6727e95f2"><td class="memItemLeft" align="right" valign="top"><a id="a16a4047422def0acca488ed6727e95f2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#a16a4047422def0acca488ed6727e95f2">begin</a> (IPAddress adress, int control_port=APPLEMIDI_DEFAULT_PORT, int data_port_opt=-1)</td></tr>
-<tr class="memdesc:a16a4047422def0acca488ed6727e95f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a session with the indicated address. <br /></td></tr>
-<tr class="separator:a16a4047422def0acca488ed6727e95f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3728adad10aa56dffcd04b7122f61727"><td class="memItemLeft" align="right" valign="top"><a id="a3728adad10aa56dffcd04b7122f61727"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> (int control_port=APPLEMIDI_DEFAULT_PORT)</td></tr>
+<tr class="separator:a3728adad10aa56dffcd04b7122f61727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a488fb70eedfb2b1b40a6121e04884b07"><td class="memItemLeft" align="right" valign="top"><a id="a488fb70eedfb2b1b40a6121e04884b07"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> (IPAddress adress, int control_port=APPLEMIDI_DEFAULT_PORT, int data_port_opt=-1)</td></tr>
+<tr class="separator:a488fb70eedfb2b1b40a6121e04884b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a599481be137cbc0ae57c288a593e8dcf"><td class="memItemLeft" align="right" valign="top"><a id="a599481be137cbc0ae57c288a593e8dcf"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a599481be137cbc0ae57c288a593e8dcf">channelPressure</a> (uint8_t value, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a599481be137cbc0ae57c288a593e8dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a channelPressure MIDI command to the output. <br /></td></tr>
@@ -116,10 +115,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#aa80729b4b9932838ddef4fe48242510b">controlChange</a> (uint8_t msg, uint8_t value, int8_t channel=-1)</td></tr>
 <tr class="memdesc:aa80729b4b9932838ddef4fe48242510b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a control change MIDI command to the output. <br /></td></tr>
 <tr class="separator:aa80729b4b9932838ddef4fe48242510b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b495dd596d1aa3f146e07e675c8be4e"><td class="memItemLeft" align="right" valign="top"><a id="a9b495dd596d1aa3f146e07e675c8be4e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#a9b495dd596d1aa3f146e07e675c8be4e">end</a> ()</td></tr>
-<tr class="memdesc:a9b495dd596d1aa3f146e07e675c8be4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the connections. <br /></td></tr>
-<tr class="separator:a9b495dd596d1aa3f146e07e675c8be4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa89dc4462bff5da4f1f672a3cd44e4b"><td class="memItemLeft" align="right" valign="top"><a id="afa89dc4462bff5da4f1f672a3cd44e4b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="separator:afa89dc4462bff5da4f1f672a3cd44e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe9bfaacf6e738555f1394ef24fcb200"><td class="memItemLeft" align="right" valign="top"><a id="abe9bfaacf6e738555f1394ef24fcb200"></a>
 virtual ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#abe9bfaacf6e738555f1394ef24fcb200">getConnectionStatus</a> ()</td></tr>
 <tr class="memdesc:abe9bfaacf6e738555f1394ef24fcb200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the connection status. <br /></td></tr>
@@ -128,10 +126,9 @@ virtual ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><a c
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a164dfde583e2e3fdf3e8a277954a3632">localControl</a> (bool active, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a164dfde583e2e3fdf3e8a277954a3632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a localControl MIDI command to the output. <br /></td></tr>
 <tr class="separator:a164dfde583e2e3fdf3e8a277954a3632"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06c6802d81d37bb6e9770a9939bb42f6"><td class="memItemLeft" align="right" valign="top"><a id="a06c6802d81d37bb6e9770a9939bb42f6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#a06c6802d81d37bb6e9770a9939bb42f6">loop</a> ()</td></tr>
-<tr class="memdesc:a06c6802d81d37bb6e9770a9939bb42f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processing logic to be executed in loop. <br /></td></tr>
-<tr class="separator:a06c6802d81d37bb6e9770a9939bb42f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a931bc102bdbc357762e587f358f71921"><td class="memItemLeft" align="right" valign="top"><a id="a931bc102bdbc357762e587f358f71921"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
+<tr class="separator:a931bc102bdbc357762e587f358f71921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bffbeb8f4f625a551f741d6ec515da3"><td class="memItemLeft" align="right" valign="top"><a id="a7bffbeb8f4f625a551f741d6ec515da3"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#a7bffbeb8f4f625a551f741d6ec515da3">noteOff</a> (uint8_t note, uint8_t velocity, int8_t channel=-1)</td></tr>
 <tr class="memdesc:a7bffbeb8f4f625a551f741d6ec515da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a noteOff MIDI command to the output. <br /></td></tr>
@@ -168,10 +165,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#afdc7e84bfe245486503768f271680e1f">setMidiAction</a> (<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a> &amp;<a class="el" href="classmidi_1_1_midi_action.html">MidiAction</a>)</td></tr>
 <tr class="memdesc:afdc7e84bfe245486503768f271680e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the voice which is used in inbound processing. <br /></td></tr>
 <tr class="separator:afdc7e84bfe245486503768f271680e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa7580134db96147cbd55be63d0f2bdc"><td class="memItemLeft" align="right" valign="top"><a id="aaa7580134db96147cbd55be63d0f2bdc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#aaa7580134db96147cbd55be63d0f2bdc">setName</a> (const char *name)</td></tr>
-<tr class="memdesc:aaa7580134db96147cbd55be63d0f2bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the dns name. <br /></td></tr>
-<tr class="separator:aaa7580134db96147cbd55be63d0f2bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fcce410ffa80b6cbc8c13232bc9d32d"><td class="memItemLeft" align="right" valign="top"><a id="a1fcce410ffa80b6cbc8c13232bc9d32d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setName</b> (const char *name)</td></tr>
+<tr class="separator:a1fcce410ffa80b6cbc8c13232bc9d32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6d5f15c999e24882e9ddade36af1577"><td class="memItemLeft" align="right" valign="top"><a id="ab6d5f15c999e24882e9ddade36af1577"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_midi_common.html#ab6d5f15c999e24882e9ddade36af1577">write</a> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *msg, int len)</td></tr>
 <tr class="memdesc:ab6d5f15c999e24882e9ddade36af1577"><td class="mdescLeft">&#160;</td><td class="mdescRight">write multiple <a class="el" href="structmidi_1_1_midi_message.html" title="The content of the midi message: timestamp, status, arg1 and arg2.">MidiMessage</a> objects to final output <br /></td></tr>
@@ -190,58 +186,54 @@ static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8d332933e0076b3c9d24aeeed73bdacc"><td class="memItemLeft" align="right" valign="top"><a id="a8d332933e0076b3c9d24aeeed73bdacc"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getChannel</b> (uint8_t ch)</td></tr>
+<tr class="separator:a8d332933e0076b3c9d24aeeed73bdacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memItemLeft" align="right" valign="top"><a id="a20f19c66fe44a0e3998639d4b28c11e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setConnectionStatus</b> (ConnectionStatus status)</td></tr>
 <tr class="separator:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6696d18b0d9d65b1e9f6a514b597a47f"><td class="memItemLeft" align="right" valign="top"><a id="a6696d18b0d9d65b1e9f6a514b597a47f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#a6696d18b0d9d65b1e9f6a514b597a47f">setupLogger</a> ()</td></tr>
-<tr class="memdesc:a6696d18b0d9d65b1e9f6a514b597a47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate apple midi debug messages. <br /></td></tr>
-<tr class="separator:a6696d18b0d9d65b1e9f6a514b597a47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16d4cd3d35d5f02ced5d69f453f2f143"><td class="memItemLeft" align="right" valign="top"><a id="a16d4cd3d35d5f02ced5d69f453f2f143"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#a16d4cd3d35d5f02ced5d69f453f2f143">setupMDns</a> (int port)</td></tr>
-<tr class="memdesc:a16d4cd3d35d5f02ced5d69f453f2f143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup MDNS apple-midi service. <br /></td></tr>
-<tr class="separator:a16d4cd3d35d5f02ced5d69f453f2f143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34bca48f3788242ea90d5883912e2b0a"><td class="memItemLeft" align="right" valign="top"><a id="a34bca48f3788242ea90d5883912e2b0a"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#a34bca48f3788242ea90d5883912e2b0a">tick</a> (uint32_t timestamp)</td></tr>
-<tr class="memdesc:a34bca48f3788242ea90d5883912e2b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">process input from the control and the data port <br /></td></tr>
-<tr class="separator:a34bca48f3788242ea90d5883912e2b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8052a1bf508977c07f5cf9a012e4af51"><td class="memItemLeft" align="right" valign="top"><a id="a8052a1bf508977c07f5cf9a012e4af51"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#a8052a1bf508977c07f5cf9a012e4af51">toStr</a> (IPAddress &amp;adress)</td></tr>
-<tr class="memdesc:a8052a1bf508977c07f5cf9a012e4af51"><td class="mdescLeft">&#160;</td><td class="mdescRight">provides the network address as string <br /></td></tr>
-<tr class="separator:a8052a1bf508977c07f5cf9a012e4af51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942a62672edcabd7987771b329ac4a4b"><td class="memItemLeft" align="right" valign="top"><a id="a942a62672edcabd7987771b329ac4a4b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setupLogger</b> ()</td></tr>
+<tr class="separator:a942a62672edcabd7987771b329ac4a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adddd7dd95ce060f2f04263c10da5f7a7"><td class="memItemLeft" align="right" valign="top"><a id="adddd7dd95ce060f2f04263c10da5f7a7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setupMDns</b> (int port)</td></tr>
+<tr class="separator:adddd7dd95ce060f2f04263c10da5f7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae204a115b0040c27c8f2f9ac1a4c783e"><td class="memItemLeft" align="right" valign="top"><a id="ae204a115b0040c27c8f2f9ac1a4c783e"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>tick</b> (uint32_t timestamp)</td></tr>
+<tr class="separator:ae204a115b0040c27c8f2f9ac1a4c783e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb1d27211ee0464ef51423c358a2e4b"><td class="memItemLeft" align="right" valign="top"><a id="afdb1d27211ee0464ef51423c358a2e4b"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>toStr</b> (IPAddress &amp;adress)</td></tr>
+<tr class="separator:afdb1d27211ee0464ef51423c358a2e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memItemLeft" align="right" valign="top"><a id="a75a6f9752d8a2428d83b27977e18d3d4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateTimestamp</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *pMsg)</td></tr>
 <tr class="separator:a75a6f9752d8a2428d83b27977e18d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae997b18aaa2f74298cf659de9defd553"><td class="memItemLeft" align="right" valign="top"><a id="ae997b18aaa2f74298cf659de9defd553"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#ae997b18aaa2f74298cf659de9defd553">writeData</a> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *msg, int len)</td></tr>
-<tr class="memdesc:ae997b18aaa2f74298cf659de9defd553"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmidi_1_1_midi_common.html" title="The common methods provided by all Arduino Midi subclasses which can be used to generate Midi message...">MidiCommon</a> implementation. <br /></td></tr>
-<tr class="separator:ae997b18aaa2f74298cf659de9defd553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27cea15849bc7e69570d4bec536cc4c0"><td class="memItemLeft" align="right" valign="top"><a id="a27cea15849bc7e69570d4bec536cc4c0"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>writeData</b> (<a class="el" href="structmidi_1_1_midi_message.html">MidiMessage</a> *msg, int len)</td></tr>
+<tr class="separator:a27cea15849bc7e69570d4bec536cc4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a64f4b542d24758152aca731d2aa4efac"><td class="memItemLeft" align="right" valign="top"><a id="a64f4b542d24758152aca731d2aa4efac"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#a64f4b542d24758152aca731d2aa4efac">applemidi_callback_midi_message_received</a> (uint8_t port, uint32_t timestamp, uint8_t midi_status, uint8_t *remaining_message, size_t len, size_t continued_sysex_pos)</td></tr>
-<tr class="memdesc:a64f4b542d24758152aca731d2aa4efac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback method to parse midi message. <br /></td></tr>
-<tr class="separator:a64f4b542d24758152aca731d2aa4efac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad581bec85909cfe3a21ae92f1f99c4a6"><td class="memItemLeft" align="right" valign="top"><a id="ad581bec85909cfe3a21ae92f1f99c4a6"></a>
-static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmidi_1_1_apple_midi_server.html#ad581bec85909cfe3a21ae92f1f99c4a6">applemidi_if_send_udp_datagram</a> (uint8_t *ip_addr, uint16_t port, uint8_t *tx_data, size_t tx_len)</td></tr>
-<tr class="memdesc:ad581bec85909cfe3a21ae92f1f99c4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback method to send UDP message with the help of the Arduino API. <br /></td></tr>
-<tr class="separator:ad581bec85909cfe3a21ae92f1f99c4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e6e8dbbbc959f6d783ea4c7c97feb18"><td class="memItemLeft" align="right" valign="top"><a id="a4e6e8dbbbc959f6d783ea4c7c97feb18"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>applemidi_callback_midi_message_received</b> (uint8_t port, uint32_t timestamp, uint8_t midi_status, uint8_t *remaining_message, size_t len, size_t continued_sysex_pos)</td></tr>
+<tr class="separator:a4e6e8dbbbc959f6d783ea4c7c97feb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc6013d46e0ccebba9307ca4e90f7cb"><td class="memItemLeft" align="right" valign="top"><a id="a1fc6013d46e0ccebba9307ca4e90f7cb"></a>
+static int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>applemidi_if_send_udp_datagram</b> (uint8_t *ip_addr, uint16_t port, uint8_t *tx_data, size_t tx_len)</td></tr>
+<tr class="separator:a1fc6013d46e0ccebba9307ca4e90f7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a8c4367f268bfd35b98cd43abc0770dd8"><td class="memItemLeft" align="right" valign="top"><a id="a8c4367f268bfd35b98cd43abc0770dd8"></a>
+<tr class="memitem:a7236cbfd85b41b82a67c7c84a3cd7f5c"><td class="memItemLeft" align="right" valign="top"><a id="a7236cbfd85b41b82a67c7c84a3cd7f5c"></a>
 <a class="el" href="classmidi_1_1_midi_parser.html">MidiParser</a>&#160;</td><td class="memItemRight" valign="bottom"><b>apple_event_handler</b></td></tr>
-<tr class="separator:a8c4367f268bfd35b98cd43abc0770dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a7236cbfd85b41b82a67c7c84a3cd7f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ee469ef9f02084576f6bbbc853abc13"><td class="memItemLeft" align="right" valign="top"><a id="a5ee469ef9f02084576f6bbbc853abc13"></a>
 ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><b>connectionStatus</b></td></tr>
 <tr class="separator:a5ee469ef9f02084576f6bbbc853abc13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1406d571349f184129e454614d993ed3"><td class="memItemLeft" align="right" valign="top"><a id="a1406d571349f184129e454614d993ed3"></a>
+<tr class="memitem:a976217a6bb1f47469f6a98b1596f53d9"><td class="memItemLeft" align="right" valign="top"><a id="a976217a6bb1f47469f6a98b1596f53d9"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>dns_name</b> = &quot;AppleMidi&quot;</td></tr>
-<tr class="separator:a1406d571349f184129e454614d993ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0c0b1660d076475ce5e67fb3412f46c"><td class="memItemLeft" align="right" valign="top"><a id="ac0c0b1660d076475ce5e67fb3412f46c"></a>
+<tr class="separator:a976217a6bb1f47469f6a98b1596f53d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40c756a5ee7364ebdb6049ae7bf7d250"><td class="memItemLeft" align="right" valign="top"><a id="a40c756a5ee7364ebdb6049ae7bf7d250"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_setup</b> = false</td></tr>
-<tr class="separator:ac0c0b1660d076475ce5e67fb3412f46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a40c756a5ee7364ebdb6049ae7bf7d250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff88ec9ecc155f8f55d0c165e90e06db"><td class="memItemLeft" align="right" valign="top"><a id="aff88ec9ecc155f8f55d0c165e90e06db"></a>
 char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="separator:aff88ec9ecc155f8f55d0c165e90e06db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,12 +246,12 @@ char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="memitem:aaaffd3a4348b3a4bd5e2884f0105c460"><td class="memItemLeft" align="right" valign="top"><a id="aaaffd3a4348b3a4bd5e2884f0105c460"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>receivingChannel</b> = -1</td></tr>
 <tr class="separator:aaaffd3a4348b3a4bd5e2884f0105c460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04aedd43689d0e35d22456374f7c612a"><td class="memItemLeft" align="right" valign="top"><a id="a04aedd43689d0e35d22456374f7c612a"></a>
+<tr class="memitem:ac40f36e37db9355218b5d0e2438ac462"><td class="memItemLeft" align="right" valign="top"><a id="ac40f36e37db9355218b5d0e2438ac462"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>remote_port</b></td></tr>
-<tr class="separator:a04aedd43689d0e35d22456374f7c612a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89b072515e65e8ce43722ba05167debc"><td class="memItemLeft" align="right" valign="top"><a id="a89b072515e65e8ce43722ba05167debc"></a>
+<tr class="separator:ac40f36e37db9355218b5d0e2438ac462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f6f0a8b83173a05cd9f1b2d2454a22f"><td class="memItemLeft" align="right" valign="top"><a id="a2f6f0a8b83173a05cd9f1b2d2454a22f"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>rx_buffer</b> [MIDI_BUFFER_SIZE]</td></tr>
-<tr class="separator:a89b072515e65e8ce43722ba05167debc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a2f6f0a8b83173a05cd9f1b2d2454a22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dd86de6b7e6baef25af0f67caea5ff0"><td class="memItemLeft" align="right" valign="top"><a id="a9dd86de6b7e6baef25af0f67caea5ff0"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>sendingChannel</b> = 0</td></tr>
 <tr class="separator:a9dd86de6b7e6baef25af0f67caea5ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -269,19 +261,27 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampHigh</b><
 <tr class="memitem:acde612eb9123a757be8216ad7868ded3"><td class="memItemLeft" align="right" valign="top"><a id="acde612eb9123a757be8216ad7868ded3"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>timestampLow</b></td></tr>
 <tr class="separator:acde612eb9123a757be8216ad7868ded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac516c5e975d1c6c31aa7a3ed148cb020"><td class="memItemLeft" align="right" valign="top"><a id="ac516c5e975d1c6c31aa7a3ed148cb020"></a>
-WiFiUDP&#160;</td><td class="memItemRight" valign="bottom"><b>udpControl</b></td></tr>
-<tr class="separator:ac516c5e975d1c6c31aa7a3ed148cb020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a345744db018f60b1ec0528b1a4ff64dd"><td class="memItemLeft" align="right" valign="top"><a id="a345744db018f60b1ec0528b1a4ff64dd"></a>
-WiFiUDP&#160;</td><td class="memItemRight" valign="bottom"><b>udpData</b></td></tr>
-<tr class="separator:a345744db018f60b1ec0528b1a4ff64dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac71c412291c438f475aa18c42cbcdef8"><td class="memItemLeft" align="right" valign="top"><a id="ac71c412291c438f475aa18c42cbcdef8"></a>
+UDPClass&#160;</td><td class="memItemRight" valign="bottom"><b>udpControl</b></td></tr>
+<tr class="separator:ac71c412291c438f475aa18c42cbcdef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dfa873ff29053d08cd3fbf3fda62ade"><td class="memItemLeft" align="right" valign="top"><a id="a9dfa873ff29053d08cd3fbf3fda62ade"></a>
+UDPClass&#160;</td><td class="memItemRight" valign="bottom"><b>udpData</b></td></tr>
+<tr class="separator:a9dfa873ff29053d08cd3fbf3fda62ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:aebb27ff053a9fbb89a31833a89f4051b"><td class="memItemLeft" align="right" valign="top"><a id="aebb27ff053a9fbb89a31833a89f4051b"></a>
+static <a class="el" href="classmidi_1_1_apple_midi_server.html">AppleMidiServer</a>&lt; UDPClass &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_instance</b> = nullptr</td></tr>
+<tr class="separator:aebb27ff053a9fbb89a31833a89f4051b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A Sender and Receiver which supports Apple Midi using the implementation from midibox. Apple midi uses UDP on a control and a data port. <a href="https://github.com/midibox/esp32-idf-applemidi">https://github.com/midibox/esp32-idf-applemidi</a>. </p>
+<div class="textblock"><h3>template&lt;class UDPClass = WiFiUDP&gt;<br />
+class midi::AppleMidiServer&lt; UDPClass &gt;</h3>
+
+<p>A Sender and Receiver which supports Apple Midi using the implementation from midibox. Apple midi uses UDP on a control and a data port. <a href="https://github.com/midibox/esp32-idf-applemidi">https://github.com/midibox/esp32-idf-applemidi</a>. </p>
 <p>by Phil Schatzmann </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="_apple_midi_server_8h_source.html">AppleMidiServer.h</a></li>
-<li>src/AppleMidiServer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
