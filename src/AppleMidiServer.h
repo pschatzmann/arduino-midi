@@ -32,16 +32,18 @@ typedef void* apple_midi_cb_t;
 template <class UDPClass = WiFiUDP>
 class AppleMidiServer : public MidiCommon {
  public:
-  AppleMidiServer() {}
+  AppleMidiServer() {
+    _instance = this;
+  };
 
   AppleMidiServer(MidiAction* action, int midiPort = -1) {
+    _instance = this;
     apple_event_handler.begin(action, midiPort);
   }
 
   void setName(const char* name) { dns_name = name; }
 
   bool begin(int control_port = APPLEMIDI_DEFAULT_PORT) {
-    _instance = this;
     MIDI_LOGI(__PRETTY_FUNCTION__);
     setupLogger();
     setupMDns(control_port);
