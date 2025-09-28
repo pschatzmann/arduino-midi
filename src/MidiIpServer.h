@@ -33,7 +33,7 @@ class MidiIpServer : public MidiServer {
             MIDI_LOGI( __PRETTY_FUNCTION__);
         
             if (p_wifi_server==nullptr){
-                p_wifi_server = new WiFiServer(serverPort);
+                p_wifi_server = new ServerClass(serverPort);
             }
             p_wifi_server->begin();
             MIDI_LOGI("server started on port %d", serverPort);

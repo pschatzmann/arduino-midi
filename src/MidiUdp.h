@@ -42,7 +42,7 @@ class MidiUdp : public UDPClass {  // EthernetUDP {
   size_t write(const uint8_t* buffer, size_t size) {
     size_t result = 0;
     if (this->beginPacket(targetUdpAddress, targetPort) == 1) {
-      result = WiFiUDP::write(buffer, size);
+      result = UDPClass::write(buffer, size);
       if (result > 0) {
         bool packetOk = this->endPacket();
         MIDI_LOGD("x%x, Number of bytes have %s been sent out: %d ", __func__,
