@@ -18,6 +18,7 @@ namespace midi {
 */
 /***************************************************/
 
+template <class UDPClass = WiFiUDP>
 class MidiUdpServer : public MidiServer {
     public:
         MidiUdpServer(MidiAction *action):MidiServer(action){
@@ -63,7 +64,7 @@ class MidiUdpServer : public MidiServer {
         }
 
     protected:
-        MidiUdp *udp=nullptr;
+        MidiUdp<UDPClass> *udp=nullptr;
         bool is_connected = false;
         int remote_port = 0;
 

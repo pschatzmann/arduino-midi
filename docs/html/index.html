@@ -138,6 +138,22 @@ Logging</h2>
 Namespace</h2>
 <p>All the midi classes are defined using the midi namespace. If you include <a class="el" href="_midi_8h_source.html">Midi.h</a> the using namespace is already defined. However, if you include the individual class specific header files you need to add a using namespace midi; in your sketch.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
+Class Templates / Alternatives Networking Stacks</h2>
+<p>The following classes support class templates for selecting the networking stack:</p>
+<ul>
+<li><code>AppleMidiServer</code></li>
+<li><code>MidiIpserver</code></li>
+<li><code>MidiUdp</code></li>
+<li><code>MidiUdpServer</code></li>
+</ul>
+<p>By default the WiFi classes are used. If you want to use it with Ethernet please select the corresponding clases:</p>
+<ul>
+<li><code>AppleMidiServer&lt;EthernetUDP&gt;</code></li>
+<li><code>MidiIpserver&lt;EthernetServer, EthernetClient&gt;</code></li>
+<li><code>MidiUdp&lt;EthernetUDP&gt;</code></li>
+<li><code>MidiUdpServer&lt;EthernetUDP&gt;</code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Installation in Arduino</h2>
 <p>You can download the library as zip and call include Library -&gt; zip library. Or you can git clone this project into the Arduino libraries folder e.g. with</p>
 <div class="fragment"><div class="line">cd  ~/Documents/Arduino/libraries</div>

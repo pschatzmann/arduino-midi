@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['tick_103',['tick',['../classmidi_1_1_apple_midi_server.html#a34bca48f3788242ea90d5883912e2b0a',1,'midi::AppleMidiServer']]],
-  ['tostr_104',['toStr',['../classmidi_1_1_apple_midi_server.html#a8052a1bf508977c07f5cf9a012e4af51',1,'midi::AppleMidiServer']]]
+  ['_7emidistreamin_93',['~MidiStreamIn',['../classmidi_1_1_midi_stream_in.html#aadf64b3479f9b35bf466c49595622131',1,'midi::MidiStreamIn']]]
 ];

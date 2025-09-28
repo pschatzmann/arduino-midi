@@ -86,14 +86,14 @@ Inheritance diagram for midi::MidiCommon:</div>
  <div class="center">
   <img src="classmidi_1_1_midi_common.png" usemap="#midi::MidiCommon_map" alt=""/>
   <map id="midi::MidiCommon_map" name="midi::MidiCommon_map">
-<area href="classmidi_1_1_apple_midi_server.html" title="A Sender and Receiver which supports Apple Midi using the implementation from midibox...." alt="midi::AppleMidiServer" shape="rect" coords="0,56,136,80"/>
-<area href="classmidi_1_1_midi_ble_client.html" title="A Bluetooth Low Energy BLE Client which can send or receive Bluetooth messages. It needs to connect t..." alt="midi::MidiBleClient" shape="rect" coords="146,56,282,80"/>
-<area href="classmidi_1_1_midi_ble_server.html" title="A Bluetooth Low Energy BLE Server which can send or receive Bluetooth messages." alt="midi::MidiBleServer" shape="rect" coords="292,56,428,80"/>
-<area href="classmidi_1_1_midi_server.html" title="A simple Serial Server which which receives and creates MIDI messages." alt="midi::MidiServer" shape="rect" coords="438,56,574,80"/>
-<area href="classmidi_1_1_midi_stream_in.html" title="Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default MidiParser..." alt="midi::MidiStreamIn" shape="rect" coords="584,56,720,80"/>
-<area href="classmidi_1_1_midi_stream_out.html" title="Output of Midi Messages to an Arduino Stream (eg output to Serial, UDP or IP)." alt="midi::MidiStreamOut" shape="rect" coords="730,56,866,80"/>
-<area href="classmidi_1_1_midi_ip_server.html" title="A simple IP Server which which receives and creates MIDI messages." alt="midi::MidiIpServer" shape="rect" coords="365,112,501,136"/>
-<area href="classmidi_1_1_midi_udp_server.html" title="A simple UDP Server which receives and creates MIDI messages." alt="midi::MidiUdpServer" shape="rect" coords="511,112,647,136"/>
+<area href="classmidi_1_1_apple_midi_server.html" title="A Sender and Receiver which supports Apple Midi using the implementation from midibox...." alt="midi::AppleMidiServer&lt; UDPClass &gt;" shape="rect" coords="0,56,279,80"/>
+<area href="classmidi_1_1_midi_ble_client.html" title="A Bluetooth Low Energy BLE Client which can send or receive Bluetooth messages. It needs to connect t..." alt="midi::MidiBleClient" shape="rect" coords="289,56,568,80"/>
+<area href="classmidi_1_1_midi_ble_server.html" title="A Bluetooth Low Energy BLE Server which can send or receive Bluetooth messages." alt="midi::MidiBleServer" shape="rect" coords="578,56,857,80"/>
+<area href="classmidi_1_1_midi_server.html" title="A simple Serial Server which which receives and creates MIDI messages." alt="midi::MidiServer" shape="rect" coords="867,56,1146,80"/>
+<area href="classmidi_1_1_midi_stream_in.html" title="Input of Midi Messages from the Aruduino HardwareSerial port. You need to give the default MidiParser..." alt="midi::MidiStreamIn" shape="rect" coords="1156,56,1435,80"/>
+<area href="classmidi_1_1_midi_stream_out.html" title="Output of Midi Messages to an Arduino Stream (eg output to Serial, UDP or IP)." alt="midi::MidiStreamOut" shape="rect" coords="1445,56,1724,80"/>
+<area href="classmidi_1_1_midi_ip_server.html" title="A simple IP Server which which receives and creates MIDI messages." alt="midi::MidiIpServer&lt; ServerClass, ClientClass &gt;" shape="rect" coords="722,112,1001,136"/>
+<area href="classmidi_1_1_midi_udp_server.html" title="A simple UDP Server which receives and creates MIDI messages." alt="midi::MidiUdpServer&lt; UDPClass &gt;" shape="rect" coords="1011,112,1290,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -177,6 +177,9 @@ static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8d332933e0076b3c9d24aeeed73bdacc"><td class="memItemLeft" align="right" valign="top"><a id="a8d332933e0076b3c9d24aeeed73bdacc"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getChannel</b> (uint8_t ch)</td></tr>
+<tr class="separator:a8d332933e0076b3c9d24aeeed73bdacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memItemLeft" align="right" valign="top"><a id="a20f19c66fe44a0e3998639d4b28c11e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setConnectionStatus</b> (ConnectionStatus status)</td></tr>
 <tr class="separator:a20f19c66fe44a0e3998639d4b28c11e5"><td class="memSeparator" colspan="2">&#160;</td></tr>

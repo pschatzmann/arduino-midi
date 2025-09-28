@@ -89,6 +89,21 @@ MidiLogLevel = MidiDebug; // or MidiInfo, MidiWarning, MidiError
 
 All the midi classes are defined using the midi namespace. If you include Midi.h the using namespace is already defined. However, if you include the individual class specific header files you need to add a using namespace midi; in your sketch.
 
+### Class Templates / Alternatives Networking Stacks
+
+The following classes support class templates for selecting the networking stack:
+
+- ```AppleMidiServer``` (= ```AppleMidiServer<WiFiUDP>``` )
+- ```MidiIpserver``` (= ```AppleMidiServer<WiFiServer,WiFiClient>``` )
+- ```MidiUdp``` (= ```MidiUdp<WiFiUDP>``` )
+- ```MidiUdpServer``` (= ```MidiUdpServer<WiFiUDP>``` )
+
+By default the WiFi classes are used. If you want to use it with Ethernet please use the corresponding class template parameters:
+
+- ```AppleMidiServer<EthernetUDP>```
+- ```MidiIpserver<EthernetServer, EthernetClient>```
+- ```MidiUdp<EthernetUDP>```
+- ```MidiUdpServer<EthernetUDP>```
 
 
 ### Installation in Arduino
