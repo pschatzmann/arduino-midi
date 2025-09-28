@@ -17,7 +17,7 @@ namespace midi {
     by Phil Schatzmann
 */
 /***************************************************/
-
+template <class ServerClass = WiFiServer, class ClientClass = WiFiClient>
 class MidiIpServer : public MidiServer {
     public:
         MidiIpServer(MidiAction *action) : MidiServer(action){
@@ -32,11 +32,6 @@ class MidiIpServer : public MidiServer {
         bool begin(int serverPort=5008){
             MIDI_LOGI( __PRETTY_FUNCTION__);
         
-            if (WiFi.status() != WL_CONNECTED){
-                MIDI_LOGE("WiFi not connected");
-                return false;
-            }
-
             if (p_wifi_server==nullptr){
                 p_wifi_server = new WiFiServer(serverPort);
             }
@@ -70,8 +65,8 @@ class MidiIpServer : public MidiServer {
         }
 
     protected:
-        WiFiServer *p_wifi_server = nullptr;
-        WiFiClient client;
+        ServerClass *p_wifi_server = nullptr;
+        ClientClass client;
 
 };
 

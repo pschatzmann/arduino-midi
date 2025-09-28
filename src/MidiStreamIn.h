@@ -26,6 +26,7 @@ namespace midi {
 /***************************************************/
 class MidiStreamIn : public MidiCommon {
     public:
+        MidiStreamIn() = default;
         /// Default Constructor
         MidiStreamIn(Stream &stream, MidiAction &action);
         /// Constructor to implement you custom MidiParser
@@ -33,13 +34,10 @@ class MidiStreamIn : public MidiCommon {
         /// Destructor
         ~MidiStreamIn();
         // Parse/Process the next midi message
-        bool loop();
-        
+        bool loop();        
+        /// Call setup when created with empty constructor
+        void setup(Stream *stream, MidiParser *handler, bool releaseHandler);
     protected:
-        friend class MidiServer;
-        friend class MidiIpServer;
-        friend class MidiUdpServer;
-
         int getLastStatusPos(uint8_t *buffer, int endPos);
         Stream *pStream = nullptr;
         MidiParser *pHandler = nullptr;
@@ -47,9 +45,6 @@ class MidiStreamIn : public MidiCommon {
         uint8_t buffer[BUFFER_LEN];
         int startPos = 0;
 
-        MidiStreamIn() = default;
-
-        void setup(Stream *stream, MidiParser *handler, bool releaseHandler);
 };
 
 } // namespace

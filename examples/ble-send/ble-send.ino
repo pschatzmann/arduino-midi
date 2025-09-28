@@ -11,10 +11,12 @@
 #include <Midi.h>
 
 MidiBleServer ble("MidiServer");
+int note = 30;
+uint16_t amplitude = 100; // 0 to 128
 
 void setup() {
   Serial.begin(115200);
-  ble.begin(action);
+  ble.begin();
   ble.setDefaultSendingChannel(0);
 }
 

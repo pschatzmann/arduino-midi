@@ -7,6 +7,7 @@
  * 
  */
 #include "Midi.h"
+#include "BluetoothSerial.h"
 
 BluetoothSerial SerialBT;
 MidiStreamOut out(SerialBT);

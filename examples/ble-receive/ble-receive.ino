@@ -7,8 +7,8 @@
  * @copyright Copyright (c) 2021
  * 
  */
-#include <Midi.h>
 
+#include <Midi.h>
 
 MidiCallbackAction action;
 MidiBleServer ble("MidiServer", &action);
@@ -27,8 +27,7 @@ void setup() {
   Serial.begin(115200);
 
   action.setCallbacks(onNoteOn, onNoteOff);
-  ble.begin(action);
+  ble.begin();
 }
 
-void loop() {
-}
+void loop() {}
