@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['noteoff_28',['noteOff',['../classmidi_1_1_midi_common.html#a7bffbeb8f4f625a551f741d6ec515da3',1,'midi::MidiCommon']]],
-  ['noteon_29',['noteOn',['../classmidi_1_1_midi_common.html#a7e026258c4355d38dedda82f1862141c',1,'midi::MidiCommon']]],
-  ['notetofrequency_30',['noteToFrequency',['../classmidi_1_1_midi_common.html#a95a089c4af7d0809094255de9a4bf242',1,'midi::MidiCommon']]]
+  ['in_20arduino_0',['Installation in Arduino',['../index.html#autotoc_md7',1,'']]],
+  ['installation_20in_20arduino_1',['Installation in Arduino',['../index.html#autotoc_md7',1,'']]],
+  ['isvalidhost_2',['isValidHost',['../classmidi_1_1_midi_udp.html#ab8f5f703f4a6bf1ec589128d95fc60b1',1,'midi::MidiUdp']]]
 ];

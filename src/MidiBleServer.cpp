@@ -82,15 +82,16 @@ void MidiBleServer :: begin(MidiAction &MidiAction) {
 }
 
 void MidiBleServer :: writeData(MidiMessage *pMsg, int len) {
-    updateTimestamp(&outMessage);
+    if (pCharacteristic == nullptr) return;  // begin() was not called
+    updateTimestamp(pMsg);
 
     switch (len) {
         case 1: 
-            pCharacteristic->setValue((uint8_t*)&outMessage, sizeof(MidiMessage)-1); 
+            pCharacteristic->setValue((uint8_t*)pMsg, sizeof(MidiMessage)-1); 
             pCharacteristic->notify();  
             break;
         case 2: 
-            pCharacteristic->setValue((uint8_t*)&outMessage, sizeof(MidiMessage)); 
+            pCharacteristic->setValue((uint8_t*)pMsg, sizeof(MidiMessage)); 
             pCharacteristic->notify();  
             break;
     }

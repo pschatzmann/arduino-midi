@@ -37,9 +37,10 @@ class MidiBleClient : public MidiCommon {
         BLEAdvertisedDevice *getBLEAdvertisedDevice();
         
     protected:
-        const char *name;
-        BLERemoteCharacteristic* pRemoteCharacteristic;
-        BLEAdvertisedDevice* pDevice;
+        const char *name = nullptr;
+        MidiBleParser *pParser = nullptr;
+        BLERemoteCharacteristic* pRemoteCharacteristic = nullptr;
+        BLEAdvertisedDevice* pDevice = nullptr;
 
 };
 

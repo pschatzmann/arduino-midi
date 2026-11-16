@@ -18,8 +18,13 @@ void midi_log(MidiLogLevel_t level, const char* fmt ...) {
     strcat(log_buffer,":     ");
     va_list arg;
     va_start(arg, fmt);
-    vsprintf(log_buffer+9, fmt, arg);
+    size_t prefix_len = strlen(log_buffer);
+    vsnprintf(log_buffer+prefix_len, sizeof(log_buffer)-prefix_len, fmt, arg);
     va_end(arg);
+#ifdef LOG_OUT
     LOG_OUT.println(log_buffer);
+#else
+    puts(log_buffer);
+#endif
   }
 }

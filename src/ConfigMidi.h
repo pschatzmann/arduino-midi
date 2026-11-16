@@ -1,10 +1,27 @@
 #pragma once
-#include "Arduino.h"
+
+// Arduino is optional: the core (parser, message generation) also builds
+// on a desktop without Arduino (e.g. for the unit tests)
+#if defined(ARDUINO)
+#  define MIDI_ARDUINO_ACTIVE 1
+#elif defined(__has_include)
+#  if __has_include("Arduino.h")
+#    define MIDI_ARDUINO_ACTIVE 1
+#  else
+#    define MIDI_ARDUINO_ACTIVE 0
+#  endif
+#else
+#  define MIDI_ARDUINO_ACTIVE 0
+#endif
+
+#if MIDI_ARDUINO_ACTIVE
+#  include "Arduino.h"
+#endif
 
 #define MIDI_ACTIVE true
 
 #define NAMESPACE_ACTIVE true
-#ifndef LOG_OUT
+#if !defined(LOG_OUT) && MIDI_ARDUINO_ACTIVE
 #define LOG_OUT Serial
 #endif
 

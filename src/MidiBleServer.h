@@ -26,7 +26,9 @@ class MidiBleServer : public MidiCommon {
             
         //! Starts the BLE server
         void begin(MidiAction &MidiAction);
+        /// Starts the BLE server and starts advertising
         void begin();
+        /// Sends the message as BLE Midi notification
         void writeData(MidiMessage *pMsg, int len);
 
 

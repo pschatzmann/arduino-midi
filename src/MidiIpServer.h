@@ -20,6 +20,7 @@ namespace midi {
 template <class ServerClass = WiFiServer, class ClientClass = WiFiClient>
 class MidiIpServer : public MidiServer {
     public:
+        /// Constructor with the MidiAction which receives the messages
         MidiIpServer(MidiAction *action) : MidiServer(action){
         } 
 
@@ -29,6 +30,7 @@ class MidiIpServer : public MidiServer {
             }
         }
          
+        /// Starts the TCP server on the indicated port
         bool begin(int serverPort=5008){
             MIDI_LOGI( __PRETTY_FUNCTION__);
         
@@ -40,6 +42,7 @@ class MidiIpServer : public MidiServer {
             return true;
         }
 
+        /// Stops the server
         void end() {
             if (p_wifi_server!=nullptr){
                 delete p_wifi_server;
@@ -47,6 +50,7 @@ class MidiIpServer : public MidiServer {
             }
         }
 
+        /// Accepts a new client or processes the received messages: call it in the Arduino loop()
         void loop() {
             if (p_wifi_server!=nullptr){
                 if (!client.connected()){

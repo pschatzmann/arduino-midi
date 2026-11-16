@@ -14,13 +14,13 @@ void MidiStreamOut :: setup(Print *stream){
 }
 
 void MidiStreamOut :: writeData(MidiMessage *pMsg, int len) {
-    static uint8_t last_status;
-    int size = 0;
-
-    if (pMsg->status != last_status){
-        buffer[size] = pMsg->status;
-        size++;
+    if (pStream == nullptr) {
+        MIDI_LOGE("MidiStreamOut: no output stream defined");
+        return;
     }
+    // we always send the status byte (no running status)
+    int size = 0;
+    buffer[size++] = pMsg->status;
     if (len>=1){
         buffer[size] = pMsg->arg1;
         size++;

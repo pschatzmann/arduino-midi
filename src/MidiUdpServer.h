@@ -6,6 +6,7 @@
 #include <WiFi.h>
 #include "MidiLogger.h"
 #include "MidiUdp.h"
+#include "MidiServer.h"
 
 namespace midi {
 
@@ -21,15 +22,18 @@ namespace midi {
 template <class UDPClass = WiFiUDP>
 class MidiUdpServer : public MidiServer {
     public:
+        /// Constructor with the MidiAction which receives the messages
         MidiUdpServer(MidiAction *action):MidiServer(action){
         } 
 
         ~MidiUdpServer() {
             if (udp!=nullptr){
                 delete udp;
+                udp = nullptr;
             }
         }
          
+        /// Listens on serverPort and sends to the indicated address (the target port is updated from the first received packet)
         bool begin(IPAddress ip, int serverPort=5008){
             MIDI_LOGI( __PRETTY_FUNCTION__);
         
@@ -38,12 +42,17 @@ class MidiUdpServer : public MidiServer {
                 return false;
             }
 
-            udp = new MidiUdp(ip, serverPort);
+            if (udp == nullptr) {
+                udp = new MidiUdp<UDPClass>(ip, serverPort);
+            }
+            // listen for incoming packets
+            udp->begin(serverPort);
             in.setup(udp, new MidiParser(p_action), true);
             out.setup(udp);
             return true;
         }
 
+        /// Processes the received packets: call it in the Arduino loop()
         void loop() {
             if (udp!=nullptr){
                 int len = udp->parsePacket();

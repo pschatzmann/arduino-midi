@@ -23,8 +23,8 @@ The basic functionality is based on Arduino Streams (Except the BLE functionalit
 #include "Midi.h"
 
 MidiStreamOut out(Serial);
-uint16_t note = 64; // 0 to 128
-uint16_t amplitude = 100; // 0 to 128
+uint8_t note = 64; // 0 to 127
+uint8_t amplitude = 100; // 0 to 127
 
 void setup() {
     Serial.begin(115200);
@@ -51,7 +51,7 @@ The same is true for the [MidiStreamIn](https://pschatzmann.github.io/arduino-mi
 #include "Midi.h"
 
 MidiCallbackAction action;
-MidiStreamIn in(Serial, &action);
+MidiStreamIn in(Serial, action);
 
 void onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) {
   Serial.print("onNoteOn: ");
@@ -73,6 +73,30 @@ void loop() {
 }
 
 ```
+### Supported Midi Messages
+
+Channels are numbered 0 to 15. All sending methods accept an optional channel as last parameter: if it is omitted, the default channel (`setDefaultSendingChannel()`, 0 by default) is used. Data values are 0 to 127.
+
+| Message | Sending | Receiving (MidiAction) |
+|---------|---------|------------------------|
+| Note On / Off | `noteOn(note, velocity)` / `noteOff(note, velocity)` | `onNoteOn()` / `onNoteOff()` |
+| Control Change | `controlChange(controller, value)`, `allNotesOff()`, `resetAllControllers()`, `localControl(active)` | `onControlChange()` |
+| Program Change | `programChange(program)` | `onProgramChange()` |
+| Channel Pressure | `channelPressure(value)` | `onChannelPressure()` |
+| Poly Pressure | `polyPressure(note, value, channel)` | `onPolyPressure()` |
+| Pitch Bend | `pitchBend(value)`: 0 to 16383, center 8192 | `onPitchBend14()`: 0 to 16383, or `onPitchBend()`: 0 to 127, center 64 |
+
+Notes:
+
+- A Note On with a velocity of 0 is reported as `onNoteOff()`.
+- `onNoteOn()`, `onNoteOff()`, `onControlChange()` and `onPitchBend()` must be implemented by a MidiAction, the other methods are optional. By default `onPitchBend14()` forwards the pitch bend with 7 bit resolution to `onPitchBend()`.
+- With the `MidiCallbackAction` you can define the callbacks with `setCallbacks()` or the individual setters (e.g. `setCallbackOnProgramChange()`, `setCallbackOnPitchBend14()`).
+- The parser supports running status and messages which are split over multiple reads. System exclusive, system common and realtime messages are skipped.
+- `polyPressure(value)` without a note is deprecated: it does not send anything.
+- `MidiCommon::noteToFrequency()` and `MidiCommon::frequencyToNote()` convert between notes and frequencies in Hz.
+
+### Server Classes
+
 We also provide some higher level API  "Server" classes which can be used for both, input and output: MidiServer, MidiIpServer, AppleMidiServer...
 
 Here is the generated [Class Documentation](https://pschatzmann.github.io/arduino-midi/html/annotated.html). 
@@ -80,10 +104,11 @@ You can find [further information in my blogs](https://www.pschatzmann.ch/home/t
 
 ### Logging
 
-The library provides some logging functionality. By default the log level is set to MidiDebug. You can change the level with 
+The library provides some logging functionality. By default the log level is set to MidiWarning. You can change the level with 
 ```
 MidiLogLevel = MidiDebug; // or MidiInfo, MidiWarning, MidiError
 ```
+On Arduino the log is written to `Serial` (the output is defined by `LOG_OUT` in ConfigMidi.h). On the desktop it is written to stdout.
 
 ### Namespace
 
@@ -94,14 +119,14 @@ All the midi classes are defined using the midi namespace. If you include Midi.h
 The following classes support class templates for selecting the networking stack:
 
 - ```AppleMidiServer``` (= ```AppleMidiServer<WiFiUDP>``` )
-- ```MidiIpserver``` (= ```AppleMidiServer<WiFiServer,WiFiClient>``` )
+- ```MidiIpServer``` (= ```MidiIpServer<WiFiServer,WiFiClient>``` )
 - ```MidiUdp``` (= ```MidiUdp<WiFiUDP>``` )
 - ```MidiUdpServer``` (= ```MidiUdpServer<WiFiUDP>``` )
 
 By default the WiFi classes are used. If you want to use it with Ethernet please use the corresponding class template parameters:
 
 - ```AppleMidiServer<EthernetUDP>```
-- ```MidiIpserver<EthernetServer, EthernetClient>```
+- ```MidiIpServer<EthernetServer, EthernetClient>```
 - ```MidiUdp<EthernetUDP>```
 - ```MidiUdpServer<EthernetUDP>```
 
@@ -117,4 +142,14 @@ git clone https://github.com/pschatzmann/arduino-midi.git
 ```
 I recommend to use git because you can easily update to the latest version just by executing the git pull command in the project folder.
 
+### Unit Tests
 
+The platform independent core (parser, message generation, logging) can be tested on the desktop with CMake:
+
+```
+cmake -S . -B build
+cmake --build build
+ctest --test-dir build --output-on-failure
+```
+
+The Stream based classes (`MidiStreamIn`, `MidiStreamOut`) are only tested when the [Arduino Emulator](https://github.com/pschatzmann/Arduino-Emulator) is available: add `-DMIDI_USE_ARDUINO_EMULATOR=ON` (it is downloaded automatically, or use `-DARDUINO_EMULATOR_DIR=<path>` for a local copy).

@@ -27,9 +27,11 @@ namespace midi {
 class MidiBleParser 
 : public BLECharacteristicCallbacks , public  MidiParser {
     public:
+        /// Constructor with the MidiAction and an optional channel filter (-1 = all channels)
         MidiBleParser(MidiAction *MidiAction, int channelFilter = -1 );
         virtual ~MidiBleParser();
         virtual void onRead(BLECharacteristic* pCharacteristic);
+	    /// Parses the BLE Midi packet which was written to the characteristic
 	    virtual void onWrite(BLECharacteristic* pCharacteristic);
 
 };

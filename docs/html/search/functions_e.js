@@ -1,5 +1,18 @@
 var searchData=
 [
-  ['write_105',['write',['../classmidi_1_1_midi_common.html#ab6d5f15c999e24882e9ddade36af1577',1,'midi::MidiCommon']]],
-  ['writedata_106',['writeData',['../classmidi_1_1_apple_midi_server.html#ae997b18aaa2f74298cf659de9defd553',1,'midi::AppleMidiServer::writeData()'],['../classmidi_1_1_midi_ble_client.html#a893c26eb05a3b52e1168d9713bc67096',1,'midi::MidiBleClient::writeData()']]]
+  ['setcallbackonchannelpressure_0',['setCallbackOnChannelPressure',['../classmidi_1_1_midi_callback_action.html#a285b2883a383abb6d377227edf50f8e8',1,'midi::MidiCallbackAction']]],
+  ['setcallbackoncontrolchange_1',['setCallbackOnControlChange',['../classmidi_1_1_midi_callback_action.html#aeb05a46227ea7c17a8d9d19bdb707ee9',1,'midi::MidiCallbackAction']]],
+  ['setcallbackonnoteoff_2',['setCallbackOnNoteOff',['../classmidi_1_1_midi_callback_action.html#a36ecca14ee67c5def36be6ef11e9df07',1,'midi::MidiCallbackAction']]],
+  ['setcallbackonnoteon_3',['setCallbackOnNoteOn',['../classmidi_1_1_midi_callback_action.html#aa56a618224d71d5ec1e08de6e9fdf9ed',1,'midi::MidiCallbackAction']]],
+  ['setcallbackonpitchbend_4',['setCallbackOnPitchBend',['../classmidi_1_1_midi_callback_action.html#ab663e4d0e3de210e0d9143a6a99ff3cd',1,'midi::MidiCallbackAction']]],
+  ['setcallbackonpitchbend14_5',['setCallbackOnPitchBend14',['../classmidi_1_1_midi_callback_action.html#ab9bd26b757e64ff1443ffd45a36e847c',1,'midi::MidiCallbackAction']]],
+  ['setcallbackonpolypressure_6',['setCallbackOnPolyPressure',['../classmidi_1_1_midi_callback_action.html#a8d00b1f435d714888f978b3994028772',1,'midi::MidiCallbackAction']]],
+  ['setcallbackonprogramchange_7',['setCallbackOnProgramChange',['../classmidi_1_1_midi_callback_action.html#a65bea3895038a2f3ba30455ae97b1146',1,'midi::MidiCallbackAction']]],
+  ['setcallbacks_8',['setCallbacks',['../classmidi_1_1_midi_callback_action.html#aedd43c2a7a664a931c282b01533d4945',1,'midi::MidiCallbackAction']]],
+  ['setdefaultsendingchannel_9',['setDefaultSendingChannel',['../classmidi_1_1_midi_common.html#a1fc898c0b3dfeddef8515df50abac9d2',1,'midi::MidiCommon']]],
+  ['setfilterreceivingchannel_10',['setFilterReceivingChannel',['../classmidi_1_1_midi_common.html#a0ccfb10ae26c6855310de2443c319af1',1,'midi::MidiCommon']]],
+  ['setmidiaction_11',['setMidiAction',['../classmidi_1_1_midi_common.html#afdc7e84bfe245486503768f271680e1f',1,'midi::MidiCommon']]],
+  ['setname_12',['setName',['../classmidi_1_1_apple_midi_server.html#a1fcce410ffa80b6cbc8c13232bc9d32d',1,'midi::AppleMidiServer']]],
+  ['settargetport_13',['setTargetPort',['../classmidi_1_1_midi_udp.html#a35d5ebdd203d605f4dbd599fa71287ac',1,'midi::MidiUdp']]],
+  ['setup_14',['setup',['../classmidi_1_1_midi_stream_in.html#a0d28ac77f721f80b1a2c6e812b3804a9',1,'midi::MidiStreamIn::setup()'],['../classmidi_1_1_midi_stream_out.html#a3d9f4f789bd9e65c43e660f8b19fb704',1,'midi::MidiStreamOut::setup()']]]
 ];

@@ -32,41 +32,24 @@ void MidiStreamIn :: setup(Stream *stream, MidiParser *handler, bool releaseHand
         delete pHandler;
     }
     pHandler = handler;
-    startPos = 0;
     ownsHandler = releaseHandler;
 }
 
 bool MidiStreamIn :: loop() {
     MIDI_LOGD( __PRETTY_FUNCTION__);
     bool processed = false;
-    if (pStream->available()>0){
-        int lenRead = pStream->readBytes(buffer+startPos, BUFFER_LEN-startPos);
-        if (lenRead>0){
-            MIDI_LOGI( "readBytes: %len", lenRead);
-            int endPos = startPos+lenRead;
-            int lastStatusPos = getLastStatusPos(buffer, endPos);
-            if (lastStatusPos>=0) {
-                pHandler->parse(buffer, lastStatusPos);
-                int lenUnprocessed = endPos-lastStatusPos;
-                // move unprocessed bytes to head
-                memmove(buffer, buffer+lastStatusPos, lenUnprocessed);
-                startPos = lenUnprocessed;
-                processed = true;
-            }
-        }
+    // the parser is streaming: we can process all bytes immediately
+    int available;
+    while ((available = pStream->available())>0){
+        // only request what is available to avoid waiting for the timeout
+        int lenRead = pStream->readBytes(buffer, available < BUFFER_LEN ? available : BUFFER_LEN);
+        if (lenRead<=0) break;
+        MIDI_LOGI( "readBytes: %d", lenRead);
+        pHandler->parse(buffer, lenRead);
+        processed = true;
     }
     return processed;
 }
-
-int MidiStreamIn :: getLastStatusPos(uint8_t* buffer, int pos){
-    while (pos>=0){
-        if (buffer[pos]>>7 == 1){
-            return pos; 
-        }
-        pos--;
-    }
-    return -1;
-} 
 
 
 } // namespace

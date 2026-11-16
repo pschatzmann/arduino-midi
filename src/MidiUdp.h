@@ -26,6 +26,7 @@ template <class UDPClass = WiFiUDP>
 class MidiUdp : public UDPClass {  // EthernetUDP {
 
  public:
+  /// Sends all packets to the indicated host name and port
   MidiUdp(char* addessStr, int targetPort) {
     this->isValidHostFlag = WiFi.hostByName(addessStr, targetUdpAddress);
     if (!this->isValidHostFlag) {
@@ -34,11 +35,14 @@ class MidiUdp : public UDPClass {  // EthernetUDP {
     this->targetPort = targetPort;
   }
 
+  /// Sends all packets to the indicated address and port
   MidiUdp(IPAddress address, int targetPort) {
     this->targetUdpAddress = address;
     this->targetPort = targetPort;
+    this->isValidHostFlag = true;
   }
 
+  /// Writes the data as one UDP packet to the target
   size_t write(const uint8_t* buffer, size_t size) {
     size_t result = 0;
     if (this->beginPacket(targetUdpAddress, targetPort) == 1) {
@@ -56,14 +60,16 @@ class MidiUdp : public UDPClass {  // EthernetUDP {
     return result;
   }
 
+  /// Returns false if the host could not be resolved or the last packet could not be sent
   bool isValidHost() { return this->isValidHostFlag; }
 
+  /// Changes the target port
   void setTargetPort(int port) { targetPort = port; }
 
  protected:
   IPAddress targetUdpAddress;
   int targetPort;
-  bool isValidHostFlag;
+  bool isValidHostFlag = false;
 };
 
 }  // namespace midi

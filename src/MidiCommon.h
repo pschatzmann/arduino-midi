@@ -46,10 +46,15 @@ namespace midi {
  * 
  */
 struct MidiMessage {
+    /// BLE header byte: 0b10 + high 6 bits of the timestamp
     uint8_t timestampHigh;
+    /// BLE timestamp byte: 0b1 + low 7 bits of the timestamp
     uint8_t timestampLow;
+    /// Status byte: message type (high nibble) and channel (low nibble)
     uint8_t status;
+    /// First data byte
     uint8_t arg1;
+    /// Second data byte (not used by program change and channel pressure)
     uint8_t arg2;
 };
 
@@ -62,7 +67,11 @@ enum ConnectionStatus {
 /***************************************************/
 /*! \class MidiCommon
     \brief  The common methods provided by all Arduino Midi
-    subclasses which can be used to generate Midi messages:
+    subclasses which can be used to generate Midi messages.
+    Channels are 0..15: if the channel is not specified (-1), the default
+    sending channel is used. Data values are 0..127; values outside of the
+    range are masked (pitch bend is limited to 0..16383).
+    Implemented e.g. by:
 
     - MidiBleServer
     - MidiBleClient
@@ -80,7 +89,7 @@ class MidiCommon {
         //! Activates a filter on receiving messages to the indicated channel
         virtual void setFilterReceivingChannel(int channel);
 
-        //! Sets the default channel for the sending commands. 
+        //! Sets the default channel (0..15) for the sending commands: the default is 0
         virtual void setDefaultSendingChannel(int8_t channel);
 
         //! Sends a noteOn MIDI command to the output
@@ -89,37 +98,40 @@ class MidiCommon {
         //! Sends a noteOff MIDI command to the output
         virtual void noteOff(uint8_t note, uint8_t velocity, int8_t channel=-1);
 
-        //! Sends a pitchBend MIDI command to the output
+        //! Sends a pitchBend MIDI command to the output: value 0..16383, center 8192
         virtual  void pitchBend(uint16_t value, int8_t channel=-1);
 
-        //! Sends a channelPressure MIDI command to the output
+        //! Sends a channelPressure (aftertouch for the whole channel) MIDI command to the output
         virtual void channelPressure(uint8_t value, int8_t channel=-1);
 
-        //! Sends a polyPressure MIDI command to the output
+        //! Deprecated: poly pressure needs a note - use polyPressure(note, value, channel)
         virtual void polyPressure(uint8_t valuePar, int8_t channel=-1);
 
-        //! Sends a programChange MIDI command to the output
+        //! Sends a polyPressure (polyphonic aftertouch) MIDI command to the output
+        virtual void polyPressure(uint8_t note, uint8_t value, int8_t channel);
+
+        //! Sends a programChange MIDI command to the output: program 0..127
         virtual void programChange(uint8_t program, int8_t channel=-1);
 
-        //! Sends a allNotesOff MIDI command to the output
+        //! Sends a allNotesOff MIDI command (control change 120) to the output
         virtual void allNotesOff( int8_t channel=-1);
 
-        //! Sends a resetAllControllers  MIDI command to the output
+        //! Sends a resetAllControllers MIDI command (control change 121) to the output
         virtual void resetAllControllers( int8_t channel=-1);
 
-        //! Sends a localControl  MIDI command to the output
+        //! Sends a localControl MIDI command (control change 122) to the output
         virtual void localControl( bool active, int8_t channel=-1);
 
-        //! Sends a control change MIDI command to the output
+        //! Sends a control change MIDI command to the output: see MidiControlChange.h for the controller numbers
         virtual void controlChange(uint8_t msg, uint8_t value, int8_t channel=-1);
 
-        //! Converts a MIDI note to a frequency in Hz
+        //! Converts a MIDI note to a frequency in Hz (note 69 = A4 = 440 Hz)
         static float noteToFrequency(uint8_t note);
 
-        //! Converts a Frequency (in Hz) to a MIDI note
+        //! Converts a frequency (in Hz) to the nearest MIDI note (limited to 0..127)
         static uint8_t frequencyToNote(float freq);
 
-        //! Defines the voice which is used in inbound processing
+        //! Defines the MidiAction which receives the events of the inbound processing
         virtual void setMidiAction(MidiAction &MidiAction);
 
         //! Determines the connection status
@@ -132,7 +144,7 @@ class MidiCommon {
         void setConnectionStatus(ConnectionStatus status) {connectionStatus=status; }
         void updateTimestamp(MidiMessage *pMsg);
         virtual void writeData(MidiMessage *msg, int len);
-        uint8_t getChannel(uint8_t ch);
+        uint8_t getChannel(int8_t ch);
         
         ConnectionStatus connectionStatus;
         MidiAction *pMidiAction;

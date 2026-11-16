@@ -12,11 +12,12 @@ namespace midi {
 
 /***************************************************/
 /*! \class MidiStreamIn
-    \brief Input of Midi Messages from the Aruduino 
-    HardwareSerial port. You need to give the default
-    MidiParser or your own subclassed
-    implementation in the constructor to process
-     the midi records.
+    \brief Input of Midi Messages from an Arduino
+    Stream (e.g. Serial, Bluetooth Serial or a TCP/IP client).
+    In the constructor you either give a MidiAction (which is used with
+    the default MidiParser) or your own (subclassed) MidiParser to process
+    the midi messages. Messages can be split over multiple reads and
+    running status is supported.
 
     You also need to call the loop method in the loop
     of your Arduino sketch.
@@ -27,23 +28,22 @@ namespace midi {
 class MidiStreamIn : public MidiCommon {
     public:
         MidiStreamIn() = default;
-        /// Default Constructor
+        /// Constructor with the input stream and the MidiAction (uses the default MidiParser)
         MidiStreamIn(Stream &stream, MidiAction &action);
-        /// Constructor to implement you custom MidiParser
+        /// Constructor with the input stream and your custom MidiParser (which is not deleted)
         MidiStreamIn(Stream &stream, MidiParser &handler);
         /// Destructor
         ~MidiStreamIn();
-        // Parse/Process the next midi message
+        /// Reads all available bytes and processes the contained midi messages:
+        /// returns true if some data was processed
         bool loop();        
         /// Call setup when created with empty constructor
         void setup(Stream *stream, MidiParser *handler, bool releaseHandler);
     protected:
-        int getLastStatusPos(uint8_t *buffer, int endPos);
         Stream *pStream = nullptr;
         MidiParser *pHandler = nullptr;
         bool ownsHandler = false;
         uint8_t buffer[BUFFER_LEN];
-        int startPos = 0;
 
 };
 

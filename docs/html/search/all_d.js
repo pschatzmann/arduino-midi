@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7emidistreamin_44',['~MidiStreamIn',['../classmidi_1_1_midi_stream_in.html#aadf64b3479f9b35bf466c49595622131',1,'midi::MidiStreamIn']]]
+  ['reset_0',['reset',['../classmidi_1_1_midi_parser.html#aa9529a3659b21364c26ed69ff2b01d1e',1,'midi::MidiParser']]],
+  ['resetallcontrollers_1',['resetAllControllers',['../classmidi_1_1_midi_common.html#a64a34fef651a7ad879975e9feef2394c',1,'midi::MidiCommon']]]
 ];

@@ -29,7 +29,7 @@ void MidiBleParser::onWrite(BLECharacteristic* pCharacteristic) {
 	MIDI_LOGD( "%s, onWrite",__func__);
   const char* str = pCharacteristic->getValue().c_str();
   int len = pCharacteristic->getValue().length();
-  parse((uint8_t*)str, len);
+  parseBle((const uint8_t*)str, len);
 } 
 
 } // namespace

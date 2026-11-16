@@ -5,6 +5,9 @@
 
 #include <WiFi.h>
 #include "MidiLogger.h"
+#include "MidiCommon.h"
+#include "MidiStreamIn.h"
+#include "MidiStreamOut.h"
 
 namespace midi {
 
@@ -19,10 +22,12 @@ namespace midi {
 
 class MidiServer : public MidiCommon {
     public:
+        /// Constructor with the MidiAction which receives the messages
         MidiServer(MidiAction *action) {
             p_action = action;
         } 
          
+        /// Uses the indicated stream for receiving and sending Midi messages
         bool begin(Stream &stream){
             MIDI_LOGI( __PRETTY_FUNCTION__);
             in.setup(&stream, new MidiParser(p_action), true);
@@ -30,9 +35,11 @@ class MidiServer : public MidiCommon {
             return true;
         }
 
+        /// Stops the processing
         virtual void end() {
         }
 
+        /// Processes the received messages: call it in the Arduino loop()
         virtual void loop() {
             MIDI_LOGD("MidiIpServer::loop");
             in.loop();

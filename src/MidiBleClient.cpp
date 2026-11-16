@@ -5,16 +5,23 @@
 namespace midi {
 
 const char* APP_CLIENT = "MidiBleClient";
-MidiBleParser *pEventHandler;
+// parser which receives the notifications (the BLE callback is a plain function)
+static MidiBleParser *pEventHandler = nullptr;
 
 
 MidiBleClient :: MidiBleClient(const char* name, MidiBleParser* pEventHandler) {
     this->name = name;
     this->connectionStatus = Unconnected;
+    this->pParser = pEventHandler;
 }
 
 void MidiBleClient :: begin(MidiAction &MidiAction) {
     this->pMidiAction = &MidiAction;
+    // make sure that the received notifications are parsed
+    if (pParser == nullptr) {
+        pParser = new MidiBleParser(pMidiAction, receivingChannel);
+    }
+    pEventHandler = pParser;
     BLEScan* pBLEScan = BLEDevice::getScan();
     pBLEScan->setAdvertisedDeviceCallbacks(new MidiBleClientAdvertisedDeviceCallbacks(this));
     pBLEScan->setInterval(1349);
@@ -26,7 +33,7 @@ void MidiBleClient :: begin(MidiAction &MidiAction) {
 
 void characteristic_notify_callback(BLERemoteCharacteristic* pBLERemoteCharacteristic, uint8_t* pData, size_t length, bool isNotify){
     if (pEventHandler)
-        pEventHandler->parse(pData,length);
+        pEventHandler->parseBle(pData,length);
 }
 
 
@@ -70,18 +77,16 @@ void MidiBleClient :: begin(BLEAdvertisedDevice *pDevice) {
 
 void MidiBleClient :: writeData(MidiMessage *pMsg, int len) {
     if (pRemoteCharacteristic!=nullptr){
-        updateTimestamp(&outMessage);
-        uint8_t* cp = (uint8_t*)&outMessage;
-        //int messageLen = sizeof(MidiMessage);
+        updateTimestamp(pMsg);
+        // header, timestamp, status + len data bytes
+        uint8_t* cp = (uint8_t*)pMsg;
         switch (len) {
-            case 1: {
-                pRemoteCharacteristic->writeValue(cp,len-1, false);
+            case 1:
+                pRemoteCharacteristic->writeValue(cp, sizeof(MidiMessage)-1, false);
                 break;
-            }
-            case 2: {
-                pRemoteCharacteristic->writeValue(cp,len, false);
+            case 2:
+                pRemoteCharacteristic->writeValue(cp, sizeof(MidiMessage), false);
                 break;
-            }
         }
     }
 }
