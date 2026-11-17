@@ -12,6 +12,7 @@ The library supports
   - Midi over UDP
   - Files
 - Midi over BLE
+- Midi over USB (device and host)
 - Apple Midi
 
 
@@ -94,6 +95,43 @@ Notes:
 - The parser supports running status and messages which are split over multiple reads. System exclusive, system common and realtime messages are skipped.
 - `polyPressure(value)` without a note is deprecated: it does not send anything.
 - `MidiCommon::noteToFrequency()` and `MidiCommon::frequencyToNote()` convert between notes and frequencies in Hz.
+
+### USB MIDI
+
+USB MIDI is provided by `MidiUsb.h` (it is not included by `Midi.h`, so that the USB stack is only used when needed). Both USB roles are supported:
+
+- `MidiUsbDevice`: the board is a USB MIDI device which is connected to a computer
+- `MidiUsbHost`: the board is a USB host for a USB MIDI keyboard or controller
+
+Both classes provide the regular sending methods (`noteOn()`, `controlChange()`...) and forward the received messages to a `MidiAction`. Call `loop()` in the Arduino loop. `isConnected()` tells you whether the USB connection is active.
+
+```
+#include "MidiUsb.h"
+
+MidiCallbackAction action;
+MidiUsbDevice usbMidi("Arduino MIDI", &action);  // or: MidiUsbHost usbMidi(&action);
+
+void setup() {
+  action.setCallbacks(onNoteOn, onNoteOff);
+  usbMidi.begin();
+}
+
+void loop() {
+  usbMidi.loop();
+}
+```
+
+| Platform | MidiUsbDevice | MidiUsbHost |
+|----------|---------------|-------------|
+| ESP32-S2/S3/P4 | Tools - USB Mode: "USB-OTG (TinyUSB)" | Arduino core >= 3.3, USB Mode: "USB-OTG (TinyUSB)": begin() starts the USB host |
+| RP2040/RP2350 | default "Pico SDK" stack: `#include <MIDIUSB.h>` before MidiUsb.h; or "Adafruit TinyUSB" stack: `#include <Adafruit_TinyUSB.h>` | "Adafruit TinyUSB" stack with Pico-PIO-USB (or "Adafruit TinyUSB Host (native)"): you set up and run `Adafruit_USBH_Host` yourself |
+| Other Adafruit TinyUSB boards (SAMD, nRF52...) | `#include <Adafruit_TinyUSB.h>` | - |
+| AVR/SAMD with native USB (MIDIUSB library) | `#include <MIDIUSB.h>` before MidiUsb.h | - |
+| Linux desktop | ALSA raw MIDI of the USB gadget (e.g. Raspberry Pi Zero with g_midi) | ALSA raw MIDI: `begin()` uses the first device, `begin("Keystation")` selects by card name, `begin("/dev/snd/midiC1D0")` by device file |
+
+On the Linux desktop no additional library is needed (the `/dev/snd/midiC*D*` device files are used) and unplugged devices are reconnected automatically. On other platforms the classes compile, but `begin()` reports that USB MIDI is not supported.
+
+See the examples `usb-device-send`, `usb-device-receive`, `usb-host-receive` and `usb-host-receive-rp2040`.
 
 ### Server Classes
 

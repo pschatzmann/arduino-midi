@@ -11,7 +11,7 @@ namespace midi {
 /*! \class MidiParser
     \brief  A streaming Midi Parser which calls the corresponding events.
     It supports Midi byte streams (with running status) via parse() and
-    BLE Midi packets via parseBle(). The parser keeps its state between
+    BLE Midi packets via parseBle() and USB-MIDI event packets via parseUsb(). The parser keeps its state between
     calls, so messages can be split over multiple calls.
 
     Supported channel voice messages: note on/off, poly pressure, control
@@ -46,6 +46,8 @@ class MidiParser  {
         void parse(const uint8_t*  msg, int len);
         /// Parse a BLE Midi packet (header and timestamp bytes are removed)
         void parseBle(const uint8_t*  msg, int len);
+        /// Parse USB-MIDI event packets (4 bytes per packet, the cable number is ignored)
+        void parseUsb(const uint8_t*  packets, int len);
         /// Parse a single byte of a standard Midi byte stream
         void parseByte(uint8_t byte);
         /// Resets the parser state (e.g. running status)

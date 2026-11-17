@@ -7,6 +7,11 @@ set(MIDI_TESTS
     test_midi_logger
 )
 
+# USB MIDI: the desktop implementation uses the Linux ALSA raw MIDI devices
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    list(APPEND MIDI_TESTS test_midi_usb)
+endif()
+
 # The Stream based classes can only be tested with the Arduino Emulator
 if(TARGET arduino_emulator)
     list(APPEND MIDI_TESTS test_midi_stream)

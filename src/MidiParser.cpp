@@ -1,5 +1,6 @@
 #include "MidiParser.h"
 #include "MidiLogger.h"
+#include "MidiUsbPacket.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -83,6 +84,24 @@ void MidiParser::parseBle(const uint8_t* msg, int len){
       }
     } else {
       parseByte(byte);
+    }
+  }
+}
+
+/**
+ * @brief Parse USB-MIDI 1.0 event packets (4 bytes each): the cable number
+ * is ignored and the contained MIDI bytes are processed. Incomplete packets
+ * at the end are ignored.
+ * @param [in] packets one or more 4 byte USB-MIDI packets
+ * @param [in] len length in bytes
+ */
+void MidiParser::parseUsb(const uint8_t* packets, int len){
+  if (packets == nullptr || len <= 0) return;
+  uint8_t bytes[3];
+  for (int pos = 0; pos + 4 <= len; pos += 4) {
+    int n = MidiUsbPacket::toBytes(packets + pos, bytes);
+    for (int j = 0; j < n; j++) {
+      parseByte(bytes[j]);
     }
   }
 }
