@@ -6,19 +6,9 @@
 #include <math.h>
 
 #if MIDI_BLE_ACTIVE
-#include <freertos/FreeRTOS.h>
-#include <freertos/event_groups.h>
-#include <freertos/task.h>
-#include <esp_err.h>
-#include <nvs_flash.h>
-#include <esp_bt.h>            // Ard BLE
-#include <esp_bt_device.h>     // Ard BLE
-#include <esp_bt_main.h>       // Ard BLE
-#include <esp_gap_ble_api.h>   // Ard BLE
-#include <esp_gatts_api.h>     // Ard BLE
-#include <esp_gattc_api.h>     // Ard BLE
-#include <esp_gatt_common_api.h>// Ard BLE
-#include <esp_err.h>           // Ard ESP-IDF
+// Only the API of the Arduino BLE library is used: it works with the
+// Bluedroid (ESP32) and the NimBLE stack (e.g. ESP32-S3, ESP32-C3), so the
+// stack specific ESP-IDF headers must not be included here.
 #include <map>                 // Part of C++ Standard library
 #include <sstream>             // Part of C++ Standard library
 #include <iomanip>             // Part of C++ Standard library

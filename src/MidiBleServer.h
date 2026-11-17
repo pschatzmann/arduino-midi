@@ -63,3 +63,23 @@ class MidiBleServerCallback: public BLEServerCallbacks {
 } // namespace
 
 #endif
+
+#if !MIDI_BLE_ACTIVE && defined(HOST)
+#include "MidiCommon.h"
+#include "MidiLogger.h"
+namespace midi {
+/**
+ * @brief BLE is not available on the desktop (Arduino-Emulator): this
+ * replacement lets BLE sketches compile and run. begin() reports that BLE is
+ * not supported and nothing is received.
+ */
+class MidiBleServer : public MidiCommon {
+    public:
+        MidiBleServer(const char* name, MidiAction *action = nullptr, int channelFilter = -1) {}
+        void begin(MidiAction &action) { begin(); }
+        void begin() { MIDI_LOGE("MidiBleServer: BLE is not supported on this platform"); }
+    protected:
+        void writeData(MidiMessage *pMsg, int len) {}
+};
+} // namespace
+#endif

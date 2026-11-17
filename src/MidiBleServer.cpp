@@ -42,11 +42,12 @@ void MidiBleServer :: begin() {
                     );
 
                     
-    if (this->pMidiAction != nullptr) {                
-        if (this->pEventHandler == nullptr){
-            MIDI_LOGD( "Creating new MidiBleParser for MidiAction");
-            this->pEventHandler =  new MidiBleParser(pMidiAction, this->receivingChannel);
-        }
+    // the parser is created in the constructor or here from the MidiAction
+    if (this->pEventHandler == nullptr && this->pMidiAction != nullptr) {
+        MIDI_LOGD( "Creating new MidiBleParser for MidiAction");
+        this->pEventHandler =  new MidiBleParser(pMidiAction, this->receivingChannel);
+    }
+    if (this->pEventHandler != nullptr) {
         MIDI_LOGD( "Setting callback for characteristic");
         pCharacteristic->setCallbacks(this->pEventHandler);
     }
